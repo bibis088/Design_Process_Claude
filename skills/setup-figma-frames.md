@@ -107,17 +107,28 @@ Avant de passer au skill suivant, réponds à ces questions :
 2. La nomenclature est-elle exacte sur toutes les frames — `[US-###] [NomUS] / [Plateforme] / [État]` ? (oui / non + frames mal nommées)
 3. Le contenu à intégrer est-il identifié — URL, assets ou placeholder structuré ? (oui / non + contenu à préciser)
 
+### ✅ Critère de sortie accessibilité (RAAM niveau A — obligatoire sur les écrans créés)
+
+Ces critères s'appliquent à chaque lot d'écrans créés — principaux ou secondaires :
+
+4. L'ordre de focus est-il logique sur chaque frame créée — de haut en bas, gauche à droite ? (oui / non + frames à corriger — RAAM 7.1)
+5. Les zones tactiles sont-elles ≥ 44x44pt (iOS) / 48x48dp (Android) sur tous les éléments interactifs visibles ? (oui / non + éléments non conformes — RAAM 13.1)
+6. Les états Empty et Error affichent-ils un message texte — pas uniquement une icône ou une couleur pour communiquer l'état ? (oui / non — RAAM 2.1)
+
 > Réponds point par point. Si tout est validé, le skill se termine et les prochaines étapes s'affichent.
 > Si un point nécessite une correction, le skill reprend depuis l'étape concernée.
+> Les critères 4, 5, 6 sont des critères RAAM niveau A — ils bloquent si non conformes.
 
 ## Résumé de fin d'exécution
 
 ```
 ✅ setup-figma-frames "$ARGUMENTS" terminé
 📱 Figma Projet → page 📱 Screens — [N] frames créées
+✅ Revue accessibilité RAAM niveau A : [Pass / À corriger]
 
 Prochaines étapes :
-→ /fetch-content-for-frames $ARGUMENTS (si URL de contenu disponible)
-→ /create-figma-component $ARGUMENTS (création des composants)
-→ /check-guidelines-compliance $ARGUMENTS (après composants)
+→ [Si écrans principaux] Direction artistique humaine (Humain) — étape manuelle
+→ [Si écrans secondaires] /fetch-content-for-frames $ARGUMENTS (si URL disponible)
+→ /figma-code-connect $ARGUMENTS (après tous les écrans)
+→ /review-figma-scope $ARGUMENTS (validation PO)
 ```

@@ -124,14 +124,23 @@ Avant de passer au skill suivant, réponds à ces questions :
 2. L'auto layout est-il configuré avec des valeurs issues des tokens `spacing/*` — aucune valeur en dur ? (oui / non + valeurs à corriger)
 3. La zone tactile est-elle ≥ 44x44pt (iOS) / 48x48dp (Android) sur tous les variants ? (oui / non + variants non conformes)
 
+### ✅ Critère de sortie accessibilité (RAAM niveau A — obligatoire)
+
+Ces critères bloquent le passage au composant ou écran suivant :
+
+4. Chaque élément interactif du composant a-t-il un `accessibilityLabel` défini dans les annotations du layer Figma ? (oui / non + éléments manquants)
+5. Le composant transmet-il l'information par autre chose que la couleur seule — icône, texte ou forme accompagne toujours la couleur ? (oui / non — RAAM 2.1)
+6. Le ratio de contraste du composant est-il ≥ 3:1 pour les éléments interactifs (RAAM 2.4) ? (oui / non — indiquer le ratio mesuré)
+
 > Réponds point par point. Si tout est validé, le skill se termine et les prochaines étapes s'affichent.
 > Si un point nécessite une correction, le skill reprend depuis l'étape concernée.
+> Les critères 4, 5, 6 sont des critères RAAM niveau A — ils bloquent si non conformes.
 
 ## Résumé de fin d'exécution
 
 ```
 ✅ create-figma-component "$ARGUMENTS" terminé
-🧩 Figma → composant créé et disponible
+🧩 Figma → composant créé, guidelines et accessibilité validés
 
 Prochaines étapes :
 → /check-guidelines-compliance $ARGUMENTS

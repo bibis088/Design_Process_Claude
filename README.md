@@ -77,41 +77,89 @@ Chaque fichier modifié est annoté avec `✅ MODIFIÉ [X]` ou `✅ NOUVEAU [X]`
 
 ─── UI ───────────────────────────────────────────────────────
 
-Étape 14 — Frames vides Figma (UI)
+Étape 14 — Lecture Figma avant écriture (UI)
+    /figma-read-design [feature-slug]
+    → Inventorie frames, tokens et composants existants
+
+Étape 15 — Frames vides nommées (UI)
     /setup-figma-frames [feature-slug]
-    → Figma Projet → page 📱 Screens — frames nommées
+    → Figma Projet → page 📱 Screens — frames selon US + états
 
-Étape 14b — Injection contenu (UI — optionnel si URL disponible)
-    /fetch-content-for-frames [feature-slug]
-    → Contenu réel depuis URL dans les frames Figma
-
-Étape 15 — Composants Figma (UI)
+Étape 16 — Composants de base (UI)
     /create-figma-component [feature-slug]/[component-slug]
-    → Figma → composant avec variants + tokens + auto layout
+    → Composants récurrents : boutons, inputs, cards, navigation...
+    → Basés sur les tokens du design system
 
-Étape 16 — Conformité guidelines (UI)
-    /check-guidelines-compliance [feature-slug]/[slug]
-    → Rapport HIG + Material 3
+Étape 17 — Conformité guidelines composants (UI)
+    /check-guidelines-compliance [feature-slug]/[component-slug]
+    → Rapport HIG + Material 3 sur les composants
+    → Corriger avant de passer aux écrans
+
+─── DIRECTION ARTISTIQUE (humain) ───────────────────────────
+
+Étape 18 — Direction artistique [MANUELLE — Antoine]
+    Réalisée par le designer humain directement dans Figma.
+    Aucun agent n'intervient à cette étape.
+
+    Ce que le designer fait :
+    - Définit l'identité visuelle : typographie, couleurs, ton
+    - Applique les choix stylistiques sur les composants existants
+    - Crée les écrans principaux (happy path) sur base des specs UX
+    - Valide la cohérence avec la direction de marque
+
+    Gate de sortie : les écrans principaux sont créés et validés
+    visuellement par Antoine avant de passer à l'étape suivante.
+
+─── REVUE ACCESSIBILITÉ #1 + INJECTION CONTENU ──────────────
+
+Étape 19 — Revue accessibilité écrans principaux (UI)
+    ⚠️ Intégrée comme critère de sortie dans create-figma-component
+    → Vérification RAAM niveau A sur chaque écran principal créé
+    → Labels, ordre de focus, zones tactiles — bloque si non conforme
+
+Étape 20 — Injection du contenu réel (UI — si URL disponible)
+    /fetch-content-for-frames [feature-slug]
+    → Contenu depuis URL web → frames Figma
+    → Remplace les placeholders par du contenu réel
+
+─── ÉCRANS SECONDAIRES + CAS DÉGRADÉS ──────────────────────
+
+Étape 21 — Écrans secondaires et états dégradés (UI)
+    /setup-figma-frames [feature-slug] --scope secondary
+    → Loading, Empty, Error sur chaque écran
+    → Flux alternatifs et cas d'erreur
+    → Basés sur les composants du design system déjà créés
+
+─── REVUE ACCESSIBILITÉ #2 ───────────────────────────────────
+
+Étape 22 — Revue accessibilité écrans secondaires (UI)
+    ⚠️ Intégrée comme critère de sortie dans setup-figma-frames
+    → Vérification RAAM niveau A sur les états dégradés
+    → Même rigueur que les écrans principaux
 
 ─── VALIDATION ───────────────────────────────────────────────
 
-Étape 17 — Review scope Figma (PO)
+Étape 23 — Code Connect (UI)
+    /figma-code-connect [feature-slug]
+    → Connexion composants Figma ↔ SwiftUI/Compose
+
+Étape 24 — Review scope Figma (PO)
     /review-figma-scope [epic-slug]/[feature-slug]
     → Conformité EPIC + US + CA dans les frames
 
-Étape 18 — Handoff Dev (UI)
+Étape 25 — Handoff Dev (UI)
     /write-figma-handoff [feature-slug]
     → Figma Projet → page 🚀 Handoff prête
 
 ─── QA ───────────────────────────────────────────────────────
 
-Étape 19 — Rapport QA (QA Engineer)
+Étape 26 — Rapport QA (QA Engineer)
     /write-qa-report [epic-slug]/[us-slug]
     → Produit : specs/[epic-slug]/qa/QA-###-[slug].md
 
 ─── STORE (si publication) ───────────────────────────────────
 
-Étape 20 — Assets store (UI)
+Étape 27 — Assets store (UI)
     /write-store-assets [epic-slug]
     → Figma Projet → page 📦 Store Assets
 ```
@@ -125,10 +173,12 @@ Chaque fichier modifié est annoté avec `✅ MODIFIÉ [X]` ou `✅ NOUVEAU [X]`
 | Gate | Qui valide | Condition |
 |------|-----------|-----------|
 | `Draft` → `In Review` | Agent auteur | DoD interne cochée |
-| `In Review` → `Approved` | PO | Cohérence fonctionnelle validée |
-| Frames → `Ready for dev` | PO (`review-figma-scope`) | Scope EPIC/US/CA couvert |
+| `In Review` → `Approved` | **Humain** + PO | Cohérence fonctionnelle + validation humaine |
+| Cadrage → Brief | **Humain** | Stack technique + périmètre V1 confirmés |
+| Frames → `Ready for dev` | **Humain** + PO (`review-figma-scope`) | Direction artistique validée + scope couvert |
 | `Approved` → `Dev Ready` | Tech Lead | Faisabilité technique confirmée |
-| `Dev Ready` → `Done` | PO + QA | Critères d'acceptance et rapport QA validés |
+| `Dev Ready` → `Done` | **Humain** + PO + QA | CA validés + rapport QA approuvé |
+| Changement de scope | **Humain** | Obligatoire — tout changement en cours de sprint |
 
 ### Nouvelle feature sur projet existant
 
@@ -146,6 +196,168 @@ Si Figma est déjà configuré (tokens, grilles), démarrer directement à l'ét
 ```
 
 ---
+
+## ⚙️ Mode d'exécution — Manuel, Semi-auto ou Automatique
+
+Ce process peut être exécuté à trois niveaux selon le contexte et la confiance accordée aux agents.
+
+---
+
+### Niveau 1 — Manuel (une étape à la fois)
+
+Chaque skill est invoqué individuellement. L'humain lit le résultat, valide, puis déclenche l'étape suivante.
+
+**Quand l'utiliser :**
+- Premier projet avec ce process
+- Étapes nouvelles ou complexes (cadrage, direction artistique)
+- Quand le contexte est incertain ou le scope peu clair
+
+**Comment :**
+```
+/write-cadrage authentication
+→ Lire le résumé de cadrage
+→ Valider ou corriger
+→ /write-persona authentication/regular-user
+→ Lire le persona
+→ Valider ou corriger
+→ /write-brief-fonctionnel authentication
+→ ...
+```
+
+Chaque étape attend une réponse explicite avant de continuer.
+
+---
+
+### Niveau 2 — Semi-automatique (séquence jusqu'à la prochaine gate humaine)
+
+Plusieurs étapes sont enchaînées automatiquement jusqu'à atteindre un point de validation humaine obligatoire. L'agent s'arrête, présente les livrables produits, et attend la validation.
+
+**Quand l'utiliser :**
+- Process bien maîtrisé
+- Scope clair et cadrage validé
+- Phases techniques sans décision stratégique (UX → UI sur un flux connu)
+
+**Comment :**
+
+Demander explicitement de chaîner les étapes :
+
+```
+"Lance le process de spécification fonctionnelle pour l'epic authentication.
+Enchaîne automatiquement : cadrage → personas → brief → flux → règles métier.
+Arrête-toi avant de produire les user stories et présente-moi un résumé
+de tout ce qui a été produit."
+```
+
+L'agent exécute les 5 skills dans l'ordre, applique les phases de validation internes, et s'arrête à la gate humaine pour présenter le bilan.
+
+**Séquences semi-auto recommandées par phase :**
+
+| Phase | Séquence automatisable | Gate d'arrêt |
+|-------|----------------------|-------------|
+| Cadrage complet | `write-cadrage` → `write-persona` × N → `write-brief-fonctionnel` | Validation humaine du brief |
+| Specs fonctionnelles | `write-flux-fonctionnel` × N → `write-regles-metier` → `write-glossaire` | Validation PO |
+| User stories | `write-feature-ticket` → `write-user-story` × N | Validation humaine des US |
+| Setup Figma | `figma-read-design` → `setup-figma-project` → `setup-figma-tokens` → `setup-figma-grid` | Validation humaine de la structure |
+| Composants | `create-figma-component` × N → `check-guidelines-compliance` × N | Validation humaine avant direction artistique |
+| Écrans secondaires | `setup-figma-frames` → `fetch-content-for-frames` | Validation humaine des frames |
+| Finalisation | `figma-code-connect` → `review-figma-scope` → `write-figma-handoff` | Validation humaine avant handoff |
+| QA | `write-qa-report` × N → `review-dod` | Validation humaine finale |
+
+---
+
+### Niveau 3 — Automatique (phase complète sans intervention)
+
+Une phase entière s'exécute de bout en bout. L'agent prend toutes les décisions techniques et s'arrête uniquement aux gates humaines obligatoires définies dans `rules/communication.md`.
+
+**Quand l'utiliser :**
+- Phases purement techniques (setup Figma, tokens, grilles)
+- Tâches répétitives sur un process maîtrisé (génération de N user stories depuis un brief approuvé)
+- Veille et rapports automatiques (`process-watch`)
+
+**Comment :**
+
+```
+"Lance la phase de setup Figma complète pour l'epic authentication.
+Enchaîne tout automatiquement jusqu'à ce que le setup soit prêt
+pour que l'UX Designer commence à travailler.
+Présente-moi un rapport final avec les URLs des fichiers créés."
+```
+
+ou
+
+```
+"À partir du brief fonctionnel EPIC-001-authentication approuvé,
+génère automatiquement toutes les user stories sans intervention.
+Applique les DoD internes et arrête-toi quand toutes les stories
+sont en statut In Review, prêtes pour ma validation."
+```
+
+**Phases entièrement automatisables :**
+
+| Phase | Condition d'automatisation | Ce qui se passe |
+|-------|--------------------------|----------------|
+| Setup Figma complet | Brief approuvé + MCP Figma connecté | `figma-read-design` → `setup-figma-project` → `setup-figma-tokens` → `setup-figma-grid` |
+| Génération de N US | Brief + flux approuvés | `write-user-story` × N avec DoD interne |
+| Audit projet existant | Accès sources confirmé | `audit-existing-project` complet |
+| Veille hebdomadaire | Déclenchée chaque semaine | `process-watch` → rapport |
+| Assets store | Handoff validé | `write-store-assets` complet |
+
+---
+
+### Règles d'automatisation
+
+**Ce qui peut toujours être automatisé :**
+- Tout skill de production documentaire (write-*)
+- Setup et configuration (setup-figma-*)
+- Lecture Figma (figma-read-design)
+- Rapports et veille (process-watch, write-qa-report)
+
+**Ce qui nécessite toujours une intervention humaine :**
+- Validation du cadrage et de la stack technique
+- Direction artistique
+- Tout changement de scope
+- Validation finale avant `Done`
+- Arbitrage de conflits entre agents
+
+**Ce qui peut être automatisé mais doit être relu :**
+- Génération de user stories (vérifier la pertinence des CA)
+- Création de personas (vérifier la représentativité)
+- Review scope Figma (le PO peut valider en lot)
+
+---
+
+### Enchaîner plusieurs phases d'un coup
+
+Pour les projets bien cadrés, il est possible de décrire l'objectif final et laisser l'agent planifier et exécuter l'ensemble :
+
+```
+"On a un brief fonctionnel validé pour EPIC-001-authentication.
+Objectif : avoir toutes les specs UX prêtes pour que l'UI Designer
+puisse démarrer lundi.
+
+Enchaîne automatiquement :
+1. Génère tous les flux fonctionnels depuis le brief
+2. Génère toutes les user stories
+3. Génère la navigation map
+4. Génère les user flows textuels
+5. Génère les user flows visuels dans Figma
+6. Génère les specs de tous les écrans
+
+Arrête-toi avant la direction artistique et présente-moi
+un bilan complet de tout ce qui a été produit."
+```
+
+L'agent exécute dans l'ordre, applique les phases de validation internes (questions de fin de skill), et s'arrête à la gate humaine définie.
+
+---
+
+### Bonnes pratiques
+
+- **Commencer au niveau 1** sur un nouveau projet — passer au niveau 2 dès que le process est familier
+- **Toujours nommer explicitement la gate d'arrêt** dans ta demande : "arrête-toi avant X"
+- **Les phases de validation internes des skills** (questions 1, 2, 3...) s'appliquent même en mode automatique — l'agent les traite lui-même et bloque si un critère échoue
+- **Si un critère de validation échoue en mode auto**, l'agent s'arrête, signale le problème et attend l'instruction humaine avant de continuer
+- **`process-watch`** est le seul skill conçu pour tourner de façon entièrement autonome et récurrente
 
 ## Arborescence
 
@@ -328,3 +540,18 @@ Figma (canal transversal)
 | `figma-use-wrapper` | UI / DSM | Skill fondateur — wrappe `use_figma` avec conventions projet. Obligatoire avant tout écriture |
 | `figma-read-design` | UI / DSM | Pipeline de lecture — `get_metadata` + `get_variable_defs` + `search_design_system` avant écriture |
 | `figma-code-connect` | UI | Connecte composants Figma → SwiftUI/Compose via Code Connect |
+
+### Skills documentation utilisateur (nouveaux)
+
+| Skill | Agent | Description |
+|-------|-------|-------------|
+| `write-contextual-help` | UX | Empty states, messages d'erreur, tooltips inline |
+| `write-onboarding-spec` | UX | Parcours d'onboarding — walkthroughs, tooltips découverte |
+| `write-release-notes` | PO | Release notes App Store, Play Store et in-app |
+
+### Skills maintenance et intégration (nouveaux)
+
+| Skill | Agent | Description |
+|-------|-------|-------------|
+| `audit-existing-project` | BA | Audit projet existant avant intégration du process |
+| `process-watch` | BA | Veille hebdomadaire — RAAM, HIG, M3, MCP Figma, Claude |

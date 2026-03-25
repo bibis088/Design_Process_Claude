@@ -90,18 +90,58 @@ En plus de créer les composants et écrans, tu vérifies la conformité HIG (iO
 
 ### Process Figma complet
 Pour chaque feature, exécuter dans l'ordre :
+
 ```
-0. /figma-read-design [feature-slug]             ← OBLIGATOIRE — lire avant écrire
-1. /setup-figma-frames [feature-slug]            ← frames vides nommées
-2. /fetch-content-for-frames [feature-slug]      ← contenu réel (si URL disponible)
-3. /create-figma-component [feature-slug]/[slug] ← composants avec variants
-4. /check-guidelines-compliance [feature-slug]/[slug] ← conformité HIG/M3
-5. /figma-code-connect [feature-slug]            ← connexion composants ↔ code
-6. /write-figma-handoff [feature-slug]           ← préparation Dev
-7. /write-store-assets [epic-slug]               ← assets publication (si applicable)
+─── PRÉPARATION ────────────────────────────────────────────
+0. /figma-read-design [feature-slug]
+   → Lecture obligatoire : tokens, composants existants, frames
+
+1. /setup-figma-frames [feature-slug]
+   → Frames vides nommées selon US + états
+
+─── COMPOSANTS ─────────────────────────────────────────────
+2. /create-figma-component [feature-slug]/[slug]
+   → Composants de base : boutons, inputs, cards, navigation
+   → Critère de sortie : accessibilité RAAM niveau A intégrée
+
+3. /check-guidelines-compliance [feature-slug]/[slug]
+   → Conformité HIG + Material 3 sur les composants
+
+─── DIRECTION ARTISTIQUE (HUMAIN) ──────────────────────────
+4. [MANUEL — Humain]
+   → Identité visuelle, typographie, couleurs, ton
+   → Écrans principaux (happy path) créés dans Figma
+   → Gate : écrans principaux validés visuellement avant la suite
+
+─── REVUE ACCESSIBILITÉ #1 (écrans principaux) ─────────────
+   ⚠️ Intégrée comme critère de sortie dans setup-figma-frames
+   → RAAM niveau A : ordre de focus, zones tactiles, états textuels
+
+─── INJECTION CONTENU ──────────────────────────────────────
+5. /fetch-content-for-frames [feature-slug]
+   → Contenu réel depuis URL web (si disponible)
+
+─── ÉCRANS SECONDAIRES + CAS DÉGRADÉS ─────────────────────
+6. /setup-figma-frames [feature-slug] (écrans secondaires)
+   → Loading, Empty, Error + flux alternatifs
+   → Basés sur les composants DS existants
+   → Critère de sortie : accessibilité RAAM niveau A intégrée
+
+─── REVUE ACCESSIBILITÉ #2 (écrans secondaires) ────────────
+   ⚠️ Intégrée comme critère de sortie dans setup-figma-frames
+   → Même rigueur que les écrans principaux
+
+─── FINALISATION ───────────────────────────────────────────
+7. /figma-code-connect [feature-slug]
+   → Connexion composants Figma ↔ SwiftUI/Compose
+
+8. /write-figma-handoff [feature-slug]
+   → Préparation handoff Dev
+
+9. /write-store-assets [epic-slug]    ← si publication store
 ```
 
-**Règle fondamentale :** Tout skill d'écriture Figma passe par `figma-use-wrapper` qui invoque `use_figma`. Toute lecture passe par `figma-read-design` qui invoque `get_metadata`, `get_variable_defs` et `search_design_system`.
+**Règle fondamentale :** Tout skill d'écriture Figma passe par `figma-use-wrapper` → `use_figma`. Toute lecture passe par `figma-read-design` → `get_metadata` + `get_variable_defs` + `search_design_system`.
 
 ### Nomenclature obligatoire
 Consulter `rules/figma.md` avant de créer quoi que ce soit dans Figma.

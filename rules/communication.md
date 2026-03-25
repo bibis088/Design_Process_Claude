@@ -104,7 +104,7 @@ Toute question ouverte dans un document doit être adressée à un agent ou une 
 Si deux agents produisent des documents contradictoires (ex: règle métier BA vs critère d'acceptance PO), la résolution suit cette hiérarchie :
 
 ```
-Antoine (décision finale)
+Humain (décision finale)
     ↑
 PO (arbitrage fonctionnel)
     ↑
@@ -171,3 +171,92 @@ Quand un agent détecte une incohérence entre deux documents :
 | `Approved` | Document validé, peut être consommé |
 | `Rejected` | Document refusé — retour à l'agent source avec motif |
 | `Conflict` | Contradiction détectée — escalade requise |
+
+---
+
+## ✅ NOUVEAU [5] — Gates de validation humaine
+
+Le **Humain** est le valideur final à chaque phase du process. Son rôle est de vérifier et valider l'ensemble des décisions — il ne produit pas de documents, il approuve ou bloque.
+
+### Définition du rôle Humain
+- Valide les décisions stratégiques (cadrage, scope, personas)
+- Approuve les livrables avant passage au statut suivant
+- Arbitre les conflits entre agents
+- Décide des changements de scope en cours de projet ou sprint
+- Réalise la direction artistique (étape manuelle dans le process UI)
+
+### Gates obligatoires par phase
+
+| Phase | Gate | Ce que le Humain valide |
+|-------|------|------------------------|
+| Cadrage | Après `/write-cadrage` | Stack technique, périmètre V1, personas pressentis |
+| Brief Fonctionnel | Après `/write-brief-fonctionnel` | Objectifs, périmètre V1 vs hors périmètre |
+| Personas | Après `/write-persona` | Archétypes représentatifs du contexte réel |
+| User Stories | Après `/write-user-story` | Critères d'acceptance réalistes et testables |
+| Direction artistique | Étape 18 du process UI | Identité visuelle, écrans principaux |
+| Review scope Figma | Après `/review-figma-scope` | Conformité fonctionnelle des frames |
+| Rapport QA | Après `/write-qa-report` | Verdict final avant `Done` |
+| Changement de scope | À tout moment | Tout changement de périmètre en cours de sprint |
+
+### Format de demande de validation humaine
+
+À chaque gate, l'agent produit une demande explicite :
+
+```markdown
+## ⚠️ Validation Humaine requise — [Phase] — [YYYY-MM-DD]
+
+### Livrable soumis
+- Type : [EPIC / US / Brief / Frame / Rapport QA]
+- ID : [EPIC-### / US-### / etc.]
+- Statut actuel : [In Review]
+- Statut visé : [Approved]
+
+### Résumé pour décision
+[2-3 phrases max — ce qui a été produit et pourquoi ça nécessite une validation]
+
+### Points d'attention
+- [Point spécifique qui nécessite ton regard]
+- [Décision ouverte si applicable]
+
+### Question de validation
+"Confirmes-tu ce livrable pour passer au statut [Approved / Dev Ready / Done] ?"
+
+Réponse attendue : oui / non / [corrections à apporter]
+```
+
+---
+
+## ✅ NOUVEAU [6] — Gestion des changements de scope
+
+Tout changement de périmètre en cours de projet ou de sprint — ajout, suppression ou modification d'une fonctionnalité — passe obligatoirement par validation humaine.
+
+### Template de demande de changement de scope
+
+```markdown
+## Demande de changement de scope — [YYYY-MM-DD]
+
+### Demandeur
+[Agent ou source ayant identifié le besoin de changement]
+
+### Changement proposé
+- Type : [Ajout / Suppression / Modification]
+- Scope actuel : [Description de ce qui existe]
+- Scope proposé : [Description de ce qui changerait]
+- Raison : [Pourquoi ce changement est nécessaire]
+
+### Impact estimé
+| Dimension | Impact | Détail |
+|-----------|--------|--------|
+| US concernées | [N US] | [US-###, US-###] |
+| Sprint en cours | [Oui / Non] | [Si oui : impact sur les engagements] |
+| Design System | [Oui / Non] | [Si oui : tokens ou composants à modifier] |
+| Figma | [Oui / Non] | [Frames à retravailler] |
+| Version document | [MINOR / MAJOR] | [Selon l'ampleur] |
+
+### Décision Humaine requise
+"Approuves-tu ce changement de scope ?"
+
+- ✅ Approuvé → mettre à jour les documents concernés (version MAJOR ou MINOR)
+- ❌ Refusé → documenter la raison + reporter en backlog si pertinent
+- ⏳ À planifier → créer un item backlog pour la prochaine itération
+```

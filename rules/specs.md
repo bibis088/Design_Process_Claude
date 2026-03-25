@@ -98,3 +98,90 @@ Capturer les besoins bruts dans un format simplifié pour validation client, ava
 - La conversion est déclenchée par l'agent `business-analyst` après validation client
 - Une fois converti, l'item est marqué `Converted` et référence l'épic créé — il n'est pas supprimé
 - Un item `Rejected` reste dans le backlog avec la raison du rejet documentée
+
+---
+
+## ✅ NOUVEAU [3] — Versioning des documents fonctionnels
+
+Les documents fonctionnels (EPIC, US, FEAT) sont versionnés pour tracer les évolutions en cours de projet.
+
+### Convention de version
+
+```
+MAJOR.MINOR
+```
+
+| Type | Quand incrémenter | Exemple |
+|------|------------------|---------|
+| `MAJOR` | Changement de scope, refonte du flux, suppression de critères | `1.0 → 2.0` |
+| `MINOR` | Ajout de critères d'acceptance, clarification, correction | `1.0 → 1.1` |
+
+### Format dans chaque document
+
+Ajouter dans les métadonnées de chaque EPIC, US et FEAT :
+
+```markdown
+## Métadonnées
+- Version : [MAJOR.MINOR]
+- Créé le : [YYYY-MM-DD]
+- Dernière mise à jour : [YYYY-MM-DD]
+- Modifié par : [agent ou Humain]
+- Changements : [description courte du dernier changement]
+```
+
+### Changelog fonctionnel
+
+Chaque EPIC dispose d'un mini-changelog dans son fichier `EPIC.md` :
+
+```markdown
+## Changelog
+
+| Version | Date | Auteur | Changement |
+|---------|------|--------|-----------|
+| 1.1 | YYYY-MM-DD | PO | Ajout CA-04 sur US-042 |
+| 1.0 | YYYY-MM-DD | BA | Création initiale |
+```
+
+### Règle de validation humaine sur les changements de version MAJOR
+
+Tout passage de version MAJOR sur un EPIC ou une US nécessite une validation explicite du **Humain** avant d'être appliqué — c'est un changement de scope.
+
+---
+
+## ✅ NOUVEAU [4] — Dépendances inter-features
+
+Plusieurs features peuvent partager des composants ou dépendre les unes des autres.
+
+### Déclaration dans le template EPIC
+
+```markdown
+## Dépendances inter-features
+
+### Cette feature dépend de
+| EPIC | Feature | Livrable requis | Statut |
+|------|---------|----------------|--------|
+| EPIC-001 | FEAT-003 | Composant `Button/Primary` | ✅ Disponible |
+| EPIC-001 | FEAT-005 | API authentification | ⏳ En cours |
+
+### Cette feature est requise par
+| EPIC | Feature | Livrable fourni | Statut |
+|------|---------|----------------|--------|
+| EPIC-003 | FEAT-008 | Composant `Card/Product` | 🔒 Bloquant |
+```
+
+### Règles de gestion des dépendances
+
+- Une feature ne peut pas démarrer si ses dépendances bloquantes ne sont pas en statut `Done`
+- Une dépendance non bloquante peut démarrer avec un mock ou placeholder — documenter explicitement
+- Si une dépendance change de scope (version MAJOR), toutes les features qui en dépendent doivent être réévaluées
+- Le **Humain** arbitre les conflits de dépendances inter-features
+
+### Conventions de statut des dépendances
+
+| Statut | Signification |
+|--------|--------------|
+| ✅ Disponible | Livrable prêt et disponible |
+| ⏳ En cours | En développement — date estimée connue |
+| 🔒 Bloquant | Feature bloquée — ne peut pas démarrer |
+| ⚠️ Mock | Livrable remplacé par un mock temporaire |
+| ❌ Absent | Livrable non démarré — à planifier |

@@ -15,7 +15,7 @@ Récupérer du contenu réel depuis une page web et l'injecter dans les layers t
 
 ## Prérequis
 - [ ] Frames Figma créées via `/setup-figma-frames $ARGUMENTS`
-- [ ] URL(s) de référence fournies par Antoine
+- [ ] URL(s) de référence fournies par le Humain
 - [ ] Mapping URL → frames documenté (quelles données vont dans quelles frames)
 - [ ] MCP Figma connecté
 - [ ] Accès web disponible (web_fetch)

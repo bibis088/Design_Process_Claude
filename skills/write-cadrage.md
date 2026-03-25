@@ -101,6 +101,14 @@ Après réception des réponses, produire ce résumé avant de démarrer les liv
 - **Flux principal** : [Résumé Q3 en 1 phrase]
 - **Problème résolu** : [Résumé Q4]
 
+### Stack technique
+- **Type d'application** : [Native iOS / Native Android / Native iOS + Android / Cross-platform (React Native, Flutter) / Hybride / Web mobile]
+- **Plateformes cibles** : [iOS / Android / Les deux]
+- **Versions minimum** : [iOS XX+ / Android XX+]
+- **Contraintes techniques connues** : [ex: biométrie, widgets, offline, notifications push]
+
+> Cette information est critique — elle détermine les guidelines applicables (HIG pour iOS natif, Material 3 pour Android natif, conventions propres pour cross-platform) et les conventions de code des skills UI.
+
 ### Périmètre V1 pressenti
 - [Fonctionnalité 1]
 - [Fonctionnalité 2]
@@ -140,6 +148,14 @@ Avant de valider ce livrable et de passer à la suite, réponds à ces questions
 2. Le problème métier est-il clairement identifié depuis la réponse Q4 — pas une feature déguisée ? (oui / reformuler)
 3. Le contexte mobile est-il précisé — iOS, Android ou les deux, fréquence, environnement d'usage ? (oui / non)
 4. Au moins un KPI mesurable a-t-il été identifié depuis la réponse Q6 ? (oui / non + proposer un KPI)
+5. ✅ NOUVEAU [2] — La stack technique est-elle définie — type d'application (native, cross-platform, hybride), plateformes et versions minimum ? (oui / non — bloquant pour les étapes UI)
+
+### Gate de validation humaine — obligatoire
+Le résumé de cadrage doit être relu et validé par le **Humain** avant de lancer les étapes suivantes.
+
+> "Humain — confirmes-tu le résumé de cadrage ci-dessus, en particulier la stack technique et le périmètre V1 pressenti ?"
+
+Le process ne démarre pas sans cette confirmation explicite.
 
 > Réponds point par point. Si tout est validé, le skill se termine et les prochaines étapes s'affichent.
 > Si un point nécessite une correction, le skill reprend depuis l'étape concernée.
