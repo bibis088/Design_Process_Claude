@@ -179,50 +179,184 @@ Quand un agent détecte une incohérence entre deux documents :
 Le **Humain** est le valideur final à chaque phase du process. Son rôle est de vérifier et valider l'ensemble des décisions — il ne produit pas de documents, il approuve ou bloque.
 
 ### Définition du rôle Humain
-- Valide les décisions stratégiques (cadrage, scope, personas)
-- Approuve les livrables avant passage au statut suivant
+- Valide les livrables **en lot à la fin de chaque phase** — pas livrable par livrable
 - Arbitre les conflits entre agents
 - Décide des changements de scope en cours de projet ou sprint
 - Réalise la direction artistique (étape manuelle dans le process UI)
 
-### Gates obligatoires par phase
+---
 
-| Phase | Gate | Ce que le Humain valide |
-|-------|------|------------------------|
-| Cadrage | Après `/write-cadrage` | Stack technique, périmètre V1, personas pressentis |
-| Brief Fonctionnel | Après `/write-brief-fonctionnel` | Objectifs, périmètre V1 vs hors périmètre |
-| Personas | Après `/write-persona` | Archétypes représentatifs du contexte réel |
-| User Stories | Après `/write-user-story` | Critères d'acceptance réalistes et testables |
-| Direction artistique | Étape 18 du process UI | Identité visuelle, écrans principaux |
-| Review scope Figma | Après `/review-figma-scope` | Conformité fonctionnelle des frames |
-| Rapport QA | Après `/write-qa-report` | Verdict final avant `Done` |
-| Changement de scope | À tout moment | Tout changement de périmètre en cours de sprint |
+### 11 Gates — détail par phase
 
-### Format de demande de validation humaine
+#### Gate 0 — Initialisation
+**Déclenchée après :** `/write-cadrage` + `/write-persona` × N
+**Lot soumis :**
+- Résumé de cadrage (problème, stack technique, périmètre V1)
+- Personas (min. 2 — utilisateur régulier + nouvel utilisateur)
 
-À chaque gate, l'agent produit une demande explicite :
+**Question :** "Le cadrage et les personas reflètent-ils bien le contexte du projet ?"
+**Bloque :** le Brief Fonctionnel ne démarre pas sans validation
+
+---
+
+#### Gate 1 — Spécification fonctionnelle
+**Déclenchée après :** `/write-brief-fonctionnel` + `/write-flux-fonctionnel` × N + `/write-regles-metier` + `/write-glossaire`
+**Lot soumis :**
+- Brief Fonctionnel (`EPIC.md`)
+- Flux fonctionnels (`FLUX-###` × N)
+- Matrice de règles métier (`RB-###`)
+- Glossaire
+
+**Question :** "Les specs fonctionnelles sont-elles complètes et fidèles au besoin métier ?"
+**Bloque :** les user stories ne démarrent pas sans validation
+
+---
+
+#### Gate 2 — User stories
+**Déclenchée après :** `/write-feature-ticket` + `/write-user-story` × N (toutes les US d'une feature)
+**Lot soumis :**
+- Feature ticket (`FEAT-###`)
+- Toutes les user stories (`US-###` × N) avec leurs critères d'acceptance
+
+**Question :** "Les stories couvrent-elles le périmètre attendu ? Les critères d'acceptance sont-ils testables et non ambigus ?"
+**Bloque :** le process UX ne démarre pas sans validation
+
+---
+
+#### Gate 3 — Setup Figma
+**Déclenchée après :** `/setup-figma-project` + `/setup-figma-tokens` + `/setup-figma-grid`
+**Lot soumis :**
+- URLs des fichiers Figma Projet et Design System
+- Tokens configurés (couleurs, typo, spacing) — lien vers la page Foundations
+- Frames de base iOS/Android avec grilles actives
+
+**Question :** "La structure Figma est-elle prête pour que l'équipe design démarre ?"
+**Bloque :** le travail UX dans Figma ne démarre pas sans validation
+
+---
+
+#### Gate 4 — UX Design
+**Déclenchée après :** `/write-navigation-map` + `/write-user-flow` × N + `/write-figma-userflow` × N + `/write-screen-spec` × N + `/write-accessibility-spec`
+**Lot soumis :**
+- Navigation map (`SCREENS-MAP.md`)
+- User flows visuels dans Figma (page 🗺️ User Flows)
+- Specs de tous les écrans (`S-XX` × N)
+- Spec accessibilité RAAM de la feature
+
+**Question :** "Les parcours UX et les specs d'écran sont-ils conformes à l'intention fonctionnelle ?"
+**Bloque :** la création des composants UI ne démarre pas sans validation
+
+---
+
+#### Gate 5 — Composants UI
+**Déclenchée après :** `/create-figma-component` × N + `/check-guidelines-compliance` × N
+**Lot soumis :**
+- Tous les composants Figma avec variants, tokens et auto layout
+- Rapport de conformité HIG/M3 (sans non-conformité bloquante)
+
+**Question :** "Les composants sont-ils visuellement cohérents et conformes aux guidelines HIG/Material 3 ?"
+**Bloque :** la direction artistique ne démarre pas sans validation
+
+---
+
+#### Gate 6 — Direction artistique *(manuelle)*
+**Pas de lot** — le Humain intervient directement dans Figma.
+**Ce qu'il fait :** définit l'identité visuelle, crée les écrans principaux, valide la cohérence de marque.
+**Validation implicite :** les écrans principaux sont créés et visibles dans Figma.
+**Bloque :** la création des frames vides automatiques ne démarre pas sans que cette étape soit réalisée
+
+---
+
+#### Gate 7 — Écrans principaux
+**Déclenchée après :** création des frames Default iOS/Android pour tous les écrans happy path + revue accessibilité RAAM #1
+**Lot soumis :**
+- Frames Default iOS + Android pour toutes les US (happy path)
+- Résultat revue accessibilité RAAM niveau A sur les écrans principaux
+
+**Question :** "Les écrans principaux sont-ils conformes aux specs UX et à la direction artistique ?"
+**Bloque :** l'injection de contenu et les écrans secondaires ne démarrent pas sans validation
+
+---
+
+#### Gate 8 — Écrans secondaires
+**Déclenchée après :** `/fetch-content-for-frames` + `/setup-figma-frames` (écrans secondaires) + revue accessibilité RAAM #2
+**Lot soumis :**
+- Frames Loading / Empty / Error pour tous les écrans
+- Rapport d'injection de contenu (contenu réel vs placeholders restants)
+- Résultat revue accessibilité RAAM niveau A sur les états dégradés
+
+**Question :** "Les états dégradés sont-ils traités correctement ? Le contenu est-il réaliste ?"
+**Bloque :** la validation fonctionnelle Figma ne démarre pas sans validation
+
+---
+
+#### Gate 9 — Validation fonctionnelle Figma
+**Déclenchée après :** `/review-figma-scope`
+**Lot soumis :**
+- Rapport review scope avec verdict Pass/Fail
+
+**Question :** "Les frames couvrent-elles l'intégralité du scope EPIC/US/CA défini ?"
+**Bloque :** le handoff ne démarre pas sans validation
+
+---
+
+#### Gate 10 — Handoff
+**Déclenchée après :** `/figma-code-connect` + `/write-figma-handoff`
+**Lot soumis :**
+- Rapport Code Connect (composants connectés ↔ code)
+- Fichier Figma page `🚀 Handoff` prête
+- Document handoff avec URLs, composants utilisés, notes Dev
+
+**Question :** "Le handoff est-il complet et transmissible à l'équipe Dev sans ambiguïté ?"
+**Bloque :** la transmission aux Dev ne se fait pas sans validation
+
+---
+
+#### Gate 11 — QA
+**Déclenchée après :** `/write-qa-report` × N (toutes les US de la feature)
+**Lot soumis :**
+- Rapports QA pour toutes les US (`QA-###` × N)
+- Verdict global : Pass / Fail / Approuvé avec réserves
+- Liste des bugs bloquants si applicable
+
+**Question :** "Les résultats QA sont-ils acceptables pour passer en production ?"
+**Bloque :** le passage en `Done` et la soumission store ne se font pas sans validation
+
+---
+
+### Format de demande de validation humaine en lot
+
+À chaque gate, l'agent produit ce résumé structuré :
 
 ```markdown
-## ⚠️ Validation Humaine requise — [Phase] — [YYYY-MM-DD]
+## ⚠️ Validation Humaine requise — Gate [#] [NomPhase] — [YYYY-MM-DD]
 
-### Livrable soumis
-- Type : [EPIC / US / Brief / Frame / Rapport QA]
-- ID : [EPIC-### / US-### / etc.]
-- Statut actuel : [In Review]
-- Statut visé : [Approved]
+### Livrables produits dans cette phase
+| Livrable | ID | Statut | Lien |
+|----------|----|---------|----- |
+| [Type] | [ID] | In Review | [URL ou chemin] |
 
-### Résumé pour décision
-[2-3 phrases max — ce qui a été produit et pourquoi ça nécessite une validation]
+### Résumé de la phase
+[3-5 phrases — ce qui a été produit, les décisions prises, les points d'attention]
 
-### Points d'attention
-- [Point spécifique qui nécessite ton regard]
-- [Décision ouverte si applicable]
+### Points nécessitant ton regard
+- [Point spécifique 1]
+- [Point spécifique 2 — décision ouverte si applicable]
 
 ### Question de validation
-"Confirmes-tu ce livrable pour passer au statut [Approved / Dev Ready / Done] ?"
+"[Question définie pour cette gate]"
 
-Réponse attendue : oui / non / [corrections à apporter]
+Réponse attendue :
+- ✅ "Oui" → tous les livrables passent en `Approved`, phase suivante déclenchée
+- ❌ "Non" + corrections → livrables concernés retournent en `Draft`, agents relancés
+- ⏳ "Reporter" → livrables mis en attente, raison documentée dans le changelog
 ```
+
+---
+
+#### Gate hors-phase — Changement de scope
+Déclenché à tout moment, quelle que soit la phase en cours.
+Voir template complet dans la section suivante.
 
 ---
 

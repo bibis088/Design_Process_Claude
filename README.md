@@ -164,25 +164,35 @@ Chaque fichier modifié est annoté avec `✅ MODIFIÉ [X]` ou `✅ NOUVEAU [X]`
     → Figma Projet → page 📦 Store Assets
 ```
 
-### Gates de validation obligatoires
+### Gates de validation humaine — 11 gates en lot par phase
+
+Le Humain valide **en lot à la fin de chaque phase** — pas livrable par livrable. Les agents produisent tous les livrables d'une phase, puis s'arrêtent avec un résumé et une question de validation explicite.
 
 ```
-/review-dod [type-livrable]/[id-livrable]
+/review-dod [type-livrable]/[id-livrable]   ← vérification DoD interne avant chaque gate
 ```
 
-| Gate | Qui valide | Condition |
-|------|-----------|-----------|
-| `Draft` → `In Review` | Agent auteur | DoD interne cochée |
-| `In Review` → `Approved` | **Humain** + PO | Cohérence fonctionnelle + validation humaine |
-| Cadrage → Brief | **Humain** | Stack technique + périmètre V1 confirmés |
-| Frames → `Ready for dev` | **Humain** + PO (`review-figma-scope`) | Direction artistique validée + scope couvert |
-| `Approved` → `Dev Ready` | Tech Lead | Faisabilité technique confirmée |
-| `Dev Ready` → `Done` | **Humain** + PO + QA | CA validés + rapport QA approuvé |
-| Changement de scope | **Humain** | Obligatoire — tout changement en cours de sprint |
+| # | Phase | Lot à valider | Question posée au Humain |
+|---|-------|--------------|--------------------------|
+| **0** | Initialisation | Cadrage + Personas | "Le cadrage et les personas reflètent-ils bien le contexte du projet ?" |
+| **1** | Spécification fonctionnelle | Brief + Flux + Règles + Glossaire | "Les specs fonctionnelles sont-elles complètes et fidèles au besoin métier ?" |
+| **2** | User stories | FEAT-### + US-### × N | "Les stories couvrent-elles le périmètre attendu ? Les CA sont-ils testables ?" |
+| **3** | Setup Figma | Structure fichiers + Tokens + Grilles | "La structure Figma est-elle prête pour que l'équipe design démarre ?" |
+| **4** | UX Design | Navigation map + User flows + Specs écrans + Accessibilité RAAM | "Les parcours UX et specs d'écran sont-ils conformes à l'intention fonctionnelle ?" |
+| **5** | Composants UI | Composants Figma + Rapport conformité HIG/M3 | "Les composants sont-ils visuellement cohérents et conformes aux guidelines ?" |
+| **6** | Direction artistique | *(manuelle — pas de lot)* | Validation implicite : écrans principaux créés dans Figma |
+| **7** | Écrans principaux | Frames Default iOS/Android + RAAM accessibilité #1 | "Les écrans principaux sont-ils conformes aux specs UX et à la direction artistique ?" |
+| **8** | Écrans secondaires | Frames dégradées + Contenu injecté + RAAM accessibilité #2 | "Les états dégradés sont-ils traités correctement ? Le contenu est-il réaliste ?" |
+| **9** | Validation fonctionnelle Figma | Rapport review scope (`review-figma-scope`) | "Les frames couvrent-elles l'intégralité du scope EPIC/US/CA ?" |
+| **10** | Handoff | Code Connect + Fichier Handoff + Document handoff | "Le handoff est-il complet et transmissible à l'équipe Dev ?" |
+| **11** | QA | Rapports QA × N + Verdict global | "Les résultats QA sont-ils acceptables pour passer en production ?" |
+
+**Gate hors-phase — Changement de scope**
+Tout changement de périmètre en cours de projet ou sprint passe obligatoirement par validation humaine, quelle que soit la phase en cours. Voir template dans `rules/communication.md`.
 
 ### Nouvelle feature sur projet existant
 
-Si Figma est déjà configuré (tokens, grilles), démarrer directement à l'étape 6 :
+Si Figma est déjà configuré (tokens, grilles), démarrer directement à la phase 2 :
 ```
 /write-feature-ticket [epic-slug]/[feature-slug]
 ```
@@ -192,7 +202,7 @@ Si Figma est déjà configuré (tokens, grilles), démarrer directement à l'ét
 ```
 1. Créer specs/[epic-slug]/backlog/BACKLOG-###-[slug].md
 2. Faire valider par le client (statut : Validated)
-3. Lancer /write-cadrage [epic-slug]
+3. Lancer /write-cadrage [epic-slug]  ← démarre phase 0
 ```
 
 ---
@@ -250,18 +260,21 @@ de tout ce qui a été produit."
 
 L'agent exécute les 5 skills dans l'ordre, applique les phases de validation internes, et s'arrête à la gate humaine pour présenter le bilan.
 
-**Séquences semi-auto recommandées par phase :**
+**Séquences semi-auto recommandées par phase (alignées sur les 11 gates) :**
 
-| Phase | Séquence automatisable | Gate d'arrêt |
-|-------|----------------------|-------------|
-| Cadrage complet | `write-cadrage` → `write-persona` × N → `write-brief-fonctionnel` | Validation humaine du brief |
-| Specs fonctionnelles | `write-flux-fonctionnel` × N → `write-regles-metier` → `write-glossaire` | Validation PO |
-| User stories | `write-feature-ticket` → `write-user-story` × N | Validation humaine des US |
-| Setup Figma | `figma-read-design` → `setup-figma-project` → `setup-figma-tokens` → `setup-figma-grid` | Validation humaine de la structure |
-| Composants | `create-figma-component` × N → `check-guidelines-compliance` × N | Validation humaine avant direction artistique |
-| Écrans secondaires | `setup-figma-frames` → `fetch-content-for-frames` | Validation humaine des frames |
-| Finalisation | `figma-code-connect` → `review-figma-scope` → `write-figma-handoff` | Validation humaine avant handoff |
-| QA | `write-qa-report` × N → `review-dod` | Validation humaine finale |
+| Phase | Gate | Séquence automatisable | Arrêt |
+|-------|------|----------------------|-------|
+| 0 — Initialisation | Gate 0 | `write-cadrage` → `write-persona` × N | Validation humaine cadrage + personas |
+| 1 — Spécification | Gate 1 | `write-brief-fonctionnel` → `write-flux-fonctionnel` × N → `write-regles-metier` → `write-glossaire` | Validation humaine specs |
+| 2 — User stories | Gate 2 | `write-feature-ticket` → `write-user-story` × N | Validation humaine US |
+| 3 — Setup Figma | Gate 3 | `figma-read-design` → `setup-figma-project` → `setup-figma-tokens` → `setup-figma-grid` | Validation humaine structure Figma |
+| 4 — UX Design | Gate 4 | `write-navigation-map` → `write-user-flow` × N → `write-figma-userflow` × N → `write-screen-spec` × N → `write-accessibility-spec` | Validation humaine specs UX |
+| 5 — Composants UI | Gate 5 | `create-figma-component` × N → `check-guidelines-compliance` × N | Validation humaine composants |
+| 7 — Écrans principaux | Gate 7 | `setup-figma-frames` → `write-accessibility-annotations` × N | Validation humaine écrans principaux |
+| 8 — Écrans secondaires | Gate 8 | `fetch-content-for-frames` → `setup-figma-frames` (secondaires) → `write-accessibility-annotations` × N | Validation humaine états dégradés |
+| 9 — Validation Figma | Gate 9 | `review-figma-scope` | Validation humaine scope |
+| 10 — Handoff | Gate 10 | `figma-code-connect` → `write-figma-handoff` | Validation humaine handoff |
+| 11 — QA | Gate 11 | `write-qa-report` × N → `review-dod` × N | Validation humaine finale |
 
 ---
 
