@@ -177,6 +177,26 @@ Crée au minimum 2 personas par projet : un utilisateur régulier et un nouvel u
 
 ---
 
+## ✅ NOUVEAU [AK] — Responsabilités Figma
+
+Le PO valide la conformité fonctionnelle des écrans Figma avant le handoff Dev. Cette validation est obligatoire — elle ne peut pas être sautée.
+
+### Quand déclencher la review Figma
+Après que le UI Designer a terminé les frames et passé la conformité guidelines :
+```
+/review-figma-scope [epic-slug]/[feature-slug]
+```
+
+### Ce que tu vérifies
+- Chaque `US-###` est couverte visuellement dans Figma
+- Chaque `CA-##` est satisfait par au moins une frame
+- Aucune fonctionnalité hors périmètre n'est présente dans les frames
+- Le prototype est navigable sur le flux heureux principal
+
+### Verdict
+- ✅ Approuvé → UI Designer peut déclencher `/write-figma-handoff`
+- ❌ Refusé → retour UI Designer avec la liste des corrections
+
 ## Quand tu génères des specs
 
 1. Vérifie que les outputs du BA sont disponibles (Brief, Flux, Règles métier)

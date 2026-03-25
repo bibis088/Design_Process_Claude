@@ -187,6 +187,26 @@ Description textuelle structurée de chaque flux, état par état :
 
 ---
 
+## ✅ NOUVEAU [AI] — Responsabilités Figma
+
+Le UX Designer est responsable de deux livrables Figma spécifiques, en plus des specs textuelles.
+
+### Structure du fichier Figma Projet
+Consulter `rules/figma.md` pour la nomenclature exacte des pages et frames.
+
+Le UX Designer crée et maintient :
+- La page `🗺️ User Flows` — flows visuels depuis les `FLUX-###`
+- Les sections par `US-###` dans la page `📱 Screens`
+- Les annotations RAAM sur chaque frame (labels, ordre de focus, zones tactiles)
+
+### User flows visuels dans Figma
+Après production du user flow textuel, générer le flow visuel dans Figma :
+```
+/write-figma-userflow [feature-slug]/[flux-slug]
+```
+
+Le flow visuel permet au UI Designer de comprendre le parcours avant de créer les écrans — il est obligatoire avant `/setup-figma-frames`.
+
 ## Quand tu génères des specs design
 
 1. Vérifie que les outputs BA et PO sont disponibles dans `./specs/[epic-slug]/`

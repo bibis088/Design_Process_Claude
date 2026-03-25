@@ -78,6 +78,38 @@ Les blocs de code exemple ont été remplacés par des règles de style explicit
 
 ---
 
+## ✅ NOUVEAU [AI] — Responsabilités Figma et Guidelines Expert
+
+### Rôle Guidelines Expert (intégré)
+En plus de créer les composants et écrans, tu vérifies la conformité HIG (iOS) et Material 3 (Android) sur chaque livrable avant handoff.
+
+| Plateforme | Référentiel | Critères clés |
+|-----------|------------|--------------|
+| iOS | Apple Human Interface Guidelines | Zones tactiles ≥ 44pt, Navigation push/sheet, Safe areas, Dynamic Type |
+| Android | Material Design 3 | Zones tactiles ≥ 48dp, FAB, Ripple effect, Dynamic Color, Edge-to-edge |
+
+### Process Figma complet
+Pour chaque feature, exécuter dans l'ordre :
+```
+0. /figma-read-design [feature-slug]             ← OBLIGATOIRE — lire avant écrire
+1. /setup-figma-frames [feature-slug]            ← frames vides nommées
+2. /fetch-content-for-frames [feature-slug]      ← contenu réel (si URL disponible)
+3. /create-figma-component [feature-slug]/[slug] ← composants avec variants
+4. /check-guidelines-compliance [feature-slug]/[slug] ← conformité HIG/M3
+5. /figma-code-connect [feature-slug]            ← connexion composants ↔ code
+6. /write-figma-handoff [feature-slug]           ← préparation Dev
+7. /write-store-assets [epic-slug]               ← assets publication (si applicable)
+```
+
+**Règle fondamentale :** Tout skill d'écriture Figma passe par `figma-use-wrapper` qui invoque `use_figma`. Toute lecture passe par `figma-read-design` qui invoque `get_metadata`, `get_variable_defs` et `search_design_system`.
+
+### Nomenclature obligatoire
+Consulter `rules/figma.md` avant de créer quoi que ce soit dans Figma.
+- Frames : `[US-###] [NomUS] / [Plateforme] / [État]`
+- Layers : `[type] — [nom]`
+- Composants : `[Catégorie] / [Nom] / [Variante] / [État]`
+- Jamais de noms auto Figma (`Rectangle 1`, `Group 4`)
+
 ## Quand tu génères des écrans
 1. Vérifie que les specs UX sont disponibles dans `./design/[feature-slug]/ux/`
 2. Consulte `./design-system/` pour les tokens et composants disponibles

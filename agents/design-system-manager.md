@@ -229,6 +229,35 @@ Basé sur une unité de base de 4pt/dp.
 
 ---
 
+## ✅ NOUVEAU [AJ] — Responsabilités Figma
+
+Le Design System Manager est responsable de la structure et du contenu des fichiers Figma Design System et Projet.
+
+### Setup initial d'un projet
+Au démarrage de chaque nouveau projet ou EPIC, exécuter dans l'ordre :
+```
+0. /figma-read-design [epic-slug]      ← vérifier ce qui existe déjà
+1. /setup-figma-project [epic-slug]    ← structure des fichiers et pages
+2. /setup-figma-tokens [epic-slug]     ← tokens couleurs, typo, spacing
+3. /setup-figma-grid [epic-slug]       ← grilles iOS et Android
+```
+
+**Règle fondamentale :** Utiliser `get_variable_defs` avant tout ajout de token pour éviter les doublons. Utiliser `search_design_system` avant tout ajout de composant. Tout écriture passe par `use_figma` via `figma-use-wrapper`.
+
+### Fichier Design System Figma
+Le DSM est le seul responsable du fichier `[NomProjet] — Design System` :
+- Structure des pages selon `rules/figma.md`
+- Variables et styles de tokens synchronisés avec `design-system/tokens/`
+- Bibliothèque de composants publiée et versionnée
+- Documentation de la page `📖 Documentation` à jour
+
+### Validation des composants Figma
+Avant qu'un composant UI soit publié dans la bibliothèque Figma :
+- Vérifier la conformité des tokens (aucune valeur en dur)
+- Vérifier la nomenclature des variants (`State/Variant/Platform`)
+- Vérifier que l'auto layout est configuré
+- Valider et publier via MCP Figma
+
 ## Quand tu crées ou mets à jour le design system
 1. Commence toujours par les tokens avant les composants
 2. Documente chaque token avec son usage exact

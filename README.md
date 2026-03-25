@@ -12,22 +12,18 @@ Chaque fichier modifié est annoté avec `✅ MODIFIÉ [X]` ou `✅ NOUVEAU [X]`
 ```
 Étape 1 — Cadrage (BA)
     /write-cadrage [epic-slug]
-    → Pose les 6 questions au client
     → Produit : specs/[epic-slug]/cadrage.md
 
 Étape 2 — Personas (BA)
     /write-persona [epic-slug]/[persona-slug]
-    → Minimum 2 : utilisateur régulier + nouvel utilisateur
     → Produit : specs/[epic-slug]/personas/PERSONA-###-[slug].md
 
 Étape 3 — Brief Fonctionnel (BA)
     /write-brief-fonctionnel [epic-slug]
-    → Depuis les réponses au cadrage
     → Produit : specs/[epic-slug]/EPIC.md
 
 Étape 4 — Flux fonctionnels (BA)
     /write-flux-fonctionnel [epic-slug]/[flux-slug]
-    → Un flux par parcours utilisateur principal
     → Produit : specs/[epic-slug]/FLUX-###-[slug].md
 
 Étape 5 — Règles métier (BA)
@@ -39,42 +35,89 @@ Chaque fichier modifié est annoté avec `✅ MODIFIÉ [X]` ou `✅ NOUVEAU [X]`
     /write-user-story [epic-slug]/[story-slug]
     → Produit : specs/[epic-slug]/features/ + stories/
 
-Étape 7 — Navigation map (UX)
+─── FIGMA SETUP (DSM) ────────────────────────────────────────
+
+Étape 7 — Structure fichiers Figma (DSM)
+    /setup-figma-project [epic-slug]
+    → Crée les fichiers Figma Projet + Design System
+
+Étape 8 — Tokens Figma (DSM)
+    /setup-figma-tokens [epic-slug]
+    → Couleurs, typographies, spacing dans Figma
+
+Étape 9 — Grilles Figma (DSM)
+    /setup-figma-grid [epic-slug]
+    → Frames de base iOS et Android avec grilles
+
+─── UX ───────────────────────────────────────────────────────
+
+Étape 10 — Navigation map (UX)
     /write-navigation-map [feature-slug]
     → Produit : design/[feature-slug]/SCREENS-MAP.md
 
-Étape 8 — User flows (UX)
+Étape 11 — User flows textuels (UX)
     /write-user-flow [feature-slug]/[flux-slug]
     → Produit : design/[feature-slug]/ux/user-flow-FLUX-###.md
 
-Étape 9 — Specs écrans (UX)
+Étape 12 — User flows visuels Figma (UX)
+    /write-figma-userflow [feature-slug]/[flux-slug]
+    → Figma Projet → page 🗺️ User Flows
+
+Étape 13 — Specs écrans (UX)
     /write-screen-spec [feature-slug]/[screen-id]-[screen-slug]
     → Produit : design/[feature-slug]/ux/screens/S-XX-[nom].md
 
-Étape 9b — Spec accessibilité RAAM (UX)
+Étape 13b — Spec accessibilité RAAM (UX)
     /write-accessibility-spec [feature-slug]
-    → Critères RAAM A + AA, annotations par écran, checklist conformité
     → Produit : design/[feature-slug]/ux/accessibility-spec.md
-    → Annotations Figma à compléter en parallèle
 
-Étape 10 — Design system (DSM — si besoin)
-    /write-token [type]/[token-slug]
-    /write-component-ds [component-slug]
-    → Produit : design-system/tokens/ + components/
+Étape 13c — Annotations accessibilité (UX)
+    /write-accessibility-annotations [feature-slug]/[screen-id]
+    → Produit : design/[feature-slug]/ux/screens/S-XX-annotations.md
 
-Étape 11 — Implémentation UI (UI Designer)
-    /write-component-ui [feature-slug]/[component-slug]
-    /write-screen-ui [feature-slug]/[screen-id]-[screen-slug]
-    → Produit : design/[feature-slug]/ui/
+─── UI ───────────────────────────────────────────────────────
 
-Étape 12 — QA (QA Engineer)
-    → Teste chaque US-### contre ses CA-##
+Étape 14 — Frames vides Figma (UI)
+    /setup-figma-frames [feature-slug]
+    → Figma Projet → page 📱 Screens — frames nommées
+
+Étape 14b — Injection contenu (UI — optionnel si URL disponible)
+    /fetch-content-for-frames [feature-slug]
+    → Contenu réel depuis URL dans les frames Figma
+
+Étape 15 — Composants Figma (UI)
+    /create-figma-component [feature-slug]/[component-slug]
+    → Figma → composant avec variants + tokens + auto layout
+
+Étape 16 — Conformité guidelines (UI)
+    /check-guidelines-compliance [feature-slug]/[slug]
+    → Rapport HIG + Material 3
+
+─── VALIDATION ───────────────────────────────────────────────
+
+Étape 17 — Review scope Figma (PO)
+    /review-figma-scope [epic-slug]/[feature-slug]
+    → Conformité EPIC + US + CA dans les frames
+
+Étape 18 — Handoff Dev (UI)
+    /write-figma-handoff [feature-slug]
+    → Figma Projet → page 🚀 Handoff prête
+
+─── QA ───────────────────────────────────────────────────────
+
+Étape 19 — Rapport QA (QA Engineer)
+    /write-qa-report [epic-slug]/[us-slug]
     → Produit : specs/[epic-slug]/qa/QA-###-[slug].md
+
+─── STORE (si publication) ───────────────────────────────────
+
+Étape 20 — Assets store (UI)
+    /write-store-assets [epic-slug]
+    → Figma Projet → page 📦 Store Assets
 ```
 
 ### Gates de validation obligatoires
 
-Avant chaque passage de statut, lancer :
 ```
 /review-dod [type-livrable]/[id-livrable]
 ```
@@ -83,19 +126,19 @@ Avant chaque passage de statut, lancer :
 |------|-----------|-----------|
 | `Draft` → `In Review` | Agent auteur | DoD interne cochée |
 | `In Review` → `Approved` | PO | Cohérence fonctionnelle validée |
+| Frames → `Ready for dev` | PO (`review-figma-scope`) | Scope EPIC/US/CA couvert |
 | `Approved` → `Dev Ready` | Tech Lead | Faisabilité technique confirmée |
 | `Dev Ready` → `Done` | PO + QA | Critères d'acceptance et rapport QA validés |
 
 ### Nouvelle feature sur projet existant
 
-Si le projet a déjà un `EPIC.md` et des personas approuvés, démarrer directement à l'étape 6 :
+Si Figma est déjà configuré (tokens, grilles), démarrer directement à l'étape 6 :
 ```
 /write-feature-ticket [epic-slug]/[feature-slug]
 ```
 
 ### Besoin client non formalisé (backlog)
 
-Si le besoin arrive brut depuis le client :
 ```
 1. Créer specs/[epic-slug]/backlog/BACKLOG-###-[slug].md
 2. Faire valider par le client (statut : Validated)
@@ -261,3 +304,27 @@ Figma (canal transversal)
 | Basse | `write-guideline` | DSM |
 | Basse | `write-changelog` | DSM |
 | Transversal | `review-dod` | Tous |
+
+### Skills Figma (nouveau)
+
+| Ordre | Skill | Agent pilote | Description |
+|-------|-------|-------------|-------------|
+| 1 | `setup-figma-project` | DSM | Structure pages fichiers Figma Projet + DS |
+| 2 | `setup-figma-tokens` | DSM | Tokens couleurs, typo, spacing dans Figma |
+| 3 | `setup-figma-grid` | DSM | Grilles iOS/Android + frames de base |
+| 4 | `write-figma-userflow` | UX | Flows visuels dans Figma depuis FLUX-### |
+| 5 | `setup-figma-frames` | UI | Frames vides nommées selon US + états |
+| 6 | `fetch-content-for-frames` | UI | Injection contenu web → frames Figma |
+| 7 | `create-figma-component` | UI | Composant Figma avec variants + tokens + auto layout |
+| 8 | `check-guidelines-compliance` | UI | Conformité HIG + Material 3 |
+| 9 | `review-figma-scope` | PO | Conformité frames vs EPIC + US + CA |
+| 10 | `write-figma-handoff` | UI | Préparation fichier Figma pour Dev |
+| 11 | `write-store-assets` | UI | Assets App Store + Play Store |
+
+### Skills MCP Figma fondateurs (nouveaux)
+
+| Skill | Agent | Description |
+|-------|-------|-------------|
+| `figma-use-wrapper` | UI / DSM | Skill fondateur — wrappe `use_figma` avec conventions projet. Obligatoire avant tout écriture |
+| `figma-read-design` | UI / DSM | Pipeline de lecture — `get_metadata` + `get_variable_defs` + `search_design_system` avant écriture |
+| `figma-code-connect` | UI | Connecte composants Figma → SwiftUI/Compose via Code Connect |
