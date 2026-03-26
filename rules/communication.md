@@ -188,6 +188,18 @@ Le **Humain** est le valideur final à chaque phase du process. Son rôle est de
 
 ### 11 Gates — détail par phase
 
+#### Gate -1 — Research stratégique
+**Déclenchée après :** `/write-competitive-analysis` + `/write-sector-watch` + `/write-ux-benchmark`
+**Lot soumis :**
+- Analyse concurrentielle (min. 3 concurrents directs)
+- Veille sectorielle + réglementations applicables
+- Benchmark UX/UI (min. 5 applications)
+
+**Question :** "Les analyses stratégiques donnent-elles une base suffisante pour démarrer le cadrage ?"
+**Bloque :** le cadrage BA ne démarre pas sans validation
+
+---
+
 #### Gate 0 — Initialisation
 **Déclenchée après :** `/write-cadrage` + `/write-persona` × N
 **Lot soumis :**
@@ -232,6 +244,18 @@ Le **Humain** est le valideur final à chaque phase du process. Son rôle est de
 
 **Question :** "La structure Figma est-elle prête pour que l'équipe design démarre ?"
 **Bloque :** le travail UX dans Figma ne démarre pas sans validation
+
+---
+
+#### Gate 4a — Research utilisateur
+**Déclenchée après :** `/write-research-plan` + sessions interviews (Humain) + `/write-research-insights`
+**Lot soumis :**
+- Rapport d'insights priorisés
+- Personas mis à jour (confirmés / enrichis / corrigés)
+- Recommandations pour le UX Designer
+
+**Question :** "Les insights confirment-ils les hypothèses de personas et de flux ? Le UX Designer peut-il démarrer sur des bases validées ?"
+**Bloque :** le UX Design ne démarre pas sans insights validés
 
 ---
 

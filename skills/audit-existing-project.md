@@ -57,17 +57,19 @@ Vérifier l'existence et la qualité de :
 | Glossaire | ✅/❌ | [format] | [Bonne/Moyenne/Faible] | ✅/⚠️/❌ |
 ```
 
-### Étape 3 — Audit Figma (via figma-read-design)
+### Étape 3 — Audit Figma (via audit-figma-existing)
+
+Pour une revue Figma complète et structurée, invoquer le skill dédié :
 
 ```
-/figma-read-design [figma-url]
-→ Structure des pages, nomenclature des frames et layers
-→ Tokens disponibles vs valeurs en dur
-→ Composants bibliothèque vs composants locaux
-→ Annotations d'accessibilité présentes ou absentes
+/audit-figma-existing [figma-url]
+→ 8 dimensions auditées : structure, nomenclature, tokens, composants,
+  auto layout, accessibilité, dark mode, Code Connect
+→ Score /100 + plan de correction P1/P2/P3
+→ Produit : specs/[project-slug]/audit/figma-audit.md
 ```
 
-Évaluer contre `rules/figma.md` :
+Intégrer le score Figma dans le rapport global de migration.
 
 ```markdown
 ## Audit Figma — [project-slug]

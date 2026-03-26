@@ -10,6 +10,27 @@ Chaque fichier modifié est annoté avec `✅ MODIFIÉ [X]` ou `✅ NOUVEAU [X]`
 ### Nouveau projet — par où commencer ?
 
 ```
+─── RESEARCH STRATÉGIQUE (UX Researcher — auto + humain) ────
+
+Étape 0a — Analyse concurrentielle
+    /write-competitive-analysis [project-slug]
+    → Collecte auto : concurrents, forces/faiblesses, opportunités
+    → Produit : specs/[project-slug]/research/competitive-analysis.md
+
+Étape 0b — Veille sectorielle + réglementations
+    /write-sector-watch [project-slug]
+    → Collecte auto : tendances, actus 6 mois, contraintes légales
+    → Produit : specs/[project-slug]/research/sector-watch.md
+
+Étape 0c — Benchmark UX/UI
+    /write-ux-benchmark [project-slug]
+    → Collecte auto : patterns secteur, conventions, différenciation
+    → Produit : specs/[project-slug]/research/ux-benchmark.md
+
+⚠️ Gate -1 — Humain valide le research stratégique avant cadrage
+
+─── CADRAGE + SPÉCIFICATIONS (BA) ───────────────────────────
+
 Étape 1 — Cadrage (BA)
     /write-cadrage [epic-slug]
     → Produit : specs/[epic-slug]/cadrage.md
@@ -48,6 +69,29 @@ Chaque fichier modifié est annoté avec `✅ MODIFIÉ [X]` ou `✅ NOUVEAU [X]`
 Étape 9 — Grilles Figma (DSM)
     /setup-figma-grid [epic-slug]
     → Frames de base iOS et Android avec grilles
+
+─── RESEARCH UTILISATEUR (UX Researcher — humain guidé) ─────
+
+Étape 9a — Plan de recherche
+    /write-research-plan [epic-slug]
+    → Guide de recherche : méthodes, profils, calendrier
+    → Produit : specs/[epic-slug]/research/research-plan.md
+
+Étape 9b — Guide d'entretien
+    /write-interview-guide [epic-slug]
+    → Questions ouvertes, scénarios, protocole
+    → Produit : specs/[epic-slug]/research/interview-guide.md
+
+Étape 9c — [MANUEL — Humain] Sessions d'interviews
+    → Le Humain recrute et conduit les interviews
+    → Notes brutes transmises au UX Researcher
+
+Étape 9d — Insights + personas validés
+    /write-research-insights [epic-slug]
+    → Synthèse insights, personas mis à jour, recommandations
+    → Produit : specs/[epic-slug]/research/insights.md
+
+⚠️ Gate 4a — Humain valide les insights avant de démarrer le UX Design
 
 ─── UX ───────────────────────────────────────────────────────
 
@@ -137,6 +181,34 @@ Chaque fichier modifié est annoté avec `✅ MODIFIÉ [X]` ou `✅ NOUVEAU [X]`
     → Vérification RAAM niveau A sur les états dégradés
     → Même rigueur que les écrans principaux
 
+─── PROTOTYPE REACT ──────────────────────────────────────────
+
+Étape 22a — Prototype cliquable (après écrans principaux)
+    /write-prototype-react [feature-slug]/[flow-slug]
+    → Niveau 1 : navigation entre écrans, contenu réel
+    → Partageable au client via fichier HTML standalone
+    → Produit : design/[feature-slug]/prototype/prototype-[flow]-v1.html
+
+Étape 22b — Prototype interactif (après écrans secondaires)
+    /write-prototype-react [feature-slug]/[flow-slug]
+    → Niveau 2 : transitions + états dégradés + micro-interactions
+    → Produit : design/[feature-slug]/prototype/prototype-[flow]-v2.html
+
+─── DOCUMENTATION FONCTIONNELLE ─────────────────────────────
+
+Étape 22c — Documentation fonctionnelle complète (PO)
+    /write-functional-doc [epic-slug]
+    → Matrice EPIC→FEAT→US→écran Figma + flux + règles + personas
+    → Document unique client + Dev
+    → Produit : specs/[epic-slug]/functional-doc-v[X].md
+
+─── LIVRABLES CLIENT ─────────────────────────────────────────
+
+Étape 22d — Livrable client prototype (PO)
+    /write-client-deliverable prototype [epic-slug]
+    → Google Doc avec liens prototypes + guide d'utilisation
+    → Section "Ce qu'on vous demande de valider"
+
 ─── VALIDATION ───────────────────────────────────────────────
 
 Étape 23 — Code Connect (UI)
@@ -174,10 +246,12 @@ Le Humain valide **en lot à la fin de chaque phase** — pas livrable par livra
 
 | # | Phase | Lot à valider | Question posée au Humain |
 |---|-------|--------------|--------------------------|
+| **-1** | Research stratégique | Analyse concurrentielle + Veille sectorielle + Benchmark UX | "Les analyses stratégiques donnent-elles une base suffisante pour démarrer le cadrage ?" |
 | **0** | Initialisation | Cadrage + Personas | "Le cadrage et les personas reflètent-ils bien le contexte du projet ?" |
 | **1** | Spécification fonctionnelle | Brief + Flux + Règles + Glossaire | "Les specs fonctionnelles sont-elles complètes et fidèles au besoin métier ?" |
 | **2** | User stories | FEAT-### + US-### × N | "Les stories couvrent-elles le périmètre attendu ? Les CA sont-ils testables ?" |
 | **3** | Setup Figma | Structure fichiers + Tokens + Grilles | "La structure Figma est-elle prête pour que l'équipe design démarre ?" |
+| **4a** | Research utilisateur | Plan de recherche + Insights + Personas validés | "Les insights confirment-ils les hypothèses de personas et de flux ?" |
 | **4** | UX Design | Navigation map + User flows + Specs écrans + Accessibilité RAAM | "Les parcours UX et specs d'écran sont-ils conformes à l'intention fonctionnelle ?" |
 | **5** | Composants UI | Composants Figma + Rapport conformité HIG/M3 | "Les composants sont-ils visuellement cohérents et conformes aux guidelines ?" |
 | **6** | Direction artistique | *(manuelle — pas de lot)* | Validation implicite : écrans principaux créés dans Figma |
@@ -195,6 +269,30 @@ Tout changement de périmètre en cours de projet ou sprint passe obligatoiremen
 Si Figma est déjà configuré (tokens, grilles), démarrer directement à la phase 2 :
 ```
 /write-feature-ticket [epic-slug]/[feature-slug]
+```
+
+### Intégrer le process dans un projet existant
+
+Si un projet Figma et des specs existent déjà, démarrer par les audits :
+```
+Étape A — Audit Figma complet (DSM)
+    /audit-figma-existing [figma-url]
+    → Score /100 sur 8 dimensions
+    → Plan de correction P1/P2/P3
+    → Produit : specs/[project-slug]/audit/figma-audit.md
+
+Étape B — Audit global projet (BA)
+    /audit-existing-project [project-slug]
+    → Specs + Figma + Design system + Code
+    → Plan de migration consolidé
+    → Produit : specs/[project-slug]/audit/audit-migration.md
+
+⚠️ Validation Humaine requise
+    "Le plan de migration est-il validé avant de démarrer les corrections ?"
+
+Étape C — Appliquer les corrections P1 selon le plan
+    → Chaque action P1 utilise le skill identifié dans le rapport
+    → Puis reprendre le process à l'étape correspondante
 ```
 
 ### Besoin client non formalisé (backlog)
@@ -424,19 +522,28 @@ Update_Antoine/
 ## Chaîne des agents
 
 ```
-client (backlog)
-    ↓
+ux-researcher ─────→ specs/[epic-slug]/research/
+    ↓ competitive-analysis + sector-watch + ux-benchmark
+    ↓ Gate -1 (Humain)
 business-analyst ──→ specs/[epic-slug]/
-    ↓ EPIC + FLUX + PERSONA + RB
+    ↓ EPIC + FLUX + PERSONA (hypothétiques) + RB
+    ↓ Gate 0 + 1 (Humain)
 product-owner ─────→ specs/[epic-slug]/features/ + stories/
     ↓ FEAT + US
+    ↓ Gate 2 (Humain)
+ux-researcher ─────→ specs/[epic-slug]/research/ (research utilisateur)
+    ↓ research-plan + interviews + insights + personas validés
+    ↓ Gate 4a (Humain)
 ux-designer ───────→ design/[feature-slug]/ux/
     ↓ SCREENS-MAP + user-flows + S-XX + accessibility-spec
+    ↓ Gate 4 (Humain)
 ui-designer ───────→ design/[feature-slug]/ui/
     ↓ composants + écrans
+    ↓ Gates 5-10 (Humain)
 qa-engineer ───────→ specs/[epic-slug]/qa/
     ↓ QA-###
-Done (PO valide)
+    ↓ Gate 11 (Humain)
+Done
 ```
 
 ```
@@ -554,6 +661,14 @@ Figma (canal transversal)
 | `figma-read-design` | UI / DSM | Pipeline de lecture — `get_metadata` + `get_variable_defs` + `search_design_system` avant écriture |
 | `figma-code-connect` | UI | Connecte composants Figma → SwiftUI/Compose via Code Connect |
 
+### Skills prototype et documentation (nouveaux)
+
+| Skill | Agent | Description |
+|-------|-------|-------------|
+| `write-prototype-react` | UI | Prototype React standalone — cliquable (v1) ou interactif (v2) |
+| `write-functional-doc` | PO | Documentation fonctionnelle complète — matrice EPIC→écran Figma |
+| `write-client-deliverable` | PO | Livrables client Google Doc/Sheets avec section de validation |
+
 ### Skills documentation utilisateur (nouveaux)
 
 | Skill | Agent | Description |
@@ -566,5 +681,6 @@ Figma (canal transversal)
 
 | Skill | Agent | Description |
 |-------|-------|-------------|
-| `audit-existing-project` | BA | Audit projet existant avant intégration du process |
+| `audit-existing-project` | BA | Audit global projet existant — specs, Figma (via audit-figma-existing), DS, code |
+| `audit-figma-existing` | DSM | Revue Figma complète — 8 dimensions, score /100, plan P1/P2/P3 |
 | `process-watch` | BA | Veille hebdomadaire — RAAM, HIG, M3, MCP Figma, Claude |
