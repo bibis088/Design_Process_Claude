@@ -1,6 +1,6 @@
 ---
 name: write-research-plan
-description: Produit le plan de recherche utilisateur — méthodes, questions de recherche, profils participants, calendrier. Guide le Senior Lead Designer pour recruter et planifier les sessions. Exécuté par le ux-researcher après le brief fonctionnel.
+description: Produit le plan de recherche utilisateur — méthodes, questions de recherche, profils participants, calendrier. Guide le Product Designer pour recruter et planifier les sessions. Exécuté par le ux-researcher après le brief fonctionnel.
 argument-hint: [epic-slug]
 disable-model-invocation: false
 context: fork
@@ -12,7 +12,7 @@ Structurer le plan de recherche utilisateur depuis les hypothèses du BA — que
 
 ## Agents consommateurs
 - UX Researcher (pilote — produit le plan)
-- Senior Lead Designer (exécute — recrute et planifie les sessions)
+- Product Designer (exécute — recrute et planifie les sessions)
 
 ## Prérequis
 - [ ] Brief Fonctionnel `specs/$ARGUMENTS/EPIC.md` disponible
@@ -91,10 +91,10 @@ Nombre : [N participants]
 
 | Semaine | Action | Responsable |
 |---------|--------|------------|
-| S1 | Recrutement participants | Senior Lead Designer |
-| S2 | Sessions entretiens (N × 45 min) | Senior Lead Designer |
-| S3 | Analyse + synthèse insights | Senior Lead Designer + UX Researcher |
-| S4 | Tests utilisabilité sur maquettes | Senior Lead Designer (après maquettes UX) |
+| S1 | Recrutement participants | Product Designer |
+| S2 | Sessions entretiens (N × 45 min) | Product Designer |
+| S3 | Analyse + synthèse insights | Product Designer + UX Researcher |
+| S4 | Tests utilisabilité sur maquettes | Product Designer (après maquettes UX) |
 
 ## Outils suggérés
 - Recrutement : [Calendly, Typeform, ou réseau direct]
@@ -125,7 +125,7 @@ Avant de valider ce livrable et de passer à la suite, réponds à ces questions
 📁 specs/$ARGUMENTS/research/research-plan.md
 
 Prochaines étapes :
-→ Senior Lead Designer : recruter les participants selon les profils définis
+→ Product Designer : recruter les participants selon les profils définis
 → /write-interview-guide $ARGUMENTS (guide d'entretien)
 → Sessions à planifier avant de démarrer le UX Design
 ```

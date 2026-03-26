@@ -12,7 +12,7 @@ Produire le document fonctionnel de référence d'un EPIC — relie toutes les d
 
 ## Agents consommateurs
 - Product Owner (pilote — synthétise)
-- Senior Lead Designer (partage au client)
+- Product Designer (partage au client)
 - Dev iOS / Android (référence d'implémentation)
 
 ## Prérequis
@@ -192,7 +192,7 @@ Depuis les dossiers du projet, extraire :
 
 | Version | Date | Auteur | Changement |
 |---------|------|--------|-----------|
-| [MAJOR.MINOR] | [YYYY-MM-DD] | [Agent / Senior Lead Designer] | [Description] |
+| [MAJOR.MINOR] | [YYYY-MM-DD] | [Agent / Product Designer] | [Description] |
 ```
 
 ## Phase de validation — niveau approfondi

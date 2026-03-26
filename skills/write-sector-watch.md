@@ -1,6 +1,6 @@
 ---
 name: write-sector-watch
-description: Collecte automatique des tendances sectorielles, actualités récentes et réglementations applicables au projet. Collecte via web_search + web_fetch, analyse par le Senior Lead Designer. Exécuté par le ux-researcher avant le cadrage.
+description: Collecte automatique des tendances sectorielles, actualités récentes et réglementations applicables au projet. Collecte via web_search + web_fetch, analyse par le Product Designer. Exécuté par le ux-researcher avant le cadrage.
 argument-hint: [project-slug]
 disable-model-invocation: false
 context: fork

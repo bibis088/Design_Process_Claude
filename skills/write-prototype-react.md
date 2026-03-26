@@ -24,7 +24,7 @@ Générer un prototype React web depuis les frames Figma d'un flow complet — p
 
 ## Agents consommateurs
 - UI Designer (pilote — génère le prototype)
-- Senior Lead Designer (partage avec le client via URL)
+- Product Designer (partage avec le client via URL)
 
 ## Prérequis
 - [ ] Frames Figma du flow disponibles (écrans principaux au minimum)

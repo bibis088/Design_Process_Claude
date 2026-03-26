@@ -127,7 +127,7 @@ Ces critères s'appliquent à chaque lot d'écrans créés — principaux ou sec
 ✅ Revue accessibilité RAAM niveau A : [Pass / À corriger]
 
 Prochaines étapes :
-→ [Si écrans principaux] Direction artistique humaine (Senior Lead Designer) — étape manuelle
+→ [Si écrans principaux] Direction artistique humaine (Product Designer) — étape manuelle
 → [Si écrans secondaires] /fetch-content-for-frames $ARGUMENTS (si URL disponible)
 → /figma-code-connect $ARGUMENTS (après tous les écrans)
 → /review-figma-scope $ARGUMENTS (validation PO)

@@ -108,7 +108,7 @@ Pour chaque feature, exécuter dans l'ordre :
    → Conformité HIG + Material 3 sur les composants
 
 ─── DIRECTION ARTISTIQUE (HUMAIN) ──────────────────────────
-4. [MANUEL — Senior Lead Designer]
+4. [MANUEL — Product Designer]
    → Identité visuelle, typographie, couleurs, ton
    → Écrans principaux (happy path) créés dans Figma
    → Gate : écrans principaux validés visuellement avant la suite

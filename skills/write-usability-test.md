@@ -1,6 +1,6 @@
 ---
 name: write-usability-test
-description: Produit le protocole de test d'utilisabilité et le template de rapport. Guide le Senior Lead Designer pour tester les maquettes UX avec de vrais utilisateurs. Exécuté par le ux-researcher après les maquettes UX.
+description: Produit le protocole de test d'utilisabilité et le template de rapport. Guide le Product Designer pour tester les maquettes UX avec de vrais utilisateurs. Exécuté par le ux-researcher après les maquettes UX.
 argument-hint: [feature-slug]
 disable-model-invocation: false
 context: fork
@@ -12,7 +12,7 @@ Produire le protocole de test d'utilisabilité et le template de rapport pour te
 
 ## Agents consommateurs
 - UX Researcher (pilote — produit le protocole)
-- Senior Lead Designer (exécute — conduit les tests)
+- Product Designer (exécute — conduit les tests)
 - UX Designer (consommateur — intègre les corrections dans les specs)
 
 ## Prérequis

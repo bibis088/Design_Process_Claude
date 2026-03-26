@@ -125,7 +125,7 @@ Ajouter dans les métadonnées de chaque EPIC, US et FEAT :
 - Version : [MAJOR.MINOR]
 - Créé le : [YYYY-MM-DD]
 - Dernière mise à jour : [YYYY-MM-DD]
-- Modifié par : [agent ou Senior Lead Designer]
+- Modifié par : [agent ou Product Designer]
 - Changements : [description courte du dernier changement]
 ```
 
@@ -144,7 +144,7 @@ Chaque EPIC dispose d'un mini-changelog dans son fichier `EPIC.md` :
 
 ### Règle de validation humaine sur les changements de version MAJOR
 
-Tout passage de version MAJOR sur un EPIC ou une US nécessite une validation explicite du **Senior Lead Designer** avant d'être appliqué — c'est un changement de scope.
+Tout passage de version MAJOR sur un EPIC ou une US nécessite une validation explicite du **Product Designer** avant d'être appliqué — c'est un changement de scope.
 
 ---
 
@@ -174,7 +174,7 @@ Plusieurs features peuvent partager des composants ou dépendre les unes des aut
 - Une feature ne peut pas démarrer si ses dépendances bloquantes ne sont pas en statut `Done`
 - Une dépendance non bloquante peut démarrer avec un mock ou placeholder — documenter explicitement
 - Si une dépendance change de scope (version MAJOR), toutes les features qui en dépendent doivent être réévaluées
-- Le **Senior Lead Designer** arbitre les conflits de dépendances inter-features
+- Le **Product Designer** arbitre les conflits de dépendances inter-features
 
 ### Conventions de statut des dépendances
 
