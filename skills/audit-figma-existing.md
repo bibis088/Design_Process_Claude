@@ -16,7 +16,7 @@ Auditer de façon exhaustive un fichier Figma existant avant d'y intégrer le pr
 - UI Designer (contributeur — valide la partie composants)
 
 ## Prérequis
-- [ ] URL du fichier Figma existant fournie par le Humain
+- [ ] URL du fichier Figma existant fournie par le Senior Lead Designer
 - [ ] MCP Figma connecté (lecture suffisante — Dev Seat accepté)
 - [ ] `rules/figma.md` consulté comme référentiel de conformité
 - [ ] Validation humaine pour démarrer l'audit
@@ -356,7 +356,7 @@ Avant de valider ce livrable et de passer à la suite, réponds à ces questions
 1. Les 8 dimensions ont-elles toutes été auditées — aucune sautée faute d'accès ? (oui / non + dimensions manquantes)
 2. Le score global reflète-t-il honnêtement l'état du fichier — pas d'optimisme excessif ? (oui / non)
 3. Les actions P1 bloquantes ont-elles chacune un skill de correction identifié et un effort estimé ? (oui / non + actions à compléter)
-4. Le Humain a-t-il été consulté sur les éléments à conserver vs à refaire ? (oui / attendre confirmation)
+4. Le Senior Lead Designer a-t-il été consulté sur les éléments à conserver vs à refaire ? (oui / attendre confirmation)
 
 > Réponds point par point. Si tout est validé, le skill se termine et les prochaines étapes s'affichent.
 > Si un point nécessite une correction, le skill reprend depuis l'étape concernée.

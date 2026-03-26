@@ -203,7 +203,7 @@ Après que le UI Designer a terminé les frames et passé la conformité guideli
 2. Identifie le persona et le contexte à partir du Brief Fonctionnel
 3. Commence par le flux heureux (happy path) avant les cas d'erreur
 4. Liste les edge cases : vide, erreur réseau, données manquantes, permissions refusées
-5. Génère les fichiers dans `./specs/[epic-slug]/` <!-- ✅ MODIFIÉ [H] : convention partagée avec BA, Dev, QA et compatible Update_Antoine/ -->
+5. Génère les fichiers dans `./specs/[epic-slug]/` <!-- ✅ MODIFIÉ [H] : convention partagée avec BA, Dev, QA et compatible AI_Assisted_Design_Process/ -->
 6. Mets à jour l'index `./specs/README.md` après chaque ajout
 
 <!-- ✅ MODIFIÉ [N] : structure de dossiers inter-agents (Option B) -->

@@ -1,4 +1,4 @@
-# Update_Antoine — Guide du projet
+# AI_Assisted_Design_Process — Guide du projet
 
 Copie modifiée et enrichie de `Agent_skills_Joris`.
 Chaque fichier modifié est annoté avec `✅ MODIFIÉ [X]` ou `✅ NOUVEAU [X]` — la lettre renvoie au tableau de référence en bas de ce document.
@@ -27,7 +27,7 @@ Chaque fichier modifié est annoté avec `✅ MODIFIÉ [X]` ou `✅ NOUVEAU [X]`
     → Collecte auto : patterns secteur, conventions, différenciation
     → Produit : specs/[project-slug]/research/ux-benchmark.md
 
-⚠️ Gate -1 — Humain valide le research stratégique avant cadrage
+⚠️ Gate -1 — Senior Lead Designer valide le research stratégique avant cadrage
 
 ─── CADRAGE + SPÉCIFICATIONS (BA) ───────────────────────────
 
@@ -70,7 +70,7 @@ Chaque fichier modifié est annoté avec `✅ MODIFIÉ [X]` ou `✅ NOUVEAU [X]`
     /setup-figma-grid [epic-slug]
     → Frames de base iOS et Android avec grilles
 
-─── RESEARCH UTILISATEUR (UX Researcher — humain guidé) ─────
+─── RESEARCH UTILISATEUR (UX Researcher — Senior Lead Designer guidé) ─────
 
 Étape 9a — Plan de recherche
     /write-research-plan [epic-slug]
@@ -82,8 +82,8 @@ Chaque fichier modifié est annoté avec `✅ MODIFIÉ [X]` ou `✅ NOUVEAU [X]`
     → Questions ouvertes, scénarios, protocole
     → Produit : specs/[epic-slug]/research/interview-guide.md
 
-Étape 9c — [MANUEL — Humain] Sessions d'interviews
-    → Le Humain recrute et conduit les interviews
+Étape 9c — [MANUEL — Senior Lead Designer] Sessions d'interviews
+    → Le Senior Lead Designer recrute et conduit les interviews
     → Notes brutes transmises au UX Researcher
 
 Étape 9d — Insights + personas validés
@@ -91,7 +91,7 @@ Chaque fichier modifié est annoté avec `✅ MODIFIÉ [X]` ou `✅ NOUVEAU [X]`
     → Synthèse insights, personas mis à jour, recommandations
     → Produit : specs/[epic-slug]/research/insights.md
 
-⚠️ Gate 4a — Humain valide les insights avant de démarrer le UX Design
+⚠️ Gate 4a — Senior Lead Designer valide les insights avant de démarrer le UX Design
 
 ─── UX ───────────────────────────────────────────────────────
 
@@ -238,13 +238,13 @@ Chaque fichier modifié est annoté avec `✅ MODIFIÉ [X]` ou `✅ NOUVEAU [X]`
 
 ### Gates de validation humaine — 11 gates en lot par phase
 
-Le Humain valide **en lot à la fin de chaque phase** — pas livrable par livrable. Les agents produisent tous les livrables d'une phase, puis s'arrêtent avec un résumé et une question de validation explicite.
+Le Senior Lead Designer valide **en lot à la fin de chaque phase** — pas livrable par livrable. Les agents produisent tous les livrables d'une phase, puis s'arrêtent avec un résumé et une question de validation explicite.
 
 ```
 /review-dod [type-livrable]/[id-livrable]   ← vérification DoD interne avant chaque gate
 ```
 
-| # | Phase | Lot à valider | Question posée au Humain |
+| # | Phase | Lot à valider | Question posée au Senior Lead Designer |
 |---|-------|--------------|--------------------------|
 | **-1** | Research stratégique | Analyse concurrentielle + Veille sectorielle + Benchmark UX | "Les analyses stratégiques donnent-elles une base suffisante pour démarrer le cadrage ?" |
 | **0** | Initialisation | Cadrage + Personas | "Le cadrage et les personas reflètent-ils bien le contexte du projet ?" |
@@ -473,7 +473,7 @@ L'agent exécute dans l'ordre, applique les phases de validation internes (quest
 ## Arborescence
 
 ```
-Update_Antoine/
+AI_Assisted_Design_Process/
 ├── agents/
 │   ├── business-analyst.md
 │   ├── product-owner.md
@@ -524,25 +524,25 @@ Update_Antoine/
 ```
 ux-researcher ─────→ specs/[epic-slug]/research/
     ↓ competitive-analysis + sector-watch + ux-benchmark
-    ↓ Gate -1 (Humain)
+    ↓ Gate -1 (Senior Lead Designer)
 business-analyst ──→ specs/[epic-slug]/
     ↓ EPIC + FLUX + PERSONA (hypothétiques) + RB
-    ↓ Gate 0 + 1 (Humain)
+    ↓ Gate 0 + 1 (Senior Lead Designer)
 product-owner ─────→ specs/[epic-slug]/features/ + stories/
     ↓ FEAT + US
-    ↓ Gate 2 (Humain)
+    ↓ Gate 2 (Senior Lead Designer)
 ux-researcher ─────→ specs/[epic-slug]/research/ (research utilisateur)
     ↓ research-plan + interviews + insights + personas validés
-    ↓ Gate 4a (Humain)
+    ↓ Gate 4a (Senior Lead Designer)
 ux-designer ───────→ design/[feature-slug]/ux/
     ↓ SCREENS-MAP + user-flows + S-XX + accessibility-spec
-    ↓ Gate 4 (Humain)
+    ↓ Gate 4 (Senior Lead Designer)
 ui-designer ───────→ design/[feature-slug]/ui/
     ↓ composants + écrans
-    ↓ Gates 5-10 (Humain)
+    ↓ Gates 5-10 (Senior Lead Designer)
 qa-engineer ───────→ specs/[epic-slug]/qa/
     ↓ QA-###
-    ↓ Gate 11 (Humain)
+    ↓ Gate 11 (Senior Lead Designer)
 Done
 ```
 

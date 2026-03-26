@@ -1,6 +1,6 @@
 ---
 name: write-interview-guide
-description: Produit le guide d'entretien utilisateur structuré — questions ouvertes, scénarios, protocole. Guide le Humain pour conduire des interviews qualitatives efficaces. Exécuté par le ux-researcher.
+description: Produit le guide d'entretien utilisateur structuré — questions ouvertes, scénarios, protocole. Guide le Senior Lead Designer pour conduire des interviews qualitatives efficaces. Exécuté par le ux-researcher.
 argument-hint: [epic-slug]
 disable-model-invocation: false
 context: fork
@@ -8,11 +8,11 @@ agent: ux-researcher
 ---
 
 ## Rôle
-Produire un guide d'entretien structuré et actionnable que le Humain utilise pour conduire des interviews utilisateurs semi-directives.
+Produire un guide d'entretien structuré et actionnable que le Senior Lead Designer utilise pour conduire des interviews utilisateurs semi-directives.
 
 ## Agents consommateurs
 - UX Researcher (pilote — produit le guide)
-- Humain (exécute — conduit les interviews)
+- Senior Lead Designer (exécute — conduit les interviews)
 
 ## Prérequis
 - [ ] Plan de recherche validé (`write-research-plan`)
@@ -30,7 +30,7 @@ Produire un guide d'entretien structuré et actionnable que le Humain utilise po
 - Durée : [45-60 minutes]
 - Format : [Distanciel / Présentiel]
 - Enregistrement : [Oui — avec consentement signé / Non]
-- Intervieweur : [Humain]
+- Intervieweur : [Senior Lead Designer]
 - Observateur : [Optionnel]
 
 ## Objectifs de la session
@@ -123,6 +123,6 @@ Avant de passer au skill suivant, réponds à ces questions :
 📁 specs/$ARGUMENTS/research/interview-guide.md
 
 Prochaines étapes :
-→ Humain : conduire les sessions avec ce guide
+→ Senior Lead Designer : conduire les sessions avec ce guide
 → /write-research-insights $ARGUMENTS (après les sessions)
 ```

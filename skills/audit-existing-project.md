@@ -23,13 +23,13 @@ agent: business-analyst
 ## Gestion des erreurs
 
 Si les sources sont inaccessibles :
-> ❌ Sources inaccessibles — demander au Humain de partager les accès avant de continuer.
+> ❌ Sources inaccessibles — demander au Senior Lead Designer de partager les accès avant de continuer.
 
 ## Processus d'audit
 
 ### Étape 1 — Validation humaine de démarrage
 
-Avant tout, obtenir la confirmation du **Humain** :
+Avant tout, obtenir la confirmation du **Senior Lead Designer** :
 
 ```
 "Avant de démarrer l'audit, confirme :
@@ -146,7 +146,7 @@ Avant de valider ce livrable et de passer à la suite, réponds à ces questions
 1. L'audit couvre-t-il les 4 dimensions — specs, Figma, design system, accessibilité ? (oui / non + dimensions manquantes)
 2. Chaque écart est-il associé à un effort estimé et un skill de migration ? (oui / non + écarts non traités)
 3. Le plan de migration distingue-t-il clairement les P1 bloquants des P2/P3 ? (oui / non)
-4. Le Humain a-t-il validé le plan de migration avant de démarrer les actions P1 ? (oui / attendre confirmation)
+4. Le Senior Lead Designer a-t-il validé le plan de migration avant de démarrer les actions P1 ? (oui / attendre confirmation)
 
 > Réponds point par point. Si tout est validé, le skill se termine et les prochaines étapes s'affichent.
 > Si un point nécessite une correction, le skill reprend depuis l'étape concernée.
@@ -158,7 +158,7 @@ Avant de valider ce livrable et de passer à la suite, réponds à ces questions
 📁 specs/$ARGUMENTS/audit-migration.md
 
 Prochaines étapes :
-→ Valider le plan P1 avec le Humain
+→ Valider le plan P1 avec le Senior Lead Designer
 → Démarrer les actions P1 selon le plan
 → /setup-figma-project $ARGUMENTS (si Figma à restructurer)
 → /write-cadrage $ARGUMENTS (si specs à recréer)

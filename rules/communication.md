@@ -104,7 +104,7 @@ Toute question ouverte dans un document doit être adressée à un agent ou une 
 Si deux agents produisent des documents contradictoires (ex: règle métier BA vs critère d'acceptance PO), la résolution suit cette hiérarchie :
 
 ```
-Humain (décision finale)
+Senior Lead Designer (décision finale)
     ↑
 PO (arbitrage fonctionnel)
     ↑
@@ -176,9 +176,9 @@ Quand un agent détecte une incohérence entre deux documents :
 
 ## ✅ NOUVEAU [5] — Gates de validation humaine
 
-Le **Humain** est le valideur final à chaque phase du process. Son rôle est de vérifier et valider l'ensemble des décisions — il ne produit pas de documents, il approuve ou bloque.
+Le **Senior Lead Designer** est le valideur final à chaque phase du process. Son rôle est de vérifier et valider l'ensemble des décisions — il ne produit pas de documents, il approuve ou bloque.
 
-### Définition du rôle Humain
+### Définition du rôle Senior Lead Designer
 - Valide les livrables **en lot à la fin de chaque phase** — pas livrable par livrable
 - Arbitre les conflits entre agents
 - Décide des changements de scope en cours de projet ou sprint
@@ -248,7 +248,7 @@ Le **Humain** est le valideur final à chaque phase du process. Son rôle est de
 ---
 
 #### Gate 4a — Research utilisateur
-**Déclenchée après :** `/write-research-plan` + sessions interviews (Humain) + `/write-research-insights`
+**Déclenchée après :** `/write-research-plan` + sessions interviews (Senior Lead Designer) + `/write-research-insights`
 **Lot soumis :**
 - Rapport d'insights priorisés
 - Personas mis à jour (confirmés / enrichis / corrigés)
@@ -284,7 +284,7 @@ Le **Humain** est le valideur final à chaque phase du process. Son rôle est de
 ---
 
 #### Gate 6 — Direction artistique *(manuelle)*
-**Pas de lot** — le Humain intervient directement dans Figma.
+**Pas de lot** — le Senior Lead Designer intervient directement dans Figma.
 **Ce qu'il fait :** définit l'identité visuelle, crée les écrans principaux, valide la cohérence de marque.
 **Validation implicite :** les écrans principaux sont créés et visibles dans Figma.
 **Bloque :** la création des frames vides automatiques ne démarre pas sans que cette étape soit réalisée

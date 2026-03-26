@@ -1,4 +1,4 @@
-# Guide de contribution — Update_Antoine
+# Guide de contribution — AI_Assisted_Design_Process
 
 Ce document explique comment ajouter, modifier ou supprimer un agent, une rule ou un skill en respectant les conventions du projet.
 

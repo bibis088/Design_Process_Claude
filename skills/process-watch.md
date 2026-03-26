@@ -139,7 +139,7 @@ Avant de clore ce skill, confirme ce point :
 📁 specs/process-watch/rapport-[YYYY-MM-DD].md
 
 Prochaines étapes :
-→ Traiter les actions bloquantes (validation Humain requise)
+→ Traiter les actions bloquantes (validation Senior Lead Designer requise)
 → Planifier les actions importantes
 → Prochain rapport dans 7 jours
 ```

@@ -151,9 +151,9 @@ Avant de valider ce livrable et de passer à la suite, réponds à ces questions
 5. ✅ NOUVEAU [2] — La stack technique est-elle définie — type d'application (native, cross-platform, hybride), plateformes et versions minimum ? (oui / non — bloquant pour les étapes UI)
 
 ### Gate de validation humaine — obligatoire
-Le résumé de cadrage doit être relu et validé par le **Humain** avant de lancer les étapes suivantes.
+Le résumé de cadrage doit être relu et validé par le **Senior Lead Designer** avant de lancer les étapes suivantes.
 
-> "Humain — confirmes-tu le résumé de cadrage ci-dessus, en particulier la stack technique et le périmètre V1 pressenti ?"
+> "Senior Lead Designer — confirmes-tu le résumé de cadrage ci-dessus, en particulier la stack technique et le périmètre V1 pressenti ?"
 
 Le process ne démarre pas sans cette confirmation explicite.
 

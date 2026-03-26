@@ -12,12 +12,12 @@ Transformer les notes brutes des interviews en insights structurés, prioriser l
 
 ## Agents consommateurs
 - UX Researcher (pilote — structure les insights)
-- Humain (valide — confirme les interprétations)
+- Senior Lead Designer (valide — confirme les interprétations)
 - UX Designer (consommateur — base pour les specs d'écran)
 - Business Analyst (consommateur — peut impacter les règles métier)
 
 ## Prérequis
-- [ ] Notes brutes des interviews disponibles (fournies par le Humain)
+- [ ] Notes brutes des interviews disponibles (fournies par le Senior Lead Designer)
 - [ ] Grilles de prise de notes remplies
 - [ ] Hypothèses initiales du plan de recherche disponibles
 
@@ -30,7 +30,7 @@ Si les notes sont insuffisantes :
 
 ### Étape 1 — Consolider les données brutes
 
-Le Humain fournit les notes — l'agent les structure :
+Le Senior Lead Designer fournit les notes — l'agent les structure :
 
 ```markdown
 ## Données brutes consolidées
