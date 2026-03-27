@@ -77,6 +77,18 @@ Ne pas décrire la solution — décrire le problème.]
 - [Ce qui ne sera jamais fait ici — et pourquoi]
 - [Ce qui ne sera jamais fait ici — et pourquoi]
 
+## Dépendances inter-features
+
+### Cette feature dépend de
+| EPIC | Feature | Livrable requis | Statut |
+|------|---------|----------------|--------|
+| — | — | — | *(laisser "—" si aucune dépendance)* |
+
+### Cette feature est requise par
+| EPIC | Feature | Livrable fourni | Statut |
+|------|---------|----------------|--------|
+| — | — | — | *(laisser "—" si aucune dépendance)* |
+
 ## Flux principaux identifiés
 - [FLUX-###] — [Nom du flux] — [à produire]
 - [FLUX-###] — [Nom du flux] — [à produire]

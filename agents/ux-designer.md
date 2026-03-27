@@ -102,7 +102,7 @@ Description textuelle structurée de chaque flux, état par état :
 
 ### Références Figma
 - Frame : [URL directe vers le frame Figma — ex: https://figma.com/file/xxx?node-id=yyy]
-- Statut Figma : [To Do / In Progress / Ready for dev]
+- Statut Figma : [to_do / in_progress / ready_for_dev]
 - User stories couvertes dans ce frame : [US-###, US-###]
 
 ### Hiérarchie visuelle (de haut en bas)
@@ -195,8 +195,8 @@ Le UX Designer est responsable de deux livrables Figma spécifiques, en plus des
 Consulter `rules/figma.md` pour la nomenclature exacte des pages et frames.
 
 Le UX Designer crée et maintient :
-- La page `🗺️ User Flows` — flows visuels depuis les `FLUX-###`
-- Les sections par `US-###` dans la page `📱 Screens`
+- La page `🗺️ user_flows` — flows visuels depuis les `FLUX-###`
+- Les sections par `US-###` dans la page `📱 screens`
 - Les annotations RAAM sur chaque frame (labels, ordre de focus, zones tactiles)
 
 ### User flows visuels dans Figma

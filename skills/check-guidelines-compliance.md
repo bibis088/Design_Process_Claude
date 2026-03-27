@@ -108,10 +108,40 @@ Extraire depuis le composant ou l'écran :
 |---|-----------|---------|-------------------|
 | 1 | Android | Ripple non annoté | Ajouter annotation layer |
 
+## Anti-patterns détectés
+| # | Anti-pattern | Élément | Correction |
+|---|-------------|---------|-----------|
+| 1 | [Anti-pattern de la liste `rules/figma.md`] | [Layer/Frame] | [Correction] |
+
 ## Verdict
 - [ ] ✅ Conforme — composant/écran validé pour la suite
 - [ ] ❌ Non conforme — corrections bloquantes à apporter avant de continuer
 ```
+
+### Étape 5 — Vérification anti-patterns (checklist systématique)
+
+Vérifier la liste des anti-patterns de `rules/figma.md` — section "Anti-patterns UI mobiles" :
+
+**Critiques — bloquants :**
+- [ ] Aucun emoji utilisé comme icône de navigation
+- [ ] Information jamais transmise par couleur seule
+- [ ] Focus rings visibles sur tous les éléments interactifs
+- [ ] Boutons désactivés pendant les opérations async
+- [ ] Gestes système non bloqués (swipe back iOS, back Android)
+- [ ] Toutes les zones tactiles ≥ 44pt iOS / 48dp Android
+
+**Hauts — importants :**
+- [ ] Messages d'erreur au niveau du champ — pas uniquement en haut
+- [ ] Labels visibles — placeholder ne remplace pas le label
+- [ ] `prefers-reduced-motion` respecté sur toutes les animations
+- [ ] Aucune valeur hex en dur dans les composants — tokens uniquement
+- [ ] Swipe actions ont un affordance visuel
+- [ ] Skeleton screens pour les opérations > 1s
+
+**Moyens — à corriger avant handoff :**
+- [ ] Un seul jeu d'icônes dans le projet
+- [ ] Dark mode : variantes dédiées — pas d'inversion
+- [ ] Listes 50+ items : virtualisation prévue (annotation Dev)
 
 ## Phase de validation — niveau standard
 
@@ -120,6 +150,7 @@ Avant de passer au skill suivant, réponds à ces questions :
 1. Toutes les non-conformités bloquantes ont-elles été corrigées dans Figma ? (oui / non + éléments restants)
 2. Les zones tactiles sont-elles conformes sur iOS (≥ 44pt) ET Android (≥ 48dp) sur tous les éléments interactifs ? (oui / non)
 3. Aucune valeur de couleur, typographie ou spacing en dur dans les layers — uniquement des tokens DS ? (oui / non + layers à corriger)
+4. Tous les anti-patterns critiques de la checklist sont-ils absents ? (oui / non + anti-patterns détectés)
 
 > Réponds point par point. Si tout est validé, le skill se termine et les prochaines étapes s'affichent.
 > Si un point nécessite une correction, le skill reprend depuis l'étape concernée.

@@ -60,9 +60,9 @@ Si use_figma non disponible :
 
 ### Nomenclature — jamais de valeur auto Figma
 ```
-✅ Frame : [US-###] Login / iOS / Default
+✅ Frame : US_###_login_ios_default
 ✅ Layer : Button — Primary — Default
-✅ Composant : Button / Primary / Default
+✅ Composant : button/primary/default
 ❌ Frame : Frame 1
 ❌ Layer : Rectangle 4
 ❌ Composant : Component 1
@@ -102,7 +102,7 @@ Base unit : 8pt/dp
 ### Pour créer un frame
 ```
 1. get_metadata → vérifier que le frame n'existe pas
-2. Nommer selon convention : [US-###] [NomUS] / [Plateforme] / [État]
+2. Nommer selon convention : US_###_[nom_us]_[plateforme]_[état]
 3. use_figma → créer le frame avec grille active
 4. Ajouter en description : "Spec : S-XX | US-###"
 ```

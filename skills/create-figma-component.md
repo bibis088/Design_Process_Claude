@@ -41,7 +41,7 @@ Depuis `design/[feature-slug]/ux/component-[slug].md`, extraire :
 
 ### Étape 2 — Créer le composant de base via `use_figma`
 
-Sur la page `🔧 Components` du fichier Projet (ou `🧩 Components` du DS si composant global) :
+Sur la page `🔧 components` du fichier Projet (ou `🧩 components` du DS si composant global) :
 
 **Structure de layers obligatoire :**
 ```
@@ -72,11 +72,11 @@ Via `use_figma`, créer un component set avec les propriétés :
 
 | Propriété | Valeurs |
 |-----------|---------|
-| `Variant` | Primary, Secondary, Destructive |
-| `State` | Default, Hover, Pressed, Disabled, Loading, Error |
-| `Platform` | iOS, Android (si divergence visuelle) |
-| `Size` | SM, MD, LG (si applicable) |
-| `Has Icon` | True, False (si applicable) |
+| `variant` | primary, secondary, destructive |
+| `state` | default, hover, pressed, disabled, loading, error |
+| `platform` | ios, android (si divergence visuelle) |
+| `size` | sm, md, lg (si applicable) |
+| `has_icon` | true, false (si applicable) |
 
 Pour chaque combinaison applicable, configurer :
 - Les tokens de couleur selon l'état et la variante
@@ -108,12 +108,12 @@ Via `use_figma`, exposer les propriétés éditables :
 ### Étape 6 — Publier dans la bibliothèque
 
 Si le composant est global (réutilisable dans tout le projet) :
-1. Déplacer vers la page `🧩 Components` du Design System
+1. Déplacer vers la page `🧩 components` du Design System
 2. Soumettre au Design System Manager pour validation
 3. Publier dans la bibliothèque Figma uniquement après validation DSM
 
 Si le composant est local à la feature :
-1. Garder dans la page `🔧 Components` du fichier Projet
+1. Garder dans la page `🔧 components` du fichier Projet
 2. Ne pas publier dans la bibliothèque DS sans validation DSM
 
 ## Phase de validation — niveau standard

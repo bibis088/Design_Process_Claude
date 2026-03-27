@@ -97,44 +97,73 @@ Nos skills Figma (`setup-figma-project`, `create-figma-component`, etc.) sont de
 
 
 
+## Convention de nomenclature générale
+
+### Règle fondamentale
+```
+snake_case pour les mots
+/  pour les niveaux hiérarchiques (composants, tokens, pages)
+_  seul pour les frames et layers (pas de /)
+IDs en MAJUSCULES : US_042, EPIC_001, FLUX_003
+Tout le reste en minuscules
+```
+
+### Récapitulatif par élément
+
+| Élément | Convention | Exemple |
+|---------|-----------|---------|
+| Frame | `snake_case` | `US_042_login_ios_default` |
+| Layer | `snake_case` | `button_primary_default` |
+| Composant | `snake_case/niveaux` | `button/primary_with_icon/default` |
+| Token couleur | `snake_case/niveaux` | `color/interactive/primary` |
+| Token typo | `snake_case/niveaux` | `ios/type/body` |
+| Token spacing | `snake_case/niveaux` | `spacing/md` |
+| Page Figma | `emoji + snake_case` | `🎨 foundations` |
+| Section dans une page | `snake_case` | `US_042_login` |
+| Mode variable | `snake_case` | `light`, `dark`, `brand_a` |
+| Prototype | `snake_case` | `prototype_login_flow_v1.html` |
+| ID (US, EPIC, FLUX) | `MAJUSCULES_###` | `US_042`, `EPIC_001`, `FLUX_003` |
+
+---
+
 ## Structure des fichiers Figma
 
 ### Deux fichiers distincts par projet
 
 ```
-[NomProjet] — Design System.fig
-    ├── 🎨 Foundations
-    │   ├── Colors
-    │   ├── Typography
-    │   ├── Spacing
-    │   ├── Grid
-    │   ├── Shadows
-    │   └── Motion
-    ├── 🧩 Components
-    │   ├── Atoms (boutons, inputs, badges...)
-    │   ├── Molecules (cards, forms, list items...)
-    │   └── Organisms (headers, navbars, modals...)
-    ├── 📐 Patterns
-    │   └── [Patterns réutilisables]
-    └── 📖 Documentation
-        └── [Changelog, usage, guidelines]
+[nom_projet]_design_system.fig
+    ├── 🎨 foundations
+    │   ├── colors
+    │   ├── typography
+    │   ├── spacing
+    │   ├── grid
+    │   ├── shadows
+    │   └── motion
+    ├── 🧩 components
+    │   ├── atoms (boutons, inputs, badges...)
+    │   ├── molecules (cards, forms, list items...)
+    │   └── organisms (headers, navbars, modals...)
+    ├── 📐 patterns
+    │   └── [patterns réutilisables]
+    └── 📖 documentation
+        └── [changelog, usage, guidelines]
 
-[NomProjet] — [EPIC-###] [NomEpic].fig
-    ├── 🗺️ User Flows
-    │   └── FLUX-###-[slug]
-    ├── 📱 Screens
-    │   ├── [US-###] [NomUS]
-    │   │   ├── S-01-[nom] / iOS
-    │   │   ├── S-01-[nom] / Android
-    │   │   └── S-01-[nom] / States (loading, empty, error)
+[nom_projet]_[EPIC_###]_[nom_epic].fig
+    ├── 🗺️ user_flows
+    │   └── FLUX_###_[slug]
+    ├── 📱 screens
+    │   ├── US_###_[nom_us]
+    │   │   ├── US_###_[nom]_ios_default
+    │   │   ├── US_###_[nom]_android_default
+    │   │   └── US_###_[nom]_ios_loading / _empty / _error
     │   └── ...
-    ├── 🔧 Components (locaux — feature uniquement)
-    ├── 🚀 Handoff
-    │   └── [Frames prêtes pour dev]
-    └── 📦 Store Assets
-        ├── App Icon
-        ├── Android Banner
-        └── Screenshots (smartphone + tablet)
+    ├── 🔧 components
+    ├── 🚀 handoff
+    │   └── [frames prêtes pour dev]
+    └── 📦 store_assets
+        ├── app_icon
+        ├── android_banner
+        └── screenshots
 ```
 
 ---
@@ -144,19 +173,27 @@ Nos skills Figma (`setup-figma-project`, `create-figma-component`, etc.) sont de
 ### Fichier Design System
 | Page | Nom exact | Description |
 |------|----------|-------------|
-| Fondations | `🎨 Foundations` | Tokens primitifs et sémantiques |
-| Composants | `🧩 Components` | Bibliothèque de composants |
-| Patterns | `📐 Patterns` | Assemblages réutilisables |
-| Documentation | `📖 Documentation` | Changelog et guidelines |
+| Fondations | `🎨 foundations` | Tokens primitifs et sémantiques |
+| Composants | `🧩 components` | Bibliothèque de composants |
+| Patterns | `📐 patterns` | Assemblages réutilisables |
+| Documentation | `📖 documentation` | Changelog et guidelines |
 
 ### Fichier Projet (par EPIC)
 | Page | Nom exact | Description |
 |------|----------|-------------|
-| User Flows | `🗺️ User Flows` | Flows visuels FLUX-### |
-| Écrans | `📱 Screens` | Frames par US |
-| Composants locaux | `🔧 Components` | Composants spécifiques à la feature |
-| Handoff | `🚀 Handoff` | Frames Dev Ready |
-| Store Assets | `📦 Store Assets` | Assets pour publication |
+| User Flows | `🗺️ user_flows` | Flows visuels FLUX_### |
+| Écrans | `📱 screens` | Frames par US |
+| Composants locaux | `🔧 components` | Composants spécifiques à la feature |
+| Handoff | `🚀 handoff` | Frames Dev Ready |
+| Store Assets | `📦 store_assets` | Assets pour publication |
+
+### Sections dans une page
+```
+snake_case — ID en majuscules si référence à une US
+Ex : US_042_login
+Ex : US_001_onboarding
+Ex : shared_components
+```
 
 ---
 
@@ -164,80 +201,130 @@ Nos skills Figma (`setup-figma-project`, `create-figma-component`, etc.) sont de
 
 ### Convention obligatoire
 ```
-[US-###] [NomUS] / [Plateforme] / [État]
+US_###_[nom_us]_[plateforme]_[état]
 ```
+
+Règles :
+- `US_###` en majuscules — identifiant unique
+- Tout le reste en minuscules et snake_case
+- Plateforme : `ios` / `android`
+- État : `default` / `loading` / `empty` / `error` / `success`
 
 Exemples :
 ```
-[US-042] Login / iOS / Default
-[US-042] Login / iOS / Loading
-[US-042] Login / iOS / Error
-[US-042] Login / Android / Default
-[US-001] Onboarding / iOS / Step 1
+US_042_login_ios_default
+US_042_login_ios_loading
+US_042_login_ios_error
+US_042_login_android_default
+US_001_onboarding_ios_step_1
+US_001_onboarding_ios_step_2
 ```
 
-### Règles
-- Toujours préfixer avec l'ID de la US couverte
-- Toujours préciser la plateforme : `iOS` / `Android`
-- Toujours préciser l'état : `Default` / `Loading` / `Empty` / `Error` / `Success`
-- Jamais d'espaces dans les noms de frames — utiliser des espaces normaux, pas de tirets
-- Jamais de majuscules aléatoires — sentence case uniquement
+### À ne jamais faire
+- ❌ `Rectangle 1`, `Group 4`, `Frame 23` — noms auto Figma
+- ❌ `Calque copie 2` — doublon non renommé
+- ❌ `Login Screen FINAL v3` — majuscules + suffixes de version
+- ❌ `[US-042] Login / iOS / Default` — ancienne convention
 
 ---
 
 ## Nomenclature des layers
 
-### Règle générale
+### Convention obligatoire
 ```
-[type] — [nom] — [état si applicable]
+snake_case — tout en minuscules
 ```
 
-| Type | Préfixe | Exemple |
-|------|---------|---------|
-| Frame | Aucun — nom direct | `Header` |
-| Groupe | Aucun — nom descriptif | `Navigation Bar` |
-| Composant | Nom du composant | `Button / Primary / Default` |
-| Texte | Contenu ou rôle | `Title`, `Body`, `Label` |
-| Image | Rôle | `Hero Image`, `Avatar` |
-| Icône | Nom de l'icône | `Icon / Search` |
-| Rectangle décoratif | `BG` + description | `BG Overlay` |
+| Type | Convention | Exemple |
+|------|-----------|---------|
+| Frame conteneur | `snake_case` | `header`, `content`, `footer` |
+| Groupe | `snake_case` | `navigation_bar`, `form_section` |
+| Composant lié | Nom du composant | `button/primary/default` |
+| Texte | Rôle ou contenu court | `title`, `body`, `label_email` |
+| Image | Rôle | `hero_image`, `avatar` |
+| Icône | `icon_[nom]` | `icon_search`, `icon_close` |
+| Rectangle décoratif | `bg_[description]` | `bg_overlay`, `bg_card` |
+| Layer ignoré VoiceOver | `decoration_[description]` | `decoration_background` |
 
 ### À ne jamais faire
-- ❌ `Rectangle 1`, `Group 4`, `Frame 23` — noms auto Figma
-- ❌ `Calque copie 2` — doublon non renommé
-- ❌ `TITRE` — tout en majuscules
-- ❌ `btn-primary-hover-active-v3-FINAL` — suffixes de version
+- ❌ `Rectangle 1`, `Group 4` — noms auto
+- ❌ `Hero Image` — espaces
+- ❌ `Icon / Search` — slash dans un layer (réservé aux composants)
+- ❌ `BG Overlay` — majuscules
 
 ---
 
 ## Nomenclature des composants
 
-### Convention
+### Convention obligatoire
 ```
-[Catégorie] / [Nom] / [Variante] / [État]
+[catégorie]/[nom_composant]/[variante]/[état]
+snake_case pour chaque niveau, / pour séparer les niveaux
 ```
 
 Exemples :
 ```
-Button / Primary / Default
-Button / Primary / Hover
-Button / Secondary / Disabled
-Input / Text / Default
-Input / Text / Error
-Card / Product / With Image
-Navigation / Tab Bar / iOS
-Navigation / Tab Bar / Android
+button/primary/default
+button/primary/loading
+button/primary_with_icon/default
+button/secondary/disabled
+input/text/default
+input/text/error
+input/password/default
+card/product/with_image
+card/product/without_image
+navigation/tab_bar/ios
+navigation/tab_bar/android
+navigation/bottom_sheet/default
 ```
 
 ### Propriétés de variants obligatoires
-Tout composant avec plusieurs états doit avoir ces propriétés définies :
+
+Tout composant avec plusieurs états doit avoir ces propriétés en snake_case :
 
 | Propriété | Valeurs possibles |
 |-----------|-----------------|
-| `State` | Default, Hover, Pressed, Disabled, Loading, Error |
-| `Platform` | iOS, Android (si divergence) |
-| `Size` | SM, MD, LG (si applicable) |
-| `Variant` | Primary, Secondary, Destructive (si applicable) |
+| `state` | `default`, `hover`, `pressed`, `disabled`, `loading`, `error` |
+| `platform` | `ios`, `android` (si divergence visuelle) |
+| `size` | `sm`, `md`, `lg` (si applicable) |
+| `variant` | `primary`, `secondary`, `destructive` (si applicable) |
+| `has_icon` | `true`, `false` (si applicable) |
+
+### Modes de variables
+
+```
+light
+dark
+brand_a
+brand_b
+high_contrast
+```
+
+---
+
+## Nomenclature des tokens
+
+### Convention déjà en snake_case — inchangée
+```
+color/[catégorie]/[rôle]
+Ex : color/interactive/primary
+Ex : color/content/secondary
+Ex : color/feedback/error
+
+spacing/[taille]
+Ex : spacing/xs, spacing/sm, spacing/md, spacing/lg, spacing/xl
+
+radius/[taille]
+Ex : radius/sm, radius/md, radius/lg
+
+ios/type/[style]
+Ex : ios/type/body, ios/type/headline, ios/type/caption
+
+android/type/[style]
+Ex : android/type/body_large, android/type/label_medium
+```
+
+> Les tokens sont déjà en snake_case + `/` — aucun changement requis.
 
 ---
 
@@ -289,6 +376,124 @@ Tout composant avec plusieurs états doit avoir ces propriétés définies :
 | Snackbars | 4s display max | Notifications temporaires |
 | Dynamic Color | Material You | Theming adaptatif |
 | Edge-to-edge | Respecter les window insets | Contenu plein écran |
+
+---
+
+## ✅ NOUVEAU — Règles UX atomiques par priorité
+
+Règles d'interaction et de qualité UI à vérifier dans `check-guidelines-compliance`. Organisées par priorité décroissante.
+
+### Priorité 1 — Accessibilité (CRITIQUE)
+
+| Règle | Description | Référence |
+|-------|-------------|-----------|
+| `color_contrast` | Ratio min. 4.5:1 texte normal, 3:1 grand texte | WCAG AA |
+| `focus_states` | Focus rings visibles sur tous les éléments interactifs (2-4px) | HIG, MD |
+| `alt_text` | Alt text descriptif sur toutes les images informatives | WCAG |
+| `aria_labels` | `accessibilityLabel` sur tous les boutons icône | HIG |
+| `color_not_only` | Ne jamais transmettre l'info par couleur seule — ajouter icône ou texte | WCAG |
+| `dynamic_type` | Supporter le scaling texte système — pas de troncature | HIG Dynamic Type |
+| `reduced_motion` | Respecter `prefers-reduced-motion` — désactiver les animations | HIG |
+| `voiceover_sr` | Ordre de lecture logique pour VoiceOver/TalkBack | HIG, MD |
+| `escape_routes` | Toujours fournir Cancel/Back dans les modales et flows multi-étapes | HIG |
+
+### Priorité 2 — Touch & Interaction (CRITIQUE)
+
+| Règle | Description | Référence |
+|-------|-------------|-----------|
+| `touch_target_size` | Min 44×44pt iOS / 48×48dp Android — étendre au-delà du visuel si besoin | HIG, MD |
+| `touch_spacing` | Min 8pt/dp d'espace entre deux zones tactiles | HIG, MD |
+| `hover_vs_tap` | Jamais d'interaction critique hover-only | — |
+| `loading_buttons` | Désactiver le bouton pendant une opération async — montrer un spinner | HIG |
+| `error_feedback` | Message d'erreur au plus proche du champ problématique | HIG |
+| `gesture_conflicts` | Éviter le swipe horizontal sur le contenu principal | HIG |
+| `standard_gestures` | Utiliser les gestes standard de la plateforme — ne pas les redéfinir | HIG |
+| `system_gestures` | Ne pas bloquer les gestes système (Control Center, swipe back...) | HIG |
+| `press_feedback` | Feedback visuel immédiat au tap (ripple MD / highlight iOS) | HIG, MD |
+| `haptic_feedback` | Haptic sur confirmations importantes — ne pas en abuser | HIG |
+| `safe_area_awareness` | Zones tactiles loin du notch, Dynamic Island, gesture bar | HIG |
+| `swipe_clarity` | Swipe actions doivent avoir un affordance visible (chevron, label) | HIG |
+| `tap_feedback_speed` | Feedback visuel dans les 100ms après le tap | HIG |
+
+### Priorité 3 — Performance (HAUTE)
+
+| Règle | Description | Référence |
+|-------|-------------|-----------|
+| `progressive_loading` | Skeleton screens au lieu de spinners pour les opérations >1s | HIG |
+| `input_latency` | Latence input < 100ms pour taps/scroll | MD |
+| `debounce_throttle` | Debounce/throttle sur scroll, resize, input haute fréquence | — |
+| `main_thread_budget` | Travail par frame < 16ms pour 60fps | HIG, MD |
+| `offline_support` | Message d'état offline + fallback minimal | — |
+| `virtualize_lists` | Virtualiser les listes de plus de 50 items | HIG, MD |
+
+### Priorité 4 — Style et cohérence (HAUTE)
+
+| Règle | Description | Référence |
+|-------|-------------|-----------|
+| `no_emoji_icons` | Utiliser des icônes SVG — jamais d'emojis dans la navigation | HIG |
+| `platform_adaptive` | Respecter les idiomes plateforme : navigation, contrôles, typo, motion | HIG, MD |
+| `state_clarity` | États hover/pressed/disabled visuellement distincts | MD |
+| `elevation_consistent` | Échelle d'élévation/ombre cohérente — pas de valeurs aléatoires | MD |
+| `dark_mode_pairing` | Concevoir light et dark ensemble pour garantir la cohérence | HIG |
+| `icon_style_consistent` | Un seul jeu d'icônes par projet | HIG |
+
+### Priorité 5 — Typographie et couleurs (MOYENNE)
+
+| Règle | Description | Référence |
+|-------|-------------|-----------|
+| `text_styles_system` | Utiliser le système de styles plateforme — Dynamic Type iOS / Type roles MD | HIG, MD |
+| `weight_hierarchy` | Bold titres (600-700), Regular corps (400), Medium labels (500) | MD |
+| `color_semantic` | Tokens sémantiques uniquement — jamais de hex brut dans les composants | MD |
+| `color_dark_mode` | Dark mode : variantes désaturées/plus claires — pas de couleurs inversées | HIG, MD |
+| `color_accessible_pairs` | Paires fond/texte vérifiées à 4.5:1 (AA) ou 7:1 (AAA) | WCAG |
+
+### Priorité 6 — Animation (MOYENNE)
+
+| Règle | Description | Référence |
+|-------|-------------|-----------|
+| `animation_duration` | Durée 150-300ms — pas d'animation instantanée (0ms) ni trop longue | HIG, MD |
+| `motion_meaning` | L'animation doit avoir un sens — pas de décoratif pur | HIG |
+| `spatial_continuity` | Les éléments qui bougent doivent suivre une trajectoire logique | HIG |
+
+### Priorité 7 — Formulaires et feedback (MOYENNE)
+
+| Règle | Description | Référence |
+|-------|-------------|-----------|
+| `visible_labels` | Labels toujours visibles — ne pas utiliser le placeholder comme label | HIG |
+| `error_near_field` | Erreur affichée au plus proche du champ concerné | HIG |
+| `progressive_disclosure` | Ne pas surcharger le formulaire — révéler progressivement | HIG |
+
+### Priorité 8 — Navigation (HAUTE)
+
+| Règle | Description | Référence |
+|-------|-------------|-----------|
+| `predictable_back` | Comportement Back toujours prévisible | HIG |
+| `bottom_nav_limit` | Bottom navigation : 3 à 5 items max | HIG, MD |
+| `deep_linking` | Prévoir le deep linking pour les flux critiques | HIG, MD |
+
+---
+
+## Anti-patterns UI mobiles — À ne jamais faire
+
+Ces patterns sont vérifiés dans `check-guidelines-compliance` avant tout handoff.
+
+| ❌ Anti-pattern | ✅ Alternative | Priorité |
+|----------------|--------------|---------|
+| Emojis comme icônes de navigation | SVG icons (SF Symbols iOS / Material Icons Android) | Critique |
+| Couleur seule pour transmettre une info | Couleur + icône ou texte | Critique |
+| Focus rings supprimés | Focus rings toujours visibles | Critique |
+| Bouton actif pendant une opération async | Désactiver + spinner | Critique |
+| Gestes système bloqués (swipe back iOS) | Ne jamais intercepter les gestes système | Critique |
+| Zone tactile < 44pt / 48dp | Padding invisible pour agrandir la zone | Critique |
+| Message d'erreur uniquement en haut du formulaire | Erreur au niveau du champ concerné | Haute |
+| Placeholder utilisé comme label | Label visible au-dessus du champ | Haute |
+| Animation sans `prefers-reduced-motion` | Vérifier et respecter le setting système | Haute |
+| Valeurs hex en dur dans les composants | Tokens sémantiques uniquement | Haute |
+| Swipe action sans affordance visuelle | Chevron ou label visible | Haute |
+| Spinner bloquant pour toute opération >1s | Skeleton screen | Moyenne |
+| Icônes de styles différents dans le même écran | Un seul jeu d'icônes par projet | Moyenne |
+| Dark mode = couleurs inversées | Variantes désaturées/plus claires dédiées | Moyenne |
+| Listes de 50+ items non virtualisées | Virtualisation obligatoire | Moyenne |
 
 ---
 

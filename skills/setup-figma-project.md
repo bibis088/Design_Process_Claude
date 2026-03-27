@@ -40,13 +40,13 @@ Depuis `specs/$ARGUMENTS/EPIC.md` et `specs/$ARGUMENTS/stories/`, extraire :
 
 ### Étape 2 — Créer le fichier Design System via `use_figma`
 
-Utiliser MCP Figma pour créer ou vérifier l'existence du fichier `[NomProjet] — Design System`.
+Utiliser MCP Figma pour créer ou vérifier l'existence du fichier `[nom_projet]_design_system`.
 
 Pages à créer dans l'ordre :
-1. `🎨 Foundations` — tokens primitifs et sémantiques
-2. `🧩 Components` — bibliothèque de composants
-3. `📐 Patterns` — assemblages réutilisables
-4. `📖 Documentation` — changelog et guidelines
+1. `🎨 foundations` — tokens primitifs et sémantiques
+2. `🧩 components` — bibliothèque de composants
+3. `📐 patterns` — assemblages réutilisables
+4. `📖 documentation` — changelog et guidelines
 
 Sur chaque page, créer un frame de titre avec :
 ```
@@ -60,13 +60,13 @@ Dernière mise à jour : [YYYY-MM-DD]
 Créer le fichier `[NomProjet] — [EPIC-###] [NomEpic]`.
 
 Pages à créer dans l'ordre :
-1. `🗺️ User Flows` — une section par `FLUX-###` identifié dans l'epic
-2. `📱 Screens` — une section par `US-###` avec le titre de la story
-3. `🔧 Components` — composants locaux à la feature
-4. `🚀 Handoff` — frames prêtes pour dev (vide au démarrage)
-5. `📦 Store Assets` — assets publication (vide au démarrage)
+1. `🗺️ user_flows` — une section par `FLUX-###` identifié dans l'epic
+2. `📱 screens` — une section par `US-###` avec le titre de la story
+3. `🔧 components` — composants locaux à la feature
+4. `🚀 handoff` — frames prêtes pour dev (vide au démarrage)
+5. `📦 store_assets` — assets publication (vide au démarrage)
 
-Sur la page `📱 Screens`, créer pour chaque `US-###` une section nommée :
+Sur la page `📱 screens`, créer pour chaque `US-###` une section nommée :
 ```
 [US-###] [Titre de la story]
 ```
@@ -77,25 +77,25 @@ Sur la page `📱 Screens`, créer pour chaque `US-###` une section nommée :
 # Rapport Setup Figma — [EPIC-###] [NomEpic] — [YYYY-MM-DD]
 
 ## Fichiers créés
-- [ ] [NomProjet] — Design System : [URL Figma]
+- [ ] [nom_projet]_design_system : [URL Figma]
 - [ ] [NomProjet] — [EPIC-###] [NomEpic] : [URL Figma]
 
 ## Pages créées — Design System
 | Page | Statut | Notes |
 |------|--------|-------|
-| 🎨 Foundations | ✅ / ❌ | |
-| 🧩 Components | ✅ / ❌ | |
-| 📐 Patterns | ✅ / ❌ | |
-| 📖 Documentation | ✅ / ❌ | |
+| 🎨 foundations | ✅ / ❌ | |
+| 🧩 components | ✅ / ❌ | |
+| 📐 patterns | ✅ / ❌ | |
+| 📖 documentation | ✅ / ❌ | |
 
 ## Pages créées — Projet
 | Page | Sections créées | Statut |
 |------|----------------|--------|
-| 🗺️ User Flows | [N] flux | ✅ / ❌ |
-| 📱 Screens | [N] sections US | ✅ / ❌ |
-| 🔧 Components | — | ✅ / ❌ |
-| 🚀 Handoff | — | ✅ / ❌ |
-| 📦 Store Assets | — | ✅ / ❌ |
+| 🗺️ user_flows | [N] flux | ✅ / ❌ |
+| 📱 screens | [N] sections US | ✅ / ❌ |
+| 🔧 components | — | ✅ / ❌ |
+| 🚀 handoff | — | ✅ / ❌ |
+| 📦 store_assets | — | ✅ / ❌ |
 
 ## Sections Screens créées
 | US | Titre | Section Figma |
@@ -108,7 +108,7 @@ Sur la page `📱 Screens`, créer pour chaque `US-###` une section nommée :
 Avant de valider ce livrable et de passer à la suite, réponds à ces questions dans l'ordre :
 
 1. Les deux fichiers Figma sont-ils accessibles et correctement nommés selon la convention `rules/figma.md` ? (oui / non + corrections)
-2. Toutes les `US-###` de l'epic ont-elles une section dédiée dans la page `📱 Screens` ? (oui / non + US manquantes)
+2. Toutes les `US-###` de l'epic ont-elles une section dédiée dans la page `📱 screens` ? (oui / non + US manquantes)
 3. Les URLs des deux fichiers sont-elles renseignées dans le rapport et à disposition des agents UX et UI ? (oui / non)
 4. La nomenclature des pages est-elle exacte — emojis et libellés conformes à `rules/figma.md` ? (oui / non + corrections)
 

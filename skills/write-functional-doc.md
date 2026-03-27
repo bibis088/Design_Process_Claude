@@ -20,6 +20,7 @@ Produire le document fonctionnel de référence d'un EPIC — relie toutes les d
 - [ ] Tous les `US-###` en statut `Approved`
 - [ ] Frames Figma en statut `Ready for dev`
 - [ ] Prototype React disponible (`write-prototype-react`)
+- [ ] Plan de tagage révisé disponible (`review-tracking-plan` — v finale après Gate 8)
 - [ ] Insights de recherche disponibles (`write-research-insights`)
 
 ## Gestion des erreurs
@@ -133,7 +134,7 @@ Depuis les dossiers du projet, extraire :
 ### [FLUX-###] — [Nom du flux]
 **Description :** [Ce que ce flux accomplit]
 **Persona(s) concerné(s) :** [PERSONA-###]
-**User flow Figma :** [URL page 🗺️ User Flows]
+**User flow Figma :** [URL page 🗺️ user_flows]
 **Prototype :** [URL fichier HTML]
 
 **Flux principal :**

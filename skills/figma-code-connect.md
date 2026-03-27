@@ -59,8 +59,8 @@ Appeler : get_code_connect_suggestions
 
 | Composant Figma | Node ID | Implémentation iOS | Implémentation Android | Confiance |
 |----------------|---------|-------------------|----------------------|-----------|
-| Button / Primary / Default | [ID] | `PrimaryButton.swift` | `PrimaryButton.kt` | Haute |
-| Input / Text / Default | [ID] | `TextInput.swift` | `TextInput.kt` | Haute |
+| button/primary/default | [ID] | `PrimaryButton.swift` | `PrimaryButton.kt` | Haute |
+| input/text/default | [ID] | `TextInput.swift` | `TextInput.kt` | Haute |
 | Card / Product | [ID] | `ProductCard.swift` | `ProductCard.kt` | Moyenne |
 
 Confirmes-tu ces mappings ?

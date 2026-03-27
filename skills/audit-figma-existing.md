@@ -67,14 +67,14 @@ get_metadata [URL] → liste des pages
 ### Pages existantes
 | Page trouvée | Page attendue (rules/figma.md) | Conforme | Écart |
 |-------------|-------------------------------|---------|-------|
-| [Nom page] | `🎨 Foundations` | ✅/❌ | [description] |
-| [Nom page] | `🧩 Components` | ✅/❌ | [description] |
-| [Nom page] | `📐 Patterns` | ✅/❌ | [description] |
-| [Nom page] | `📖 Documentation` | ✅/❌ | [description] |
-| [Nom page] | `🗺️ User Flows` | ✅/❌ | [description] |
-| [Nom page] | `📱 Screens` | ✅/❌ | [description] |
-| [Nom page] | `🚀 Handoff` | ✅/❌ | [description] |
-| [Nom page] | `📦 Store Assets` | ✅/❌ | [description] |
+| [Nom page] | `🎨 foundations` | ✅/❌ | [description] |
+| [Nom page] | `🧩 components` | ✅/❌ | [description] |
+| [Nom page] | `📐 patterns` | ✅/❌ | [description] |
+| [Nom page] | `📖 documentation` | ✅/❌ | [description] |
+| [Nom page] | `🗺️ user_flows` | ✅/❌ | [description] |
+| [Nom page] | `📱 screens` | ✅/❌ | [description] |
+| [Nom page] | `🚀 handoff` | ✅/❌ | [description] |
+| [Nom page] | `📦 store_assets` | ✅/❌ | [description] |
 
 ### Score structure : [N/8] pages conformes
 ### Observations
@@ -91,7 +91,7 @@ get_metadata [URL] → liste des pages
 get_metadata [URL page Screens] → liste des frames et layers
 ```
 
-Vérifier la convention `[US-###] [NomUS] / [Plateforme] / [État]` :
+Vérifier la convention `US_###_[nom_us]_[plateforme]_[état]` :
 
 ```markdown
 ## 2. Nomenclature frames et layers

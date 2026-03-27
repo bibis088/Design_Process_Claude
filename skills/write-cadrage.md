@@ -146,7 +146,7 @@ Avant de valider ce livrable et de passer à la suite, réponds à ces questions
 
 1. Les 6 questions ont-elles toutes reçu une réponse — même partielle ? (oui / non + questions sans réponse)
 2. Le problème métier est-il clairement identifié depuis la réponse Q4 — pas une feature déguisée ? (oui / reformuler)
-3. Le contexte mobile est-il précisé — iOS, Android ou les deux, fréquence, environnement d'usage ? (oui / non)
+3. Le contexte mobile est-il précisé — ios, android ou les deux, fréquence, environnement d'usage ? (oui / non)
 4. Au moins un KPI mesurable a-t-il été identifié depuis la réponse Q6 ? (oui / non + proposer un KPI)
 5. ✅ NOUVEAU [2] — La stack technique est-elle définie — type d'application (native, cross-platform, hybride), plateformes et versions minimum ? (oui / non — bloquant pour les étapes UI)
 

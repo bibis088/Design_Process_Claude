@@ -81,7 +81,7 @@ Chaque document fonctionnel référence l'URL Figma correspondante. Chaque frame
 ```markdown
 ## Références Figma
 - Frame : [URL directe — ex: https://figma.com/file/xxx?node-id=yyy]
-- Statut Figma : [To Do / In Progress / Ready for dev]
+- Statut Figma : [to_do / in_progress / ready_for_dev]
 - US couvertes dans ce frame : [US-###, US-###]
 ```
 
@@ -91,7 +91,7 @@ Obligatoire dans : `US-###.md`, `S-XX-[nom].md`, `SCREENS-MAP.md`
 
 ```
 Spec : S-XX-[nom] | US-###, US-### | FLUX-###
-Statut : [To Do / In Progress / Ready for dev]
+Statut : [to_do / in_progress / ready_for_dev]
 ```
 
 ### Convention de statut Figma

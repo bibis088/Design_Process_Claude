@@ -73,7 +73,7 @@ Ces conventions sont partagées avec tous les agents du système (BA, Dev, QA, U
 
 ## Références Figma
 - Frame principal : [URL directe vers le frame Figma — ex: https://figma.com/file/xxx?node-id=yyy]
-- Statut Figma : [To Do / In Progress / Ready for dev]
+- Statut Figma : [to_do / in_progress / ready_for_dev]
 - Frames liés : [URL frame 2 si plusieurs écrans couverts]
 
 ## Dépendances

@@ -145,7 +145,7 @@ Pour chaque feature, exécuter dans l'ordre :
 
 ### Nomenclature obligatoire
 Consulter `rules/figma.md` avant de créer quoi que ce soit dans Figma.
-- Frames : `[US-###] [NomUS] / [Plateforme] / [État]`
+- Frames : `US_###_[nom_us]_[plateforme]_[état]`
 - Layers : `[type] — [nom]`
 - Composants : `[Catégorie] / [Nom] / [Variante] / [État]`
 - Jamais de noms auto Figma (`Rectangle 1`, `Group 4`)

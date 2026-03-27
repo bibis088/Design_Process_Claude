@@ -31,6 +31,51 @@ Si MCP Figma n'est pas accessible :
 
 ## Processus de génération
 
+### Étape 0 — Générer la direction stylistique (si nouveau projet)
+
+Si aucun token n'existe encore, recommander une direction stylistique avant de créer quoi que ce soit.
+
+Depuis `specs/[epic-slug]/cadrage.md` et `specs/[epic-slug]/research/competitive-analysis.md`, extraire :
+- Le type de produit (wellness, fintech, e-commerce, SaaS, healthcare...)
+- Le secteur d'activité
+- La cible utilisateur (B2C grand public, B2B, expert...)
+- Le ton souhaité (premium, accessible, technique, ludique...)
+
+Produire la recommandation :
+
+```markdown
+## Recommandation design system — [NomProjet]
+
+### Type de produit détecté
+[Type] — [Secteur]
+
+### Direction stylistique recommandée
+Style : [ex: Clean Minimal / Material Expressive / Premium Dark]
+Justification : [Pourquoi ce style convient à ce produit et cette cible]
+
+### Palette recommandée
+Couleur primaire : [Couleur + justification — ex: Bleu confiance pour une app fintech]
+Couleur secondaire : [Couleur]
+Couleur d'accent : [Couleur]
+Approche dark mode : [Tonale / Inversée / Adaptée]
+
+### Typographie recommandée
+iOS : [Style Figma — ex: ios/type/* basé sur SF Pro]
+Android : [Style Figma — ex: android/type/* basé sur Roboto / Google Sans]
+Hiérarchie : [Bold titres, Regular corps, Medium labels]
+
+### Tokens d'ambiance
+Radius : [Arrondi généreux / Angles nets / Intermédiaire] → [valeur recommandée]
+Ombres : [Plates / Douces / Prononcées]
+Motion : [Rapide (150ms) / Standard (250ms) / Fluide (300ms)]
+
+### Références visuelles du secteur
+[3 patterns UX standards identifiés dans le benchmark]
+
+⚠️ Validation Product Designer requise avant de créer les tokens
+"Cette direction stylistique est-elle alignée avec la vision du projet ?"
+```
+
 ### Étape 1 — Lire les tokens existants
 Depuis `design-system/tokens/`, extraire :
 - `colors.md` — palette primitive + tokens sémantiques light/dark
@@ -40,11 +85,11 @@ Depuis `design-system/tokens/`, extraire :
 - `motion.md` — durées et courbes
 - `radius.md` — rayons de bordure
 
-Si ces fichiers n'existent pas → créer les tokens de base avant de continuer (voir `/write-token`).
+Si ces fichiers n'existent pas → créer les tokens de base depuis la recommandation de l'étape 0 (voir `/write-token`).
 
 ### Étape 2 — Configurer les couleurs dans Figma
 
-Via `use_figma`, sur la page `🎨 Foundations` :
+Via `use_figma`, sur la page `🎨 foundations` :
 
 **Palette primitive** (variables Figma — collection `Primitives`) :
 ```
@@ -73,7 +118,7 @@ Mode Dark :
 
 ### Étape 3 — Configurer la typographie dans Figma
 
-Via `use_figma`, créer les styles de texte sur la page `🎨 Foundations` :
+Via `use_figma`, créer les styles de texte sur la page `🎨 foundations` :
 
 | Style Figma | iOS | Android | Poids | Line height |
 |------------|-----|---------|-------|-------------|
@@ -107,7 +152,7 @@ Via `use_figma`, créer les effets et variables :
 
 ### Étape 6 — Créer les swatches de documentation
 
-Sur la page `🎨 Foundations`, créer une frame de documentation visuelle montrant :
+Sur la page `🎨 foundations`, créer une frame de documentation visuelle montrant :
 - Tous les tokens de couleur avec leur valeur light et dark
 - L'échelle typographique avec un exemple de texte pour chaque style
 - L'échelle d'espacement avec des rectangles de taille correspondante
@@ -130,7 +175,7 @@ Avant de valider ce livrable et de passer à la suite, réponds à ces questions
 ```
 ✅ setup-figma-tokens "$ARGUMENTS" terminé
 📁 design-system/tokens/ (référence)
-🎨 Figma Design System → page 🎨 Foundations mise à jour
+🎨 Figma Design System → page 🎨 foundations mise à jour
 
 Prochaines étapes :
 → /setup-figma-grid $ARGUMENTS

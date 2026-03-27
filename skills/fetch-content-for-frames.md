@@ -74,9 +74,9 @@ Créer un mapping structuré :
 
 | Frame | Layer | Contenu extrait | Source | Statut |
 |-------|-------|----------------|--------|--------|
-| [US-###] Login / iOS / Default | Title | "Connexion à votre compte" | URL/page-login | ✅ |
-| [US-###] Login / iOS / Default | Subtitle | "Entrez vos identifiants" | URL/page-login | ✅ |
-| [US-###] Login / iOS / Default | Hero Image | https://cdn.site.com/hero.jpg | URL/page-login | ✅ |
+| US_###_login_ios_default | Title | "Connexion à votre compte" | URL/page-login | ✅ |
+| US_###_login_ios_default | Subtitle | "Entrez vos identifiants" | URL/page-login | ✅ |
+| US_###_login_ios_default | hero_image | https://cdn.site.com/hero.jpg | URL/page-login | ✅ |
 | [US-###] Dashboard / iOS / Default | Welcome | "Bonjour [Prénom]" | Dynamique — placeholder | ⚠️ |
 ```
 
@@ -104,7 +104,7 @@ Pour les contenus dynamiques (noms, prix, dates) :
 ## Résultat par frame
 | Frame | Layers mis à jour | Layers en attente | Notes |
 |-------|------------------|------------------|-------|
-| [US-###] Login / iOS / Default | 4 | 1 | Hero image protégée |
+| US_###_login_ios_default | 4 | 1 | Hero image protégée |
 
 ## Éléments à compléter manuellement
 | Frame | Layer | Raison | Action requise |

@@ -31,7 +31,7 @@ Si les prérequis ne sont pas remplis :
 ### Étape 1 — Nettoyer et organiser les frames
 
 Via `use_figma` :
-1. Déplacer toutes les frames `Ready for dev` vers la page `🚀 Handoff`
+1. Déplacer toutes les frames `Ready for dev` vers la page `🚀 handoff`
 2. Supprimer les frames de travail (brouillons, explorations, variantes rejetées)
 3. Vérifier que toutes les frames sont nommées selon la convention
 4. Vérifier qu'aucun layer n'est nommé `Rectangle 1`, `Group 4`, etc.
@@ -64,7 +64,7 @@ Via `use_figma` :
 
 ### Étape 5 — Créer le UI Kit de la feature
 
-Sur la page `🚀 Handoff`, créer une frame "UI Kit — [NomFeature]" listant :
+Sur la page `🚀 handoff`, créer une frame "UI Kit — [NomFeature]" listant :
 - Tous les composants utilisés dans la feature (avec liens vers les composants DS)
 - La palette de couleurs utilisée (tokens sémantiques)
 - L'échelle typographique utilisée
@@ -78,7 +78,7 @@ Sur la page `🚀 Handoff`, créer une frame "UI Kit — [NomFeature]" listant :
 
 ## Liens Figma
 - Fichier Projet : [URL]
-- Page Handoff : [URL directe vers la page 🚀 Handoff]
+- Page Handoff : [URL directe vers la page 🚀 handoff]
 - Prototype : [URL du prototype]
 - Design System : [URL fichier DS]
 
@@ -124,7 +124,7 @@ Avant de valider ce livrable et de passer à la suite, réponds à ces questions
 
 ```
 ✅ write-figma-handoff "$ARGUMENTS" terminé
-🚀 Figma Projet → page 🚀 Handoff prête
+🚀 Figma Projet → page 🚀 handoff prête
 📋 Document : design/$ARGUMENTS/handoff.md
 
 Prochaines étapes :

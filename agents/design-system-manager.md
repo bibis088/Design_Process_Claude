@@ -245,11 +245,11 @@ Au démarrage de chaque nouveau projet ou EPIC, exécuter dans l'ordre :
 **Règle fondamentale :** Utiliser `get_variable_defs` avant tout ajout de token pour éviter les doublons. Utiliser `search_design_system` avant tout ajout de composant. Tout écriture passe par `use_figma` via `figma-use-wrapper`.
 
 ### Fichier Design System Figma
-Le DSM est le seul responsable du fichier `[NomProjet] — Design System` :
+Le DSM est le seul responsable du fichier `[nom_projet]_design_system` :
 - Structure des pages selon `rules/figma.md`
 - Variables et styles de tokens synchronisés avec `design-system/tokens/`
 - Bibliothèque de composants publiée et versionnée
-- Documentation de la page `📖 Documentation` à jour
+- Documentation de la page `📖 documentation` à jour
 
 ### Validation des composants Figma
 Avant qu'un composant UI soit publié dans la bibliothèque Figma :

@@ -33,7 +33,7 @@ Depuis `specs/$ARGUMENTS/EPIC.md` et `stories/`, extraire :
 - Ce qui est explicitement hors périmètre
 
 ### Étape 2 — Lire les frames Figma via `use_figma`
-Lister toutes les frames de la page `📱 Screens` et vérifier :
+Lister toutes les frames de la page `📱 screens` et vérifier :
 - Chaque US-### a ses frames correspondantes (Default + états)
 - Les frames sont nommées selon la convention
 

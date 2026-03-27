@@ -29,7 +29,7 @@ Si les prérequis ne sont pas remplis :
 
 ### Étape 1 — Créer la page Store Assets
 
-Via `use_figma`, sur la page `📦 Store Assets` :
+Via `use_figma`, sur la page `📦 store_assets` :
 
 Créer les sections :
 1. `App Icon`
@@ -155,7 +155,7 @@ Avant de valider ce livrable et de passer à la suite, réponds à ces questions
 
 ```
 ✅ write-store-assets "$ARGUMENTS" terminé
-📦 Figma Projet → page 📦 Store Assets complète
+📦 Figma Projet → page 📦 store_assets complète
 
 Prochaines étapes :
 → Exporter les assets depuis Figma (Export panel)

@@ -105,7 +105,7 @@ Chaque fichier modifié est annoté avec `✅ MODIFIÉ [X]` ou `✅ NOUVEAU [X]`
 
 Étape 12 — User flows visuels Figma (UX)
     /write-figma-userflow [feature-slug]/[flux-slug]
-    → Figma Projet → page 🗺️ User Flows
+    → Figma Projet → page 🗺️ user_flows
 
 Étape 13 — Specs écrans (UX)
     /write-screen-spec [feature-slug]/[screen-id]-[screen-slug]
@@ -127,7 +127,7 @@ Chaque fichier modifié est annoté avec `✅ MODIFIÉ [X]` ou `✅ NOUVEAU [X]`
 
 Étape 15 — Frames vides nommées (UI)
     /setup-figma-frames [feature-slug]
-    → Figma Projet → page 📱 Screens — frames selon US + états
+    → Figma Projet → page 📱 screens — frames selon US + états
 
 Étape 16 — Composants de base (UI)
     /create-figma-component [feature-slug]/[component-slug]
@@ -196,7 +196,12 @@ Chaque fichier modifié est annoté avec `✅ MODIFIÉ [X]` ou `✅ NOUVEAU [X]`
 
 ─── DOCUMENTATION FONCTIONNELLE ─────────────────────────────
 
-Étape 22c — Documentation fonctionnelle complète (PO)
+Étape 22c — Plan de tagage (PO + UX)
+    /write-tracking-plan [epic-slug]/[feature-slug]
+    → PO : KPIs → événements | UX : mapping sur les écrans
+    → Produit : specs/[epic-slug]/[feature-slug]/tracking-plan.md
+
+Étape 22d — Documentation fonctionnelle complète (PO)
     /write-functional-doc [epic-slug]
     → Matrice EPIC→FEAT→US→écran Figma + flux + règles + personas
     → Document unique client + Dev
@@ -208,6 +213,14 @@ Chaque fichier modifié est annoté avec `✅ MODIFIÉ [X]` ou `✅ NOUVEAU [X]`
     /write-client-deliverable prototype [epic-slug]
     → Google Doc avec liens prototypes + guide d'utilisation
     → Section "Ce qu'on vous demande de valider"
+
+─── RÉVISION PLAN DE TAGAGE ─────────────────────────────────
+
+Étape 22e — Révision plan de tagage selon choix UI (PO)
+    /review-tracking-plan [epic-slug]/[feature-slug]
+    → Vérification couverture événements vs frames Figma
+    → Adaptation déclencheurs + nouveaux événements
+    → Produit : specs/[epic-slug]/[feature-slug]/tracking-plan.md (v révisée)
 
 ─── VALIDATION ───────────────────────────────────────────────
 
@@ -221,7 +234,7 @@ Chaque fichier modifié est annoté avec `✅ MODIFIÉ [X]` ou `✅ NOUVEAU [X]`
 
 Étape 25 — Handoff Dev (UI)
     /write-figma-handoff [feature-slug]
-    → Figma Projet → page 🚀 Handoff prête
+    → Figma Projet → page 🚀 handoff prête
 
 ─── QA ───────────────────────────────────────────────────────
 
@@ -233,7 +246,7 @@ Chaque fichier modifié est annoté avec `✅ MODIFIÉ [X]` ou `✅ NOUVEAU [X]`
 
 Étape 27 — Assets store (UI)
     /write-store-assets [epic-slug]
-    → Figma Projet → page 📦 Store Assets
+    → Figma Projet → page 📦 store_assets
 ```
 
 ### Gates de validation humaine — 11 gates en lot par phase

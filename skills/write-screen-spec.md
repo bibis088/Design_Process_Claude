@@ -50,7 +50,7 @@ Suivre strictement ce format :
 
 ## Références Figma
 - Frame : [URL directe — ex: https://figma.com/file/xxx?node-id=yyy]
-- Statut Figma : [To Do / In Progress / Ready for dev]
+- Statut Figma : [to_do / in_progress / ready_for_dev]
 - Annotations accessibilité : [To Do / In Progress / Done]
 
 ## Informations générales

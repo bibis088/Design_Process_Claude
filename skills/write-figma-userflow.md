@@ -8,7 +8,7 @@ agent: ux-designer
 ---
 
 ## Rôle
-Traduire un flux fonctionnel textuel (`FLUX-###`) en user flow visuel dans Figma — diagramme de navigation avec écrans miniatures, états et transitions — sur la page `🗺️ User Flows` du fichier Projet.
+Traduire un flux fonctionnel textuel (`FLUX-###`) en user flow visuel dans Figma — diagramme de navigation avec écrans miniatures, états et transitions — sur la page `🗺️ user_flows` du fichier Projet.
 
 ## Agents consommateurs
 - UX Designer (pilote — produit le flow visuel)
@@ -42,7 +42,7 @@ Depuis le `FLUX-###` et le user flow textuel, extraire :
 
 ### Étape 2 — Structurer le flow visuel
 
-Organisation sur la page `🗺️ User Flows` :
+Organisation sur la page `🗺️ user_flows` :
 
 ```
 Section : FLUX-### — [Nom du flux]
@@ -118,7 +118,7 @@ Avant de passer au skill suivant, réponds à ces questions :
 
 ```
 ✅ write-figma-userflow "$ARGUMENTS" terminé
-🗺️ Figma Projet → page 🗺️ User Flows mise à jour
+🗺️ Figma Projet → page 🗺️ user_flows mise à jour
 
 Prochaines étapes :
 → /setup-figma-frames $ARGUMENTS (UI Designer crée les frames vides)

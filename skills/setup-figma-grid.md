@@ -31,7 +31,7 @@ Si MCP Figma n'est pas accessible :
 
 ### Étape 1 — Créer les frames de base iOS
 
-Via `use_figma`, sur la page `🎨 Foundations` du Design System, créer :
+Via `use_figma`, sur la page `🎨 foundations` du Design System, créer :
 
 **iPhone SE / iPhone 13 mini (375 × 812pt)**
 - Grille : 4 colonnes, gouttière 16pt, marge 16pt
@@ -93,7 +93,7 @@ Chaque frame base inclut :
 
 ### Étape 4 — Documenter les grilles
 
-Sur la page `📖 Documentation`, créer une frame "Grilles & Formats" montrant :
+Sur la page `📖 documentation`, créer une frame "Grilles & Formats" montrant :
 - Toutes les frames de base côte à côte
 - Les dimensions annotées
 - Les safe areas expliquées

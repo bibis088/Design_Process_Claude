@@ -64,7 +64,7 @@ Depuis `design/[feature-slug]/SCREENS-MAP.md`, extraire :
 
 Pour chaque écran, créer les frames selon la convention :
 ```
-[US-###] [NomUS] / iOS / Default
+US_###_[nom_us]_ios_default
 [US-###] [NomUS] / iOS / Loading
 [US-###] [NomUS] / iOS / Empty
 [US-###] [NomUS] / iOS / Error
@@ -82,7 +82,7 @@ Pour chaque frame :
 
 ### Étape 4 — Organiser dans la page Screens
 
-Dans la page `📱 Screens`, organiser les frames :
+Dans la page `📱 screens`, organiser les frames :
 - Une section par `US-###`
 - iOS frames à gauche, Android frames à droite
 - États dans l'ordre : Default → Loading → Empty → Error
@@ -91,7 +91,7 @@ Dans la page `📱 Screens`, organiser les frames :
 
 Dans chaque frame Default, créer la structure de layers vide :
 ```
-[US-###] [NomUS] / iOS / Default
+US_###_[nom_us]_ios_default
     ├── Status Bar (composant DS)
     ├── Navigation Bar (composant DS — si applicable)
     ├── Content
@@ -104,7 +104,7 @@ Dans chaque frame Default, créer la structure de layers vide :
 Avant de passer au skill suivant, réponds à ces questions :
 
 1. Toutes les frames de la navigation map sont-elles créées — iOS et Android, tous les états ? (oui / non + frames manquantes)
-2. La nomenclature est-elle exacte sur toutes les frames — `[US-###] [NomUS] / [Plateforme] / [État]` ? (oui / non + frames mal nommées)
+2. La nomenclature est-elle exacte sur toutes les frames — `US_###_[nom_us]_[plateforme]_[état]` ? (oui / non + frames mal nommées)
 3. Le contenu à intégrer est-il identifié — URL, assets ou placeholder structuré ? (oui / non + contenu à préciser)
 
 ### ✅ Critère de sortie accessibilité (RAAM niveau A — obligatoire sur les écrans créés)
@@ -123,7 +123,7 @@ Ces critères s'appliquent à chaque lot d'écrans créés — principaux ou sec
 
 ```
 ✅ setup-figma-frames "$ARGUMENTS" terminé
-📱 Figma Projet → page 📱 Screens — [N] frames créées
+📱 Figma Projet → page 📱 screens — [N] frames créées
 ✅ Revue accessibilité RAAM niveau A : [Pass / À corriger]
 
 Prochaines étapes :
