@@ -36,8 +36,8 @@ Chaque fichier modifié est annoté avec `✅ MODIFIÉ [X]` ou `✅ NOUVEAU [X]`
     → Produit : specs/[epic-slug]/cadrage.md
 
 Étape 2 — Personas (BA)
-    /write-persona [epic-slug]/[persona-slug]
-    → Produit : specs/[epic-slug]/personas/PERSONA-###-[slug].md
+    /write-persona [epic-slug]
+    → Produit : PERSONA-001-regular-user.md, PERSONA-002-new-user.md, PERSONA-003-edge-user.md
 
 Étape 3 — Brief Fonctionnel (BA)
     /write-brief-fonctionnel [epic-slug]
@@ -68,6 +68,8 @@ Chaque fichier modifié est annoté avec `✅ MODIFIÉ [X]` ou `✅ NOUVEAU [X]`
 
 Étape 9 — Grilles Figma (DSM)
     /setup-figma-grid [epic-slug]
+    /setup-figma-library [epic-slug]       ← connexion DS → fichier Projet
+    /setup-figma-permissions [epic-slug]   ← matrice accès (action manuelle PD)
     → Frames de base iOS et Android avec grilles
 
 ─── RESEARCH UTILISATEUR (UX Researcher — Product Designer guidé) ─────
@@ -214,9 +216,24 @@ Chaque fichier modifié est annoté avec `✅ MODIFIÉ [X]` ou `✅ NOUVEAU [X]`
     → Google Doc avec liens prototypes + guide d'utilisation
     → Section "Ce qu'on vous demande de valider"
 
+─── TESTS UTILISATEUR SUR UI FINALE ─────────────────────────
+
+Étape 22e — Scénarios de test utilisateur (UX Researcher)
+    /write-user-test-scenarios [epic-slug]/[feature-slug]
+    → Scénarios sur base des flux + frames Figma finalisées
+    → Matrice de couverture personas × flux
+    → Produit : specs/[epic-slug]/[feature-slug]/research/user-test-scenarios.md
+
+Étape 22f — Exécution des tests (UX Researcher + Product Designer)
+    /run-user-tests [epic-slug]/[feature-slug]
+    → Partie auto : métriques prototype, analytics, formulaire SEQ/NPS
+    → Partie humaine : sessions modérées, enregistrements audio/vidéo
+    → Synthèse consolidée : citations + données chiffrées + timecodes
+    → Produit : specs/[epic-slug]/[feature-slug]/research/user-test-report.md
+
 ─── RÉVISION PLAN DE TAGAGE ─────────────────────────────────
 
-Étape 22e — Révision plan de tagage selon choix UI (PO)
+Étape 22g — Révision plan de tagage selon choix UI (PO)
     /review-tracking-plan [epic-slug]/[feature-slug]
     → Vérification couverture événements vs frames Figma
     → Adaptation déclencheurs + nouveaux événements
@@ -338,7 +355,7 @@ Chaque skill est invoqué individuellement. L'humain lit le résultat, valide, p
 /write-cadrage authentication
 → Lire le résumé de cadrage
 → Valider ou corriger
-→ /write-persona authentication/regular-user
+→ /write-persona authentication
 → Lire le persona
 → Valider ou corriger
 → /write-brief-fonctionnel authentication
@@ -375,7 +392,7 @@ L'agent exécute les 5 skills dans l'ordre, applique les phases de validation in
 
 | Phase | Gate | Séquence automatisable | Arrêt |
 |-------|------|----------------------|-------|
-| 0 — Initialisation | Gate 0 | `write-cadrage` → `write-persona` × N | Validation humaine cadrage + personas |
+| 0 — Initialisation | Gate 0 | `write-cadrage` → `write-persona` (1 appel → 3 personas) | Validation humaine cadrage + personas |
 | 1 — Spécification | Gate 1 | `write-brief-fonctionnel` → `write-flux-fonctionnel` × N → `write-regles-metier` → `write-glossaire` | Validation humaine specs |
 | 2 — User stories | Gate 2 | `write-feature-ticket` → `write-user-story` × N | Validation humaine US |
 | 3 — Setup Figma | Gate 3 | `figma-read-design` → `setup-figma-project` → `setup-figma-tokens` → `setup-figma-grid` | Validation humaine structure Figma |

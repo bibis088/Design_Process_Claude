@@ -2,8 +2,6 @@
 name: write-brief-fonctionnel
 description: "Génère le Brief Fonctionnel EPIC-### complet depuis les réponses au Cadrage initial. Exécuté par le business-analyst."
 argument-hint: "[epic-slug]"
-disable-model-invocation: false
-context: fork
 agent: business-analyst
 ---
 
@@ -11,7 +9,7 @@ agent: business-analyst
 Générer un Brief Fonctionnel complet à partir des réponses au Cadrage initial.
 
 ## Agents consommateurs
-- Business Analyst (pilote)
+Business Analyst 
 
 ## Prérequis
 Avant d'utiliser ce skill, vérifier que les éléments suivants sont disponibles :
@@ -126,11 +124,7 @@ Avant de soumettre en revue, valider la DoD BA :
 
 
 ## Gestion des erreurs
-
-Si les prérequis ne sont pas remplis :
 > ❌ Prérequis manquant — vérifier les fichiers sources avant de relancer.
-
-Si un fichier source est introuvable via chemin relatif, utiliser Glob avec le pattern `**/specs/$ARGUMENTS/**` pour localiser les fichiers depuis leur chemin absolu.
 
 ## Règles de qualité
 

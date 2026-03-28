@@ -2,8 +2,6 @@
 name: write-figma-handoff
 description: "Prépare le UI kit et le fichier Figma pour le handoff Dev — nommage, inspection, liens specs, annotations. Exécuté par le ui-designer via `use_figma`."
 argument-hint: "[feature-slug]"
-disable-model-invocation: false
-context: fork
 agent: ui-designer
 ---
 
@@ -11,8 +9,7 @@ agent: ui-designer
 Préparer le fichier Figma pour la transmission aux développeurs — frames organisées, layers nommés, tokens référencés, annotations complètes, prototype navigable.
 
 ## Agents consommateurs
-- UI Designer (pilote)
-- Dev iOS / Android (destinataires finaux)
+UI Designer 
 
 ## Prérequis
 - [ ] Review scope PO validée (`review-figma-scope` en statut Approuvé)
@@ -22,8 +19,6 @@ Préparer le fichier Figma pour la transmission aux développeurs — frames org
 - [ ] MCP Figma connecté
 
 ## Gestion des erreurs
-
-Si les prérequis ne sont pas remplis :
 > ❌ Validation PO ou conformité guidelines manquante — compléter ces étapes avant le handoff.
 
 ## Processus de génération

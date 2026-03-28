@@ -2,8 +2,6 @@
 name: fetch-content-for-frames
 description: "Extrait du contenu (textes, images, données) depuis une URL et l'injecte dans les frames Figma correspondantes via `use_figma`. Exécuté par le ui-designer."
 argument-hint: "[feature-slug]"
-disable-model-invocation: false
-context: fork
 agent: ui-designer
 ---
 
@@ -11,7 +9,7 @@ agent: ui-designer
 Récupérer du contenu réel depuis une page web et l'injecter dans les layers texte et image des frames Figma — pour éviter les placeholders Lorem ipsum en handoff.
 
 ## Agents consommateurs
-- UI Designer (pilote)
+UI Designer 
 
 ## Prérequis
 - [ ] Frames Figma créées via `/setup-figma-frames $ARGUMENTS`
@@ -21,14 +19,8 @@ Récupérer du contenu réel depuis une page web et l'injecter dans les layers t
 - [ ] Accès web disponible (web_fetch)
 
 ## Gestion des erreurs
-
-Si l'URL est inaccessible :
 > ❌ URL inaccessible ou contenu protégé — utiliser du contenu placeholder structuré et documenter les éléments à remplacer avant handoff.
-
-Si le contenu extrait est insuffisant :
 > ⚠️ Contenu partiel récupéré — documenter les éléments manquants dans le rapport et proposer des alternatives.
-
-Si MCP Figma n'est pas accessible :
 > ⚠️ MCP Figma indisponible — produire le fichier de contenu structuré à appliquer manuellement.
 
 ## Processus de génération

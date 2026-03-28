@@ -2,8 +2,6 @@
 name: write-feature-ticket
 description: "Génère un ticket feature FEAT-### complet avec objectifs mesurables, périmètre et KPIs. Exécuté par le product-owner."
 argument-hint: "[epic-slug]/[feature-slug]"
-disable-model-invocation: false
-context: fork
 agent: product-owner
 ---
 
@@ -11,7 +9,7 @@ agent: product-owner
 Générer un ticket feature `FEAT-###` complet avec objectifs mesurables, périmètre, flux et KPIs.
 
 ## Agents consommateurs
-- Product Owner (pilote)
+Product Owner 
 
 ## Prérequis
 - [ ] Brief Fonctionnel (`EPIC-###`) disponible et `Approved`
@@ -97,11 +95,7 @@ Orienté utilisateur — pas technique.]
 
 
 ## Gestion des erreurs
-
-Si les prérequis ne sont pas remplis :
 > ❌ Prérequis manquant — vérifier les fichiers sources avant de relancer.
-
-Si un fichier source est introuvable via chemin relatif, utiliser Glob avec le pattern `**/specs/$ARGUMENTS/**` pour localiser les fichiers depuis leur chemin absolu.
 
 ## Règles de qualité
 

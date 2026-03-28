@@ -2,8 +2,6 @@
 name: write-interview-guide
 description: "Produit le guide d'entretien utilisateur structuré — questions ouvertes, scénarios, protocole. Guide le Product Designer pour conduire des interviews qualitatives efficaces. Exécuté par le ux-researcher."
 argument-hint: "[epic-slug]"
-disable-model-invocation: false
-context: fork
 agent: ux-researcher
 ---
 
@@ -11,8 +9,7 @@ agent: ux-researcher
 Produire un guide d'entretien structuré et actionnable que le Product Designer utilise pour conduire des interviews utilisateurs semi-directives.
 
 ## Agents consommateurs
-- UX Researcher (pilote — produit le guide)
-- Product Designer (exécute — conduit les interviews)
+UX Researcher  · Product Designer 
 
 ## Prérequis
 - [ ] Plan de recherche validé (`write-research-plan`)

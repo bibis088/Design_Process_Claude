@@ -2,8 +2,6 @@
 name: figma-use-wrapper
 description: "Skill fondateur pour toute écriture sur le canvas Figma. Wrappe figma-use avec les conventions du projet — nomenclature, tokens, grilles mobiles iOS/Android. Obligatoire avant tout skill d'écriture Figma. Exécuté par ui-designer ou design-system-manager."
 argument-hint: "[action à réaliser sur le canvas]"
-disable-model-invocation: false
-context: fork
 agent: ui-designer
 ---
 
@@ -22,8 +20,7 @@ figma-use-wrapper (nos conventions)
 `figma-use` est le skill officiel fourni par Figma qui enseigne à l'agent comment utiliser correctement l'outil `use_figma`. Ce skill le complète avec nos règles projet.
 
 ## Agents consommateurs
-- UI Designer (pilote pour les composants et écrans)
-- Design System Manager (pilote pour tokens et bibliothèque)
+UI Designer  · Design System Manager 
 
 ## Prérequis obligatoires avant toute écriture
 
@@ -124,14 +121,8 @@ Base unit : 8pt/dp
 ```
 
 ## Gestion des erreurs
-
-Si `use_figma` retourne une erreur :
 > ❌ Erreur écriture Figma — vérifier : seat type, permissions sur le fichier, connexion MCP.
-
-Si le composant existe déjà dans la bibliothèque :
 > ⚠️ Composant existant trouvé — réutiliser plutôt que recréer. URL : [lien bibliothèque]
-
-Si les tokens ne sont pas disponibles :
 > ❌ Tokens manquants — lancer d'abord `/setup-figma-tokens [epic-slug]`.
 
 ## Fallback — MCP indisponible ou Dev Seat

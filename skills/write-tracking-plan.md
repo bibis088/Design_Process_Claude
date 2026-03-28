@@ -2,8 +2,6 @@
 name: write-tracking-plan
 description: "Produit le plan de tagage d'une feature — liste des événements analytics à implémenter, avec écran source, propriétés et KPI alimenté. Le PO définit quoi mesurer, l'UX Designer mappe sur les écrans. Exécuté après la Gate 9."
 argument-hint: "[epic-slug]/[feature-slug]"
-disable-model-invocation: false
-context: fork
 agent: product-owner
 ---
 
@@ -28,11 +26,7 @@ Produire le plan de tagage complet d'une feature — document de référence pou
 - [ ] User flows `FLUX-###` disponibles
 
 ## Gestion des erreurs
-
-Si les KPIs ne sont pas définis au cadrage :
 > ❌ KPIs manquants — compléter la section KPIs dans `cadrage.md` avant de produire le plan de tagage.
-
----
 
 ## Processus de génération
 

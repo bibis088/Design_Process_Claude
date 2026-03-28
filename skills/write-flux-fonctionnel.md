@@ -2,8 +2,6 @@
 name: write-flux-fonctionnel
 description: "Produit un flux fonctionnel FLUX-### avec préconditions, postconditions, flux alternatifs et cas d'erreur. Exécuté par le business-analyst."
 argument-hint: "[epic-slug]/[flux-slug]"
-disable-model-invocation: false
-context: fork
 agent: business-analyst
 ---
 
@@ -11,8 +9,7 @@ agent: business-analyst
 Produire un flux fonctionnel `FLUX-###` complet avec préconditions, postconditions, flux alternatifs et cas d'erreur.
 
 ## Agents consommateurs
-- Business Analyst (pilote)
-- Product Owner (contributeur)
+Business Analyst  · Product Owner 
 
 ## Prérequis
 Avant d'utiliser ce skill, vérifier que les éléments suivants sont disponibles :
@@ -104,11 +101,7 @@ Suivre strictement ce format :
 
 
 ## Gestion des erreurs
-
-Si les prérequis ne sont pas remplis :
 > ❌ Prérequis manquant — vérifier les fichiers sources avant de relancer.
-
-Si un fichier source est introuvable via chemin relatif, utiliser Glob avec le pattern `**/specs/$ARGUMENTS/**` pour localiser les fichiers depuis leur chemin absolu.
 
 ## Règles de qualité
 

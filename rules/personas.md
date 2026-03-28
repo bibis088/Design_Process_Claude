@@ -17,8 +17,11 @@ specs/
 
 ### Convention de nommage
 - `PERSONA-###` — numérotation globale au projet
-- Slug descriptif : `PERSONA-001-regular-user`, `PERSONA-002-new-user`
-- Minimum 2 personas par projet : un utilisateur régulier et un nouvel utilisateur
+- Slug descriptif : `PERSONA-001-regular-user`, `PERSONA-002-new-user`, `PERSONA-003-edge-user`
+- Minimum 3 personas par projet :
+  - `regular-user` — utilisateur régulier, cœur de cible
+  - `new-user` — nouvel utilisateur, découverte du produit
+  - `edge-user` — utilisateur aux limites : expert, senior, handicap, connexion dégradée, usage extrême
 
 ---
 

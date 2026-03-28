@@ -2,8 +2,6 @@
 name: write-token
 description: "Crée et documente un token de design sémantique avec implémentation iOS et Android. Exécuté par le design-system-manager."
 argument-hint: "[type]/[token-slug]"
-disable-model-invocation: false
-context: fork
 agent: design-system-manager
 ---
 
@@ -11,8 +9,7 @@ agent: design-system-manager
 Créer et documenter un token de design — sémantique, light/dark mode, avec implémentation iOS (SwiftUI) et Android (Compose).
 
 ## Agents consommateurs
-- Design System Manager (pilote)
-- UI Designer (consommateur — soumet la demande, n'écrit pas le token)
+Design System Manager  · UI Designer 
 
 ## Prérequis
 Avant d'utiliser ce skill, vérifier que les éléments suivants sont disponibles :
@@ -166,11 +163,7 @@ Après validation du Design System Manager, ajouter une entrée dans le changelo
 
 
 ## Gestion des erreurs
-
-Si les prérequis ne sont pas remplis :
 > ❌ Prérequis manquant — vérifier les fichiers sources avant de relancer.
-
-Si un fichier source est introuvable via chemin relatif, utiliser Glob avec le pattern `**/design-system/$ARGUMENTS/**` pour localiser les fichiers depuis leur chemin absolu.
 
 ## Règles de qualité
 

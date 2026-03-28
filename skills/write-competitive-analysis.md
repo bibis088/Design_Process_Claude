@@ -2,8 +2,6 @@
 name: write-competitive-analysis
 description: "Analyse automatique des concurrents directs et indirects — positionnement, fonctionnalités, UX, forces et faiblesses. Collecte via web_search + web_fetch, analyse par le Product Designer. Exécuté par le ux-researcher avant le cadrage."
 argument-hint: "[project-slug]"
-disable-model-invocation: false
-context: fork
 agent: ux-researcher
 ---
 
@@ -11,17 +9,13 @@ agent: ux-researcher
 Collecter et structurer automatiquement les informations sur les concurrents du projet — pour alimenter le cadrage et orienter les décisions de design et de positionnement.
 
 ## Agents consommateurs
-- UX Researcher (pilote — collecte auto)
-- Business Analyst (consommateur — enrichit le cadrage)
-- UX Designer (consommateur — oriente les choix de design)
+UX Researcher  · Business Analyst  · UX Designer 
 
 ## Prérequis
 - [ ] Nom du projet ou secteur d'activité fourni par le Product Designer
 - [ ] Liste initiale de concurrents pressentis (ou à identifier via recherche)
 
 ## Gestion des erreurs
-
-Si les concurrents ne sont pas identifiés :
 > Lancer d'abord une recherche : `web_search "[secteur] app mobile concurrents leaders [année]"`
 
 ## Processus

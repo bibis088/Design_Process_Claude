@@ -2,8 +2,6 @@
 name: write-research-plan
 description: "Produit le plan de recherche utilisateur — méthodes, questions de recherche, profils participants, calendrier. Guide le Product Designer pour recruter et planifier les sessions. Exécuté par le ux-researcher après le brief fonctionnel."
 argument-hint: "[epic-slug]"
-disable-model-invocation: false
-context: fork
 agent: ux-researcher
 ---
 
@@ -11,8 +9,7 @@ agent: ux-researcher
 Structurer le plan de recherche utilisateur depuis les hypothèses du BA — quelles questions valider, quelle méthode, qui recruter, comment planifier.
 
 ## Agents consommateurs
-- UX Researcher (pilote — produit le plan)
-- Product Designer (exécute — recrute et planifie les sessions)
+UX Researcher  · Product Designer 
 
 ## Prérequis
 - [ ] Brief Fonctionnel `specs/$ARGUMENTS/EPIC.md` disponible
@@ -21,8 +18,6 @@ Structurer le plan de recherche utilisateur depuis les hypothèses du BA — que
 - [ ] Gate -1 validée (research stratégique terminé)
 
 ## Gestion des erreurs
-
-Si les prérequis ne sont pas remplis :
 > ❌ Brief ou personas manquants — lancer d'abord `/write-brief-fonctionnel $ARGUMENTS`.
 
 ## Processus

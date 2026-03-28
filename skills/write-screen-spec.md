@@ -2,8 +2,6 @@
 name: write-screen-spec
 description: "Spécifie un écran S-XX avec hiérarchie visuelle, 4 états et accessibilité. Exécuté par le ux-designer."
 argument-hint: "[feature-slug]/[screen-id]-[screen-slug]"
-disable-model-invocation: false
-context: fork
 agent: ux-designer
 ---
 
@@ -11,7 +9,7 @@ agent: ux-designer
 Spécifier un écran détaillé `S-XX-[nom].md` avec hiérarchie visuelle, états, interactions et accessibilité.
 
 ## Agents consommateurs
-- UX Designer (pilote)
+UX Designer 
 
 ## Prérequis
 Avant d'utiliser ce skill, vérifier que les éléments suivants sont disponibles :
@@ -141,11 +139,7 @@ Suivre strictement ce format :
 
 
 ## Gestion des erreurs
-
-Si les prérequis ne sont pas remplis :
 > ❌ Prérequis manquant — vérifier les fichiers sources avant de relancer.
-
-Si un fichier source est introuvable via chemin relatif, utiliser Glob avec le pattern `**/design/$ARGUMENTS/**` pour localiser les fichiers depuis leur chemin absolu.
 
 ## Règles de qualité
 

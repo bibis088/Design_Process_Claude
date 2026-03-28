@@ -2,8 +2,6 @@
 name: write-component-spec
 description: "Spécifie un composant UX — comportements, états et variantes sans valeurs visuelles. Exécuté par le ux-designer."
 argument-hint: "[feature-slug]/[component-slug]"
-disable-model-invocation: false
-context: fork
 agent: ux-designer
 ---
 
@@ -11,7 +9,7 @@ agent: ux-designer
 Spécifier un composant UX — comportements, états, variantes et interactions — sans valeurs visuelles.
 
 ## Agents consommateurs
-- UX Designer (pilote)
+UX Designer 
 
 ## Distinction avec write-component-ui
 | Ce skill | write-component-ui |
@@ -95,11 +93,7 @@ Soyez précis — "partout" n'est pas un usage valide.]
 
 
 ## Gestion des erreurs
-
-Si les prérequis ne sont pas remplis :
 > ❌ Prérequis manquant — vérifier les fichiers sources avant de relancer.
-
-Si un fichier source est introuvable via chemin relatif, utiliser Glob avec le pattern `**/design/$ARGUMENTS/**` pour localiser les fichiers depuis leur chemin absolu.
 
 ## Règles de qualité
 

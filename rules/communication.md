@@ -315,14 +315,15 @@ Le **Product Designer** est le valideur final à chaque phase du process. Son r�
 ---
 
 #### Gate 9 — Validation fonctionnelle Figma
-**Déclenchée après :** `/review-figma-scope` + `/review-tracking-plan` + `/write-functional-doc`
+**Déclenchée après :** `/review-figma-scope` + `/run-user-tests` + `/review-tracking-plan` + `/write-functional-doc`
 **Lot soumis :**
 - Rapport review scope avec verdict Pass/Fail
-- Plan de tagage révisé (couverture événements vs frames, déclencheurs adaptés, nouveaux événements)
+- Rapport tests utilisateur (métriques + observations + enregistrements)
+- Plan de tagage révisé (couverture événements vs frames, déclencheurs adaptés)
 - Documentation fonctionnelle complète
 
-**Question :** "Les frames couvrent-elles le scope EPIC/US/CA ? Le plan de tagage révisé reflète-t-il les choix UI finaux ? La doc fonctionnelle est-elle complète ?"
-**Bloque :** le handoff ne démarre pas sans validation
+**Question :** "Les frames couvrent-elles le scope EPIC/US/CA ? Les tests utilisateur valident-ils l'expérience ? Le plan de tagage est-il aligné ? La doc fonctionnelle est-elle complète ?"
+**Bloque :** le handoff ne démarre pas sans validation — corrections critiques à traiter si identifiées
 
 ---
 

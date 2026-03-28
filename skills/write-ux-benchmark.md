@@ -2,8 +2,6 @@
 name: write-ux-benchmark
 description: "Benchmark automatique des patterns UX/UI du secteur — navigation, onboarding, composants récurrents, conventions d'interaction. Collecte via web_search + web_fetch, analyse par le Product Designer. Exécuté par le ux-researcher avant le cadrage."
 argument-hint: "[project-slug]"
-disable-model-invocation: false
-context: fork
 agent: ux-researcher
 ---
 
@@ -11,9 +9,7 @@ agent: ux-researcher
 Identifier et documenter les patterns UX/UI standards du secteur — ce que les utilisateurs s'attendent à trouver, les conventions qui fonctionnent, et les opportunités de différenciation.
 
 ## Agents consommateurs
-- UX Researcher (pilote — collecte auto)
-- UX Designer (consommateur — oriente les choix de design)
-- UI Designer (consommateur — oriente les choix visuels et composants)
+UX Researcher  · UX Designer  · UI Designer 
 
 ## Prérequis
 - [ ] Secteur d'activité et type d'application identifiés

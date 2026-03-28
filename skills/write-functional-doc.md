@@ -2,8 +2,6 @@
 name: write-functional-doc
 description: "Génère le document fonctionnel complet d'un EPIC — matrice de traçabilité EPIC→FEAT→US→écran Figma, flux fonctionnels avec liens, règles métier, personas validés, glossaire, changelog. Document unique client + Dev. Exécuté par le product-owner après la Gate 9."
 argument-hint: "[epic-slug]"
-disable-model-invocation: false
-context: fork
 agent: product-owner
 ---
 
@@ -11,9 +9,7 @@ agent: product-owner
 Produire le document fonctionnel de référence d'un EPIC — relie toutes les dimensions du projet (fonctionnel, design, Figma, prototype) en un seul document Google Doc exploitable par le client et l'équipe Dev.
 
 ## Agents consommateurs
-- Product Owner (pilote — synthétise)
-- Product Designer (partage au client)
-- Dev iOS / Android (référence d'implémentation)
+Product Owner  · Product Designer 
 
 ## Prérequis
 - [ ] Gate 9 validée — review scope Figma approuvée
@@ -21,11 +17,10 @@ Produire le document fonctionnel de référence d'un EPIC — relie toutes les d
 - [ ] Frames Figma en statut `Ready for dev`
 - [ ] Prototype React disponible (`write-prototype-react`)
 - [ ] Plan de tagage révisé disponible (`review-tracking-plan` — v finale après Gate 8)
+- [ ] Rapport tests utilisateur disponible (`run-user-tests`)
 - [ ] Insights de recherche disponibles (`write-research-insights`)
 
 ## Gestion des erreurs
-
-Si des US ne sont pas encore en statut `Approved` :
 > ⚠️ Document partiel — documenter explicitement les US en attente.
 
 ## Processus de génération

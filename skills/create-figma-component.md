@@ -2,8 +2,6 @@
 name: create-figma-component
 description: "Crée un composant Figma complet avec variants, auto layout, tokens et propriétés — basé sur la stack iOS/Android. Exécuté par le ui-designer via `use_figma`."
 argument-hint: "[feature-slug]/[component-slug]"
-disable-model-invocation: false
-context: fork
 agent: ui-designer
 ---
 
@@ -11,8 +9,7 @@ agent: ui-designer
 Créer un composant Figma réutilisable depuis une spec UX validée — avec états, variants, auto layout, tokens design system et conformité HIG/Material 3.
 
 ## Agents consommateurs
-- UI Designer (pilote — crée le composant)
-- Design System Manager (valideur — valide avant ajout à la bibliothèque DS)
+UI Designer  · Design System Manager 
 
 ## Prérequis
 - [ ] Spec composant UX disponible dans `design/[feature-slug]/ux/`
@@ -23,11 +20,7 @@ Créer un composant Figma réutilisable depuis une spec UX validée — avec ét
 - [ ] MCP Figma connecté
 
 ## Gestion des erreurs
-
-Si les prérequis ne sont pas remplis :
 > ❌ Tokens Figma ou spec UX manquants — configurer les tokens et produire la spec UX avant de créer le composant.
-
-Si MCP Figma n'est pas accessible :
 > ⚠️ MCP Figma indisponible — produire les spécifications détaillées du composant à créer manuellement.
 
 ## Processus de génération

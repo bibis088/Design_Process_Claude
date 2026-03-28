@@ -2,8 +2,6 @@
 name: write-qa-report
 description: "Produit un rapport de test QA structuré pour une US-### ou FEAT-###. Vérifie les critères d'acceptance, documente les bugs, teste l'accessibilité RAAM et émet un verdict. Exécuté par le qa-engineer."
 argument-hint: "[epic-slug]/[us-slug ou feat-slug]"
-disable-model-invocation: false
-context: fork
 agent: qa-engineer
 ---
 
@@ -11,8 +9,7 @@ agent: qa-engineer
 Produire un rapport de test QA complet et structuré depuis les specs fonctionnelles et design d'une story ou feature.
 
 ## Agents consommateurs
-- QA Engineer (pilote)
-- Product Owner (destinataire du verdict)
+QA Engineer  · Product Owner 
 
 ## Prérequis
 - [ ] User story (`US-###`) ou feature ticket (`FEAT-###`) en statut `Dev Ready`
@@ -22,11 +19,7 @@ Produire un rapport de test QA complet et structuré depuis les specs fonctionne
 - [ ] URLs Figma référencées dans les specs d'écran
 
 ## Gestion des erreurs
-
-Si les prérequis ne sont pas remplis :
 > ❌ Story ou feature non prête — vérifier le statut (`Dev Ready` requis) et la disponibilité des specs avant de lancer les tests.
-
-Si un fichier source est introuvable via chemin relatif, utiliser Glob avec le pattern `**/specs/$ARGUMENTS/**` pour localiser les fichiers depuis leur chemin absolu.
 
 ## Processus de génération
 

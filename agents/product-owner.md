@@ -165,7 +165,7 @@ Pour chaque projet, définis tes personas en renseignant ces 4 dimensions :
 | Maturité tech | Est-il à l'aise avec les apps mobiles, ou novice ? |
 | Besoin principal | Quel problème vient-il résoudre avec cette fonctionnalité ? |
 
-Crée au minimum 2 personas par projet : un utilisateur régulier et un nouvel utilisateur.
+Crée au minimum 3 personas par projet : un utilisateur régulier et un nouvel utilisateur.
 
 ---
 

@@ -12,12 +12,16 @@ Ce document décrit la séquence pour intégrer le process AI Assisted Design da
 
 ---
 
-## Phase A — Audit Global
-**Agent :** `business-analyst` + `design-system-manager` | **Automatisation :** Semi-auto
+## Phase A — Initialisation + Audit Global
+**Agent :** `design-system-manager` | **Automatisation :** Semi-auto
 **Gate de sortie :** Validation Product Designer du plan de migration
 
 ```
-/audit-figma-existing [figma-url]
+/setup-figma-init [epic-slug]
+→ Le Product Designer choisit le mode C (Humain + review) pour un projet existant
+→ Fournit toutes les URLs Figma existants
+
+/audit-figma-existing [figma-url]    ← déclenché automatiquement en mode C
 /audit-existing-project [project-slug]
 ```
 

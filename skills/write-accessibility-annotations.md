@@ -2,8 +2,6 @@
 name: write-accessibility-annotations
 description: "Produit les annotations d'accessibilité RAAM pour un écran — labels, ordre de focus, zones tactiles, contrastes — prêtes à intégrer dans Figma et les specs d'écran. Exécuté par le ux-designer."
 argument-hint: "[feature-slug]/[screen-id]-[screen-slug]"
-disable-model-invocation: false
-context: fork
 agent: ux-designer
 ---
 
@@ -11,9 +9,7 @@ agent: ux-designer
 Produire les annotations d'accessibilité RAAM complètes pour un écran spécifique — document de référence pour les annotations Figma et l'implémentation Dev.
 
 ## Agents consommateurs
-- UX Designer (pilote — produit les annotations)
-- UI Designer (consommateur — implémente dans le code)
-- QA Engineer (consommateur — référence de vérification)
+UX Designer  · UI Designer  · QA Engineer 
 
 ## Distinction avec `write-accessibility-spec`
 
@@ -31,11 +27,7 @@ Ce skill est complémentaire — il produit le détail opérationnel d'un écran
 - [ ] `rules/accessibility.md` consulté pour les critères applicables
 
 ## Gestion des erreurs
-
-Si les prérequis ne sont pas remplis :
 > ❌ Spec d'écran manquante — produire d'abord `/write-screen-spec $ARGUMENTS`.
-
-Si un fichier source est introuvable via chemin relatif, utiliser Glob avec le pattern `**/design/$ARGUMENTS/**` pour localiser les fichiers depuis leur chemin absolu.
 
 ## Processus de génération
 

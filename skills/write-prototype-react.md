@@ -2,8 +2,6 @@
 name: write-prototype-react
 description: "Génère un prototype React interactif depuis les frames Figma d'un flow complet — partageable via URL. Deux niveaux selon la phase : cliquable simple (après écrans principaux) ou interactif complet (après écrans secondaires). Exécuté par le ui-designer."
 argument-hint: "[feature-slug]/[flow-slug]"
-disable-model-invocation: false
-context: fork
 agent: ui-designer
 ---
 
@@ -23,8 +21,7 @@ Générer un prototype React web depuis les frames Figma d'un flow complet — p
 **Usage :** présentation finale, validation complète de l'expérience
 
 ## Agents consommateurs
-- UI Designer (pilote — génère le prototype)
-- Product Designer (partage avec le client via URL)
+UI Designer  · Product Designer 
 
 ## Prérequis
 - [ ] Frames Figma du flow disponibles (écrans principaux au minimum)
@@ -32,11 +29,7 @@ Générer un prototype React web depuis les frames Figma d'un flow complet — p
 - [ ] Niveau de fidélité choisi (1 ou 2)
 
 ## Gestion des erreurs
-
-Si `get_design_context` échoue sur des frames trop lourdes :
 > ⚠️ Utiliser `get_metadata` pour la structure puis `get_screenshot` pour le rendu visuel.
-
----
 
 ## Processus de génération
 

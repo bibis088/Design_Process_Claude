@@ -2,8 +2,6 @@
 name: setup-figma-frames
 description: "Crée les frames vides dans Figma nommées selon les US et états, avec grille et auto layout. Demande le contenu réel à intégrer avant de créer. Exécuté par le ui-designer via `use_figma`."
 argument-hint: "[feature-slug]"
-disable-model-invocation: false
-context: fork
 agent: ui-designer
 ---
 
@@ -11,7 +9,7 @@ agent: ui-designer
 Créer toutes les frames vides du projet dans Figma avec la nomenclature correcte, les grilles actives et l'auto layout configuré — prêtes à accueillir les composants et le contenu.
 
 ## Agents consommateurs
-- UI Designer (pilote)
+UI Designer 
 
 ## Prérequis
 - [ ] Navigation map `SCREENS-MAP.md` disponible dans `design/[feature-slug]/`
@@ -21,11 +19,7 @@ Créer toutes les frames vides du projet dans Figma avec la nomenclature correct
 - [ ] MCP Figma connecté
 
 ## Gestion des erreurs
-
-Si les prérequis ne sont pas remplis :
 > ❌ Navigation map ou user flows manquants — lancer d'abord `/write-navigation-map` et `/write-figma-userflow`.
-
-Si MCP Figma n'est pas accessible :
 > ⚠️ MCP Figma indisponible — produire la liste de frames à créer manuellement avec leur nomenclature exacte.
 
 ## Processus de génération

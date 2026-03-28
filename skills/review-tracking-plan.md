@@ -2,8 +2,6 @@
 name: review-tracking-plan
 description: "Vérifie que chaque événement du plan de tagage a un élément visuel correspondant dans les frames Figma, et adapte le plan selon les choix UI réels — nouveaux déclencheurs, événements obsolètes, opportunités non prévues. Exécuté après Gate 8 (tous les écrans)."
 argument-hint: "[epic-slug]/[feature-slug]"
-disable-model-invocation: false
-context: fork
 agent: product-owner
 ---
 
@@ -11,9 +9,7 @@ agent: product-owner
 Aligner le plan de tagage sur la réalité des maquettes UI finalisées — vérifier la couverture, adapter les déclencheurs aux choix visuels et structurels, identifier les nouvelles opportunités de tracking.
 
 ## Agents consommateurs
-- Product Owner (pilote — vérifie la couverture et adapte)
-- UX Designer (contributeur — valide les nouveaux déclencheurs)
-- Product Designer (valideur — approuve les changements en lot Gate 9)
+Product Owner  · UX Designer  · Product Designer 
 
 ## Prérequis
 - [ ] Plan de tagage initial disponible (`specs/$ARGUMENTS/tracking-plan.md`)
@@ -21,14 +17,8 @@ Aligner le plan de tagage sur la réalité des maquettes UI finalisées — vér
 - [ ] Frames Figma accessibles via MCP (`figma-read-design`)
 
 ## Gestion des erreurs
-
-Si le plan de tagage n'existe pas :
 > ❌ Plan de tagage manquant — lancer d'abord `/write-tracking-plan $ARGUMENTS`.
-
-Si les frames Figma ne sont pas accessibles :
 > ⚠️ Utiliser les specs d'écrans `S-XX-[nom].md` comme source de vérification alternative.
-
----
 
 ## Processus
 

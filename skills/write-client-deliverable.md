@@ -3,8 +3,6 @@ name: write-client-deliverable
 description: "Génère un livrable client formaté pour Google Doc ou Google Sheets depuis les documents internes — résumé de cadrage, user stories, rapport QA, release notes. Inclut une section \"Ce qu'on vous demande de valider\". Exécuté par le product-owner."
 argument-hint: "[type] [epic-slug]"
 argument-hint-detail: "types disponibles : cadrage | user-stories | maquettes | prototype | qa | release-notes | functional-doc"
-disable-model-invocation: false
-context: fork
 agent: product-owner
 ---
 
@@ -166,6 +164,11 @@ Ce n'est pas encore le produit final — c'est la version design à valider.
 
 #### Type : `prototype`
 
+> ⚠️ Ce livrable ne doit être partagé qu'après les tests utilisateur et corrections critiques.
+> Mentionner le numéro de cycle dans le document (Cycle 1 / Cycle 2).
+> Après le Cycle 2, toute demande de modification supplémentaire déclenche
+> une décision de scope par le PO et le Product Designer.
+
 ```markdown
 # Prototype interactif — [NomProjet] — [YYYY-MM-DD]
 
@@ -177,6 +180,19 @@ ne sont pas connectées.
 ---
 
 ## Accès aux prototypes
+
+## Cycle de validation contractuel
+> Référence : `specs/[epic-slug]/cadrage.md` — section "Cadre contractuel des itérations"
+
+- Numéro de cycle : [Cycle 1 / Cycle 2 / ...]
+- Cycles contractuels inclus : [N — défini au cadrage]
+- Cycles restants : [N]
+- Date du partage : [YYYY-MM-DD]
+- Délai de réponse client attendu : [N jours ouvrés — défini au cadrage]
+
+⚠️ Si ce partage dépasse le nombre de cycles contractuels :
+→ Informer le client avant d'envoyer
+→ PO + Product Designer décident : appliquer / reporter V2 / avenant
 
 | Parcours | Description | Lien | Niveau |
 |---------|-------------|------|--------|

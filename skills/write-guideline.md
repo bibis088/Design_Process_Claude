@@ -2,8 +2,6 @@
 name: write-guideline
 description: "Rédige une guideline du design system (accessibilité, dark mode, motion) avec exemples. Exécuté par le design-system-manager."
 argument-hint: "[accessibilite|dark-mode|motion]"
-disable-model-invocation: false
-context: fork
 agent: design-system-manager
 ---
 
@@ -11,8 +9,7 @@ agent: design-system-manager
 Rédiger une guideline du design system — accessibilité, dark mode ou motion — avec exemples de bon et mauvais usage.
 
 ## Agents consommateurs
-- Design System Manager (pilote)
-- UX Designer (contributeur — relecture comportementale)
+Design System Manager  · UX Designer 
 
 ## Types de guidelines couverts
 | Type | Fichier | Contenu |
@@ -94,11 +91,7 @@ Pour chaque écran ou composant, vérifier :
 
 
 ## Gestion des erreurs
-
-Si les prérequis ne sont pas remplis :
 > ❌ Prérequis manquant — vérifier les fichiers sources avant de relancer.
-
-Si un fichier source est introuvable via chemin relatif, utiliser Glob avec le pattern `**/design-system/$ARGUMENTS/**` pour localiser les fichiers depuis leur chemin absolu.
 
 ## Règles de qualité
 

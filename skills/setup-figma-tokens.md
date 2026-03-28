@@ -2,8 +2,6 @@
 name: setup-figma-tokens
 description: "Met en place la structure de tokens sémantiques dans Figma Design System — couleurs, typographies, styles de texte, spacing, ombres, motion. Exécuté par le design-system-manager via `use_figma`."
 argument-hint: "[epic-slug]"
-disable-model-invocation: false
-context: fork
 agent: design-system-manager
 ---
 
@@ -11,8 +9,7 @@ agent: design-system-manager
 Initialiser et structurer les tokens de design dans le fichier Figma Design System — depuis les tokens documentés dans `design-system/tokens/` vers les styles et variables Figma.
 
 ## Agents consommateurs
-- Design System Manager (pilote)
-- UI Designer (consommateur — applique les tokens dans les composants et frames)
+Design System Manager  · UI Designer 
 
 ## Prérequis
 - [ ] Fichier Figma Design System créé via `/setup-figma-project $ARGUMENTS`
@@ -22,11 +19,7 @@ Initialiser et structurer les tokens de design dans le fichier Figma Design Syst
 - [ ] MCP Figma connecté
 
 ## Gestion des erreurs
-
-Si les prérequis ne sont pas remplis :
 > ❌ Fichier Design System Figma manquant — lancer d'abord `/setup-figma-project $ARGUMENTS`.
-
-Si MCP Figma n'est pas accessible :
 > ⚠️ MCP Figma indisponible — produire le document de configuration des tokens à appliquer manuellement.
 
 ## Processus de génération
@@ -150,21 +143,81 @@ Via `use_figma`, créer les effets et variables :
 - Ombres : styles d'effet `shadow/card`, `shadow/modal`, `shadow/overlay`
 - Radius : variables `radius/sm → 4`, `radius/md → 8`, `radius/lg → 12`, `radius/xl → 16`
 
-### Étape 6 — Créer les swatches de documentation
+### Étape 6 — Configurer les modes de variables light / dark
+
+Via `use_figma`, sur la collection de variables sémantiques :
+
+```
+Collection : "Semantic"
+Mode 1 : light
+  color/interactive/primary    → [valeur hex light]
+  color/content/primary        → [valeur hex light]
+  color/surface/default        → [valeur hex light]
+  color/feedback/error         → [valeur hex light]
+  [... tous les tokens sémantiques]
+
+Mode 2 : dark
+  color/interactive/primary    → [valeur hex dark — désaturée/plus claire]
+  color/content/primary        → [valeur hex dark]
+  color/surface/default        → [valeur hex dark]
+  color/feedback/error         → [valeur hex dark]
+  [... tous les tokens sémantiques]
+```
+
+Règles dark mode :
+- Jamais d'inversion des couleurs light — utiliser des variantes désaturées
+- Surface dark : fond sombre (ex: `#1C1C1E` iOS / `#121212` Android)
+- Tester le contraste 4.5:1 en dark mode indépendamment du light
+
+### Étape 7 — Créer les Text Styles partagés
+
+Les Text Styles sont distincts des tokens de typographie — ce sont des objets Figma qui permettent l'annotation et le `Ctrl+T`. Via `use_figma` :
+
+```
+iOS Text Styles (dans le fichier Design System) :
+ios/large_title    → SF Pro Display, 34pt, Regular
+ios/title_1        → SF Pro Display, 28pt, Regular
+ios/title_2        → SF Pro Display, 22pt, Regular
+ios/title_3        → SF Pro Display, 20pt, Semibold
+ios/headline       → SF Pro Text, 17pt, Semibold
+ios/body           → SF Pro Text, 17pt, Regular
+ios/callout        → SF Pro Text, 16pt, Regular
+ios/subheadline    → SF Pro Text, 15pt, Regular
+ios/footnote       → SF Pro Text, 13pt, Regular
+ios/caption_1      → SF Pro Text, 12pt, Regular
+ios/caption_2      → SF Pro Text, 11pt, Regular
+
+Android Text Styles :
+android/display_large   → Roboto, 57sp, Regular
+android/display_medium  → Roboto, 45sp, Regular
+android/headline_large  → Roboto, 32sp, Regular
+android/headline_medium → Roboto, 28sp, Regular
+android/title_large     → Roboto, 22sp, Regular
+android/title_medium    → Roboto, 16sp, Medium
+android/title_small     → Roboto, 14sp, Medium
+android/body_large      → Roboto, 16sp, Regular
+android/body_medium     → Roboto, 14sp, Regular
+android/label_large     → Roboto, 14sp, Medium
+android/label_medium    → Roboto, 12sp, Medium
+android/label_small     → Roboto, 11sp, Medium
+```
+
+### Étape 8 — Créer les swatches de documentation
 
 Sur la page `🎨 foundations`, créer une frame de documentation visuelle montrant :
-- Tous les tokens de couleur avec leur valeur light et dark
+- Tous les tokens de couleur avec valeur light ET dark côte à côte
 - L'échelle typographique avec un exemple de texte pour chaque style
 - L'échelle d'espacement avec des rectangles de taille correspondante
+- Un exemple de composant en light et en dark mode
 
 ## Phase de validation — niveau approfondi
 
 Avant de valider ce livrable et de passer à la suite, réponds à ces questions dans l'ordre :
 
-1. Toutes les variables de couleur sémantiques ont-elles un mode Light ET un mode Dark configurés ? (oui / non + tokens manquants)
-2. Les styles de texte iOS et Android sont-ils distincts et correctement nommés `iOS/[nom]` et `Android/[nom]` ? (oui / non)
-3. Les variables d'espacement sont-elles basées sur une unité de 4pt/dp — toutes les valeurs sont-elles multiples de 4 ? (oui / non + valeurs incorrectes)
-4. Les swatches de documentation sont-ils lisibles et couvrent-ils tous les tokens créés ? (oui / non)
+1. Toutes les variables de couleur sémantiques ont-elles un mode `light` ET un mode `dark` configurés avec des valeurs distinctes ? (oui / non + tokens manquants)
+2. Le contraste 4.5:1 est-il respecté en dark mode indépendamment — pas uniquement testé en light ? (oui / non)
+3. Les Text Styles iOS et Android sont-ils créés et nommés `ios/[nom]` et `android/[nom]` — distincts des tokens de variables ? (oui / non)
+4. Les variables d'espacement sont-elles basées sur une unité de 4pt/dp — toutes multiples de 4 ? (oui / non + valeurs incorrectes)
 5. Les tokens Figma correspondent-ils exactement aux tokens documentés dans `design-system/tokens/` — aucune divergence ? (oui / non + divergences)
 
 > Réponds point par point. Si tout est validé, le skill se termine et les prochaines étapes s'affichent.
@@ -176,8 +229,10 @@ Avant de valider ce livrable et de passer à la suite, réponds à ces questions
 ✅ setup-figma-tokens "$ARGUMENTS" terminé
 📁 design-system/tokens/ (référence)
 🎨 Figma Design System → page 🎨 foundations mise à jour
+  - Variables : light + dark modes configurés
+  - Text Styles : iOS + Android créés
 
 Prochaines étapes :
 → /setup-figma-grid $ARGUMENTS
-→ /write-figma-userflow $ARGUMENTS (après grilles)
+→ /setup-figma-library $ARGUMENTS (connexion DS → fichier Projet)
 ```

@@ -2,8 +2,6 @@
 name: write-release-notes
 description: "Génère les release notes orientées utilisateur pour une version — App Store, Play Store et in-app. Exécuté par le product-owner."
 argument-hint: "[version] [epic-slug]"
-disable-model-invocation: false
-context: fork
 agent: product-owner
 ---
 
@@ -11,7 +9,7 @@ agent: product-owner
 Produire les release notes utilisateur pour une version livrée — résumé des nouveautés, corrections et améliorations — dans les formats requis par l'App Store, le Play Store et la communication in-app.
 
 ## Agents consommateurs
-- Product Owner (pilote)
+Product Owner 
 
 ## Prérequis
 - [ ] US-### en statut `Done` pour cette version
@@ -19,8 +17,6 @@ Produire les release notes utilisateur pour une version livrée — résumé des
 - [ ] Version définie (ex: `1.2.0`)
 
 ## Gestion des erreurs
-
-Si les prérequis ne sont pas remplis :
 > ❌ US non terminées ou QA manquant — finaliser la version avant de rédiger les release notes.
 
 ## Processus de génération

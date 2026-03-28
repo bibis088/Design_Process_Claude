@@ -1,140 +1,145 @@
 ---
 name: write-persona
-description: "Crée un persona PERSONA-### archétypal exploitable par le BA, PO et UX Designer. Exécuté par le business-analyst."
-argument-hint: "[epic-slug]/[persona-slug]"
-disable-model-invocation: false
-context: fork
+description: "Génère les 3 personas obligatoires d'un projet en un seul appel — regular-user, new-user et edge-user — adaptés au contexte du projet depuis le cadrage. Exécuté par le business-analyst. Use when user says 'crée les personas', 'génère les personas', 'write-persona', 'personas du projet', or 'qui sont nos utilisateurs'."
+argument-hint: "[epic-slug]"
 agent: business-analyst
 ---
 
 ## Rôle
-Créer un persona `PERSONA-###` complet, archétypal et exploitable par le BA, le PO et le UX Designer.
+Générer les 3 personas obligatoires du projet en un seul appel, chacun adapté à son archétype depuis les réponses au cadrage.
 
 ## Agents consommateurs
-- Business Analyst (pilote — produit lors du Cadrage initial)
-- Product Owner (contributeur — enrichit)
-- UX Designer (contributeur — enrichit)
+Business Analyst  · Product Owner  · UX Designer 
 
 ## Prérequis
-Avant d'utiliser ce skill, vérifier que les éléments suivants sont disponibles :
-- [ ] La question 1 du Cadrage initial a reçu une réponse ("Qui utilise cette fonctionnalité ?")
-- [ ] Le contexte d'usage est connu (mobile, fréquence, environnement)
-- [ ] Au minimum 2 personas sont prévus : un utilisateur régulier et un nouvel utilisateur
+- [ ] Cadrage disponible `specs/$ARGUMENTS/cadrage.md` avec réponse à Q1 (Qui ?)
+- [ ] Contexte d'usage connu (mobile, fréquence, environnement)
+
+## Les 3 archétypes obligatoires
+
+| Slug | Archétype | Ce qu'il représente |
+|------|-----------|---------------------|
+| `regular-user` | Utilisateur régulier | Cœur de cible — usage fréquent, workflows établis |
+| `new-user` | Nouvel utilisateur | Découverte du produit — onboarding, barrières à l'entrée |
+| `edge-user` | Utilisateur aux limites | Contraintes : accessibilité, connexion dégradée, usage extrême, senior ou expert |
 
 ## Processus de génération
 
-### Étape 1 — Identifier l'archétype
-Ne pas inventer un persona de toutes pièces. Le construire depuis les réponses au Cadrage initial :
-1. Identifier le rôle principal de l'utilisateur dans son contexte
-2. Déduire son niveau de maturité tech depuis le contexte d'usage
-3. Formuler ses frustrations depuis les pain points exprimés
-4. Construire sa citation depuis son besoin principal
+### Étape 1 — Lire le cadrage
+Depuis `specs/$ARGUMENTS/cadrage.md`, extraire :
+- Q1 : Qui utilise la fonctionnalité ?
+- Q2 : Quand et dans quel contexte ?
+- Q4 : Quel problème est résolu ?
 
-### Étape 2 — Vérifier l'unicité
-Avant de créer un nouveau persona, vérifier que :
-- Il ne couvre pas les mêmes besoins et comportements qu'un persona existant
-- Si deux personas sont trop similaires → les fusionner en un seul
+### Étape 2 — Générer les 3 personas
 
-### Étape 3 — Rédiger le persona
-Suivre strictement ce format :
+Produire les 3 fichiers dans l'ordre, chacun avec le template ci-dessous **adapté à son archétype** :
+
+---
+
+#### PERSONA-001 — regular-user
+
+**Angle de construction :**
+- Utilisateur qui connaît déjà le domaine — il a des habitudes établies
+- Frustrations sur l'**efficacité et la fluidité** — il veut aller plus vite
+- Fréquence d'usage : quotidien ou hebdomadaire
+- Maturité tech : intermédiaire à avancé
+
+---
+
+#### PERSONA-002 — new-user
+
+**Angle de construction :**
+- Utilisateur qui découvre le produit — premier contact
+- Frustrations sur la **complexité et le manque de guidage**
+- Questions : "Par où je commence ? Est-ce que je fais bien ?"
+- Fréquence d'usage : occasionnel au démarrage
+- Maturité tech : débutant à intermédiaire
+- Enjeux onboarding critiques pour ce persona
+
+---
+
+#### PERSONA-003 — edge-user
+
+**Angle de construction :**
+- Utilisateur aux limites du système — contraintes extrêmes
+- Choisir l'angle le plus pertinent selon le projet :
+  - **Accessibilité** : handicap visuel, moteur ou cognitif
+  - **Technique** : connexion dégradée, vieux device, mode offline
+  - **Démographique** : senior (65+) ou enfant selon le contexte
+  - **Expert** : power user qui pousse les limites du produit
+- Ce persona révèle les failles de robustesse et d'accessibilité
+- Maturité tech : variable selon l'angle choisi
+
+---
+
+### Étape 3 — Template commun (x3)
+
+Appliquer ce template pour chaque persona en adaptant le contenu à l'archétype :
 
 ```markdown
-# [PERSONA-###] Nom du persona
+# [PERSONA-###] [Prénom] — [Archétype]
 
 ## Métadonnées
-- Epic(s) associé(s) : [EPIC-###, EPIC-###]
-- Créé par : Business Analyst
-- Statut : [Draft / In Review / Approved / Archived]
+- Archétype : [regular-user / new-user / edge-user]
+- Epic(s) associé(s) : [EPIC-###]
+- Statut : Draft
 - Date de création : [YYYY-MM-DD]
-- Dernière mise à jour : [YYYY-MM-DD]
 
 ## Identité
 - Prénom fictif : [Prénom neutre et mémorable]
-- Rôle : [ex: Manager terrain, Utilisateur grand public, Administrateur]
-- Âge approximatif : [ex: 35 ans]
+- Rôle : [Rôle dans son quotidien]
+- Âge approximatif : [ex: 34 ans]
 
 ## Contexte d'usage
 | Dimension | Détail |
 |-----------|--------|
-| Quand utilise-t-il le produit ? | [ex: En déplacement, le matin avant réunion] |
-| Device principal | [iOS / Android / Les deux — préciser le modèle type si pertinent] |
-| Fréquence d'usage | [Quotidien / Hebdomadaire / Occasionnel] |
-| Environnement | [ex: En mouvement, connexion instable, multitâche, bruit ambiant] |
-| Contexte émotionnel | [ex: Sous pression, détendu, pressé] |
+| Quand ? | [Moment d'usage] |
+| Device | [iOS / Android / Les deux] |
+| Fréquence | [Quotidien / Hebdomadaire / Occasionnel] |
+| Environnement | [En mouvement / Au bureau / Connexion instable...] |
+| Contexte émotionnel | [Sous pression / Détendu / Pressé] |
 
 ## Maturité technologique
 - Niveau : [Débutant / Intermédiaire / Avancé]
-- Description : [1-2 phrases décrivant son aisance avec les apps mobiles et les outils numériques]
+- Description : [1-2 phrases sur son aisance mobile]
 
 ## Objectifs
-1. [Objectif principal — ce qu'il veut accomplir avec ce produit]
+1. [Objectif principal]
 2. [Objectif secondaire]
-3. [Objectif tertiaire si pertinent]
 
 ## Frustrations actuelles
-- [Frustration principale — pain point que le produit doit résoudre en priorité]
+- [Frustration principale — adaptée à l'archétype]
 - [Frustration secondaire]
-- [Frustration liée au contexte mobile si applicable]
 
 ## Besoins principaux
-| Besoin | Priorité | Type |
-|--------|----------|------|
-| [Besoin fonctionnel 1] | Haute | [Fonctionnel / Émotionnel / Social] |
-| [Besoin fonctionnel 2] | Moyenne | [Fonctionnel / Émotionnel / Social] |
+| Besoin | Priorité |
+|--------|---------|
+| [Besoin 1] | Haute |
+| [Besoin 2] | Moyenne |
 
 ## Citation représentative
-> "[Une phrase à la première personne qui résume son état d'esprit ou son besoin principal.
-> Doit sonner authentique — pas comme un brief marketing.]"
+> "[Phrase à la première personne — authentique, pas marketing]"
 
 ## Ce persona n'est PAS
-- [Archétype exclu pour éviter la confusion avec un autre persona]
-- [ex: "Pas un administrateur système — il n'a pas accès aux paramètres avancés"]
-
-## User stories associées
-| US | Titre | Rôle dans la story |
-|----|-------|--------------------|
-| [US-###] | [Titre] | [Acteur principal / Acteur secondaire] |
+- [Distinction avec PERSONA-001 si nécessaire]
+- [Distinction avec PERSONA-002 si nécessaire]
 ```
 
-### Étape 4 — Valider le cycle de vie
+### Étape 4 — Vérifier la cohérence des 3 personas
 
-| Statut | Responsable | Condition |
-|--------|-------------|-----------|
-| `Draft` | Business Analyst | Créé lors du Cadrage initial |
-| `In Review` | PO + UX Designer | Soumis après le Brief Fonctionnel |
-| `Approved` | PO | Validé, utilisable dans les stories et specs UX |
-| `Archived` | BA | Obsolète, remplacé ou fusionné |
-
-
-## Gestion des erreurs
-
-Si les prérequis ne sont pas remplis :
-> ❌ Prérequis manquant — vérifier les fichiers sources avant de relancer.
-
-Si un fichier source est introuvable via chemin relatif, utiliser Glob avec le pattern `**/specs/$ARGUMENTS/**` pour localiser les fichiers depuis leur chemin absolu.
-
-## Règles de qualité
-
-- Un persona est un **archétype**, jamais une personne réelle
-- La citation doit être **à la première personne** et sonner naturelle
-- La section "Ce persona n'est PAS" est obligatoire si plusieurs personas coexistent
-- Minimum 2 personas par projet — un utilisateur régulier et un nouvel utilisateur
-- Un persona `Approved` peut être partagé entre plusieurs épics du même projet
-- Si deux personas ont les mêmes besoins et comportements → fusionner obligatoirement
-
-## Chemin de fichier
-```
-specs/[epic-slug]/personas/PERSONA-###-[slug].md
-```
-
+Après génération, vérifier :
+- Les 3 personas couvrent des besoins et comportements distincts — pas de doublon
+- La citation de chacun reflète bien son archétype
+- L'edge-user est suffisamment différent pour apporter une valeur réelle au projet
 
 ## Phase de validation — niveau standard
 
 Avant de passer au skill suivant, réponds à ces questions :
 
-1. Ce persona est-il suffisamment distinct des personas existants pour justifier sa création ? (oui / fusionner avec PERSONA-###)
-2. La citation représentative sonne-t-elle naturelle — comme une vraie phrase d'utilisateur ? (oui / à reformuler)
-3. La section 'Ce persona n'est PAS' évite-t-elle toute confusion avec les autres personas du projet ? (oui / non)
+1. Les 3 personas sont-ils suffisamment distincts — aucun doublon de besoins ou comportements ? (oui / fusionner si non)
+2. Chaque citation sonne-t-elle naturelle à la première personne ? (oui / reformuler)
+3. L'edge-user est-il pertinent par rapport au contexte du projet — l'angle choisi est-il justifié ? (oui / non + ajuster l'angle)
 
 > Réponds point par point. Si tout est validé, le skill se termine et les prochaines étapes s'affichent.
 > Si un point nécessite une correction, le skill reprend depuis l'étape concernée.
@@ -142,10 +147,12 @@ Avant de passer au skill suivant, réponds à ces questions :
 ## Résumé de fin d'exécution
 
 ```
-✅ write-persona "$ARGUMENTS" terminé
-📁 specs/$ARGUMENTS/personas/PERSONA-###-[slug].md
+✅ write-persona "$ARGUMENTS" terminé — 3 personas générés
+📁 specs/$ARGUMENTS/personas/PERSONA-001-regular-user.md
+📁 specs/$ARGUMENTS/personas/PERSONA-002-new-user.md
+📁 specs/$ARGUMENTS/personas/PERSONA-003-edge-user.md
 
 Prochaines étapes :
 → /write-brief-fonctionnel $ARGUMENTS
-→ /review-dod PERSONA-###
+→ /review-dod PERSONA
 ```

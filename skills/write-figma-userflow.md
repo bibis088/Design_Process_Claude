@@ -2,8 +2,6 @@
 name: write-figma-userflow
 description: "Génère les user flows visuels dans Figma depuis les FLUX-### — permet au UI Designer de comprendre visuellement les parcours attendus. Exécuté par le ux-designer via `use_figma`."
 argument-hint: "[feature-slug]/[flux-slug]"
-disable-model-invocation: false
-context: fork
 agent: ux-designer
 ---
 
@@ -11,9 +9,7 @@ agent: ux-designer
 Traduire un flux fonctionnel textuel (`FLUX-###`) en user flow visuel dans Figma — diagramme de navigation avec écrans miniatures, états et transitions — sur la page `🗺️ user_flows` du fichier Projet.
 
 ## Agents consommateurs
-- UX Designer (pilote — produit le flow visuel)
-- UI Designer (consommateur — comprend le parcours avant de créer les écrans)
-- Product Owner (consommateur — valide la conformité fonctionnelle)
+UX Designer  · UI Designer  · Product Owner 
 
 ## Prérequis
 - [ ] Flux fonctionnel `FLUX-###` disponible dans `specs/[epic-slug]/` en statut `Approved`
@@ -23,11 +19,7 @@ Traduire un flux fonctionnel textuel (`FLUX-###`) en user flow visuel dans Figma
 - [ ] MCP Figma connecté
 
 ## Gestion des erreurs
-
-Si les prérequis ne sont pas remplis :
 > ❌ Flux fonctionnel ou fichier Figma manquant — lancer d'abord `/write-flux-fonctionnel` et `/setup-figma-project`.
-
-Si MCP Figma n'est pas accessible :
 > ⚠️ MCP Figma indisponible — produire le diagramme de flow en format texte ASCII à transmettre au designer.
 
 ## Processus de génération

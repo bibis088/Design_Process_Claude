@@ -2,8 +2,6 @@
 name: process-watch
 description: "Veille hebdomadaire automatique sur les mises à jour des référentiels — RAAM, Apple HIG, Material Design 3, MCP Figma, Claude/Anthropic. Identifie l'impact sur les agents, rules et skills. Exécuté par le business-analyst."
 argument-hint: "[YYYY-MM-DD]"
-disable-model-invocation: false
-context: fork
 agent: business-analyst
 ---
 
@@ -24,8 +22,6 @@ Hebdomadaire — à déclencher chaque semaine.
 | Claude / Anthropic | https://www.anthropic.com/news | Nouvelles versions de modèles, nouvelles capacités |
 
 ## Gestion des erreurs
-
-Si une source est inaccessible :
 > ⚠️ Source inaccessible — documenter dans le rapport et réessayer la semaine suivante.
 
 ## Processus de veille

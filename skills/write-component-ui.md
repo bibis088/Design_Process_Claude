@@ -2,8 +2,6 @@
 name: write-component-ui
 description: "Implémente un composant UI natif SwiftUI + Compose depuis une spec UX validée. Exécuté par le ui-designer."
 argument-hint: "[feature-slug]/[component-slug]"
-disable-model-invocation: false
-context: fork
 agent: ui-designer
 ---
 
@@ -11,7 +9,7 @@ agent: ui-designer
 Implémenter un composant UI natif iOS (SwiftUI) et Android (Compose) depuis une spec UX validée, en respectant les conventions du design system.
 
 ## Agents consommateurs
-- UI Designer (pilote)
+UI Designer 
 
 ## Prérequis
 Avant d'utiliser ce skill, vérifier que les éléments suivants sont disponibles :
@@ -145,11 +143,7 @@ Avant de finaliser, vérifier :
 
 
 ## Gestion des erreurs
-
-Si les prérequis ne sont pas remplis :
 > ❌ Prérequis manquant — vérifier les fichiers sources avant de relancer.
-
-Si un fichier source est introuvable via chemin relatif, utiliser Glob avec le pattern `**/design/$ARGUMENTS/**` pour localiser les fichiers depuis leur chemin absolu.
 
 ## Chemin de fichier
 ```

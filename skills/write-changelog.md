@@ -2,8 +2,6 @@
 name: write-changelog
 description: "Rédige une entrée de changelog MAJOR.MINOR.PATCH pour le design system. Exécuté par le design-system-manager."
 argument-hint: "[version] [type: MAJOR|MINOR|PATCH]"
-disable-model-invocation: false
-context: fork
 agent: design-system-manager
 ---
 
@@ -11,9 +9,7 @@ agent: design-system-manager
 Rédiger une entrée de changelog selon la convention MAJOR.MINOR.PATCH — pour le design system et les specs.
 
 ## Agents consommateurs
-- Design System Manager (pilote — pour le design system)
-- Business Analyst (contributeur — pour les specs)
-- Product Owner (contributeur — pour les specs)
+Design System Manager  · Business Analyst  · Product Owner 
 
 ## Convention de versioning
 
@@ -79,11 +75,7 @@ Pour tout changement MAJOR, notifier explicitement :
 
 
 ## Gestion des erreurs
-
-Si les prérequis ne sont pas remplis :
 > ❌ Prérequis manquant — vérifier les fichiers sources avant de relancer.
-
-Si un fichier source est introuvable via chemin relatif, utiliser Glob avec le pattern `**/design-system/$ARGUMENTS/**` pour localiser les fichiers depuis leur chemin absolu.
 
 ## Règles de qualité
 

@@ -4,11 +4,42 @@ Ce document décrit la séquence complète pour démarrer un projet from scratch
 
 ---
 
+## Point d'entrée — obligatoire
+
+```
+/project-init [project-slug]
+```
+
+Le Product Designer définit dès le départ :
+- Contexte du projet (nom, secteur, type, client)
+- Mode d'exécution pour chacun des 6 groupes d'étapes (Auto / Manuel / Mixte)
+
+Un **checkpoint** est affiché entre chaque groupe pour adapter les choix si nécessaire.
+En mode Manuel, le skill fournit le brief complet : liste des livrables, éléments indispensables, objectifs et DoD.
+
+Produit : `specs/[project-slug]/project-config.md`
+
+---
+
 ## Pré-requis avant de démarrer
 - [ ] Nom du projet et secteur d'activité connus
 - [ ] Client ou brief initial disponible
 - [ ] MCP Figma connecté
 - [ ] Accès web disponible (web_search + web_fetch)
+
+---
+
+## Phase Discovery — Interviews de découverte (en parallèle)
+**Agent :** `ux-researcher` | **Automatisation :** Semi-auto
+**Peut démarrer en même temps que le research stratégique**
+
+```
+/write-discovery-interview [project-slug]
+```
+
+**Livrables :**
+- `specs/[project-slug]/research/discovery-interviews.md`
+- Vocabulaire → BA (glossaire) | Opportunités V2+ → PO (backlog)
 
 ---
 
@@ -35,14 +66,14 @@ Ce document décrit la séquence complète pour démarrer un projet from scratch
 
 ```
 /write-cadrage [epic-slug]
-/write-persona [epic-slug]/regular-user
-/write-persona [epic-slug]/new-user
+/write-persona [epic-slug]  ← génère les 3 personas en un seul appel
 ```
 
 **Livrables :**
 - `specs/[epic-slug]/cadrage.md`
 - `specs/[epic-slug]/personas/PERSONA-001-regular-user.md`
 - `specs/[epic-slug]/personas/PERSONA-002-new-user.md`
+- `specs/[epic-slug]/personas/PERSONA-003-edge-user.md`
 
 **⚠️ Product Designer :** Valider la stack technique et le périmètre V1
 
@@ -175,10 +206,15 @@ Le Product Designer :
 
 ```
 /write-accessibility-annotations [feature-slug]/[screen-id]  ← × N
-/write-prototype-react [feature-slug]/[flow-slug]    ← Niveau 1
+/setup-figma-prototype [feature-slug]/[flow-slug]    ← connexions prototype natif Figma
+/write-prototype-react [feature-slug]/[flow-slug]    ← prototype HTML standalone (Niveau 1)
 ```
 
 **📤 Livrable client :** `/write-client-deliverable prototype [epic-slug]`
+
+> ⚠️ Partager UNIQUEMENT après tests utilisateur (Phase 8b) + corrections critiques.
+> Maximum 2 cycles de retours client. Si cycle 2 insuffisant :
+> PO + Product Designer décident — appliquer / reporter V2 / rejeter.
 
 ---
 
@@ -195,9 +231,32 @@ Le Product Designer :
 
 ---
 
-## Phase 8b — Révision plan de tagage
-**Agent :** `product-owner` | **Automatisation :** Auto via MCP Figma
+## Phase 8b — Tests utilisateur sur UI finale
+**Agent :** `ux-researcher` + Product Designer | **Automatisation :** Mixte
 **Déclenchée après :** Gate 8
+
+```
+/write-user-test-scenarios [epic-slug]/[feature-slug]
+→ Scénarios depuis flux + frames Figma finalisées
+
+← Product Designer conduit les sessions avec participants →
+← Enregistrements audio/vidéo sur Drive →
+
+/run-user-tests [epic-slug]/[feature-slug]
+→ Partie auto : métriques prototype + analytics
+→ Synthèse : rapport consolidé + timecodes enregistrements
+```
+
+**Livrables :**
+- `specs/[epic-slug]/[feature-slug]/research/user-test-scenarios.md`
+- `specs/[epic-slug]/[feature-slug]/research/user-test-report.md`
+- `sessions/[feature-slug]/[date]/*.mp4` (Drive)
+
+---
+
+## Phase 8c — Révision plan de tagage
+**Agent :** `product-owner` | **Automatisation :** Auto via MCP Figma
+**Déclenchée après :** Phase 8b
 
 ```
 /review-tracking-plan [epic-slug]/[feature-slug]

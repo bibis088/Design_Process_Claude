@@ -2,8 +2,6 @@
 name: write-regles-metier
 description: "Formalise une matrice de règles métier RB-### exploitable par PO, Dev et QA. Exécuté par le business-analyst."
 argument-hint: "[epic-slug]"
-disable-model-invocation: false
-context: fork
 agent: business-analyst
 ---
 
@@ -11,8 +9,7 @@ agent: business-analyst
 Formaliser une matrice de règles métier `RB-###` exploitable par le PO, le Dev et le QA.
 
 ## Agents consommateurs
-- Business Analyst (pilote)
-- Product Owner (contributeur)
+Business Analyst  · Product Owner 
 
 ## Prérequis
 - [ ] Les 6 questions du Cadrage initial ont reçu une réponse
@@ -75,11 +72,7 @@ Chaque règle doit avoir :
 
 
 ## Gestion des erreurs
-
-Si les prérequis ne sont pas remplis :
 > ❌ Prérequis manquant — vérifier les fichiers sources avant de relancer.
-
-Si un fichier source est introuvable via chemin relatif, utiliser Glob avec le pattern `**/specs/$ARGUMENTS/**` pour localiser les fichiers depuis leur chemin absolu.
 
 ## Règles de qualité
 

@@ -2,8 +2,6 @@
 name: write-user-story
 description: "Génère une user story US-### complète avec critères d'acceptance, règles métier et DoD. Exécuté par le product-owner."
 argument-hint: "[epic-slug]/[story-slug]"
-disable-model-invocation: false
-context: fork
 agent: product-owner
 ---
 
@@ -11,8 +9,7 @@ agent: product-owner
 Générer une user story `US-###` complète, testable et prête pour le backlog.
 
 ## Agents consommateurs
-- Product Owner (pilote)
-- Business Analyst (contributeur)
+Product Owner  · Business Analyst 
 
 ## Prérequis
 Avant d'utiliser ce skill, vérifier que les éléments suivants sont disponibles :
@@ -117,11 +114,7 @@ Si un critère échoue → retravailler la story avant de la soumettre.
 
 
 ## Gestion des erreurs
-
-Si les prérequis ne sont pas remplis :
 > ❌ Prérequis manquant — vérifier les fichiers sources avant de relancer.
-
-Si un fichier source est introuvable via chemin relatif, utiliser Glob avec le pattern `**/specs/$ARGUMENTS/**` pour localiser les fichiers depuis leur chemin absolu.
 
 ## Règles de qualité des critères d'acceptance
 

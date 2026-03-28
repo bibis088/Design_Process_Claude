@@ -2,8 +2,6 @@
 name: write-usability-test
 description: "Produit le protocole de test d'utilisabilité et le template de rapport. Guide le Product Designer pour tester les maquettes UX avec de vrais utilisateurs. Exécuté par le ux-researcher après les maquettes UX."
 argument-hint: "[feature-slug]"
-disable-model-invocation: false
-context: fork
 agent: ux-researcher
 ---
 
@@ -11,9 +9,7 @@ agent: ux-researcher
 Produire le protocole de test d'utilisabilité et le template de rapport pour tester les maquettes UX avec de vrais utilisateurs — avant la direction artistique et la création des écrans UI.
 
 ## Agents consommateurs
-- UX Researcher (pilote — produit le protocole)
-- Product Designer (exécute — conduit les tests)
-- UX Designer (consommateur — intègre les corrections dans les specs)
+UX Researcher  · Product Designer  · UX Designer 
 
 ## Prérequis
 - [ ] Maquettes UX disponibles dans Figma (user flows visuels + specs d'écran)

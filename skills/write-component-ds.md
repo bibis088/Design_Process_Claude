@@ -2,8 +2,6 @@
 name: write-component-ds
 description: "Documente un composant dans le design system — référence partagée UX, UI et Dev. Exécuté par le design-system-manager."
 argument-hint: "[component-slug]"
-disable-model-invocation: false
-context: fork
 agent: design-system-manager
 ---
 
@@ -11,7 +9,7 @@ agent: design-system-manager
 Documenter un composant dans le design system — référence partagée entre UX Designer, UI Designer et Devs.
 
 ## Agents consommateurs
-- Design System Manager (pilote)
+Design System Manager 
 
 ## Distinction avec write-component-spec et write-component-ui
 | write-component-spec | write-component-ds | write-component-ui |
@@ -113,11 +111,7 @@ Voir : design/[feature]/ui/[NomComposant].kt
 
 
 ## Gestion des erreurs
-
-Si les prérequis ne sont pas remplis :
 > ❌ Prérequis manquant — vérifier les fichiers sources avant de relancer.
-
-Si un fichier source est introuvable via chemin relatif, utiliser Glob avec le pattern `**/design-system/$ARGUMENTS/**` pour localiser les fichiers depuis leur chemin absolu.
 
 ## Règles de qualité
 

@@ -2,8 +2,6 @@
 name: write-navigation-map
 description: "Produit le SCREENS-MAP.md — vue globale de tous les écrans et connexions d'une feature. Exécuté par le ux-designer."
 argument-hint: "[feature-slug]"
-disable-model-invocation: false
-context: fork
 agent: ux-designer
 ---
 
@@ -11,7 +9,7 @@ agent: ux-designer
 Produire le `SCREENS-MAP.md` d'une feature — vue d'ensemble structurelle de tous les écrans et de leurs connexions.
 
 ## Agents consommateurs
-- UX Designer (pilote)
+UX Designer 
 
 ## Distinction avec les autres documents de flux
 
@@ -125,11 +123,7 @@ Avant de soumettre en revue :
 
 
 ## Gestion des erreurs
-
-Si les prérequis ne sont pas remplis :
 > ❌ Prérequis manquant — vérifier les fichiers sources avant de relancer.
-
-Si un fichier source est introuvable via chemin relatif, utiliser Glob avec le pattern `**/design/$ARGUMENTS/**` pour localiser les fichiers depuis leur chemin absolu.
 
 ## Règles de qualité
 

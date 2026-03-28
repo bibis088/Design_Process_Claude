@@ -2,8 +2,6 @@
 name: audit-figma-existing
 description: "Revue complète d'un fichier Figma existant avant intégration du process — écrans, design system, composants, tokens, sémantique, nomenclature, auto layout, accessibilité, dark mode, Code Connect. Produit un rapport scoré avec plan de correction priorisé. Exécuté par le design-system-manager."
 argument-hint: "[figma-url]"
-disable-model-invocation: false
-context: fork
 agent: design-system-manager
 ---
 
@@ -11,9 +9,7 @@ agent: design-system-manager
 Auditer de façon exhaustive un fichier Figma existant avant d'y intégrer le process — identifier les écarts avec `rules/figma.md`, scorer chaque dimension, et produire un plan de correction P1/P2/P3.
 
 ## Agents consommateurs
-- Design System Manager (pilote — conduit l'audit)
-- UX Designer (contributeur — valide la partie écrans/flows)
-- UI Designer (contributeur — valide la partie composants)
+Design System Manager  · UX Designer  · UI Designer 
 
 ## Prérequis
 - [ ] URL du fichier Figma existant fournie par le Product Designer
@@ -22,14 +18,8 @@ Auditer de façon exhaustive un fichier Figma existant avant d'y intégrer le pr
 - [ ] Validation humaine pour démarrer l'audit
 
 ## Gestion des erreurs
-
-Si le fichier est inaccessible :
 > ❌ Fichier Figma inaccessible — vérifier les permissions de partage et l'URL.
-
-Si le fichier est trop volumineux pour `get_design_context` :
 > ⚠️ Fichier volumineux — utiliser `get_metadata` page par page, puis `get_design_context` sur les frames échantillonnées.
-
----
 
 ## Processus d'audit
 

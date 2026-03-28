@@ -2,8 +2,6 @@
 name: write-onboarding-spec
 description: "Spécifie le parcours d'onboarding in-app — walkthroughs, tooltips de découverte, écrans d'introduction — pour les nouveaux utilisateurs. Exécuté par le ux-designer."
 argument-hint: "[epic-slug]"
-disable-model-invocation: false
-context: fork
 agent: ux-designer
 ---
 
@@ -11,9 +9,7 @@ agent: ux-designer
 Produire la spec complète du parcours d'onboarding pour les nouveaux utilisateurs — depuis le premier lancement jusqu'à la première action réussie.
 
 ## Agents consommateurs
-- UX Designer (pilote)
-- UI Designer (consommateur — crée les écrans dans Figma)
-- PO (consommateur — valide la cohérence avec les US)
+UX Designer  · UI Designer  · PO 
 
 ## Prérequis
 - [ ] Persona nouvel utilisateur disponible (`PERSONA-###-new-user`)
@@ -21,9 +17,7 @@ Produire la spec complète du parcours d'onboarding pour les nouveaux utilisateu
 - [ ] Direction artistique définie (pour cohérence du ton)
 
 ## Gestion des erreurs
-
-Si les prérequis ne sont pas remplis :
-> ❌ Persona nouvel utilisateur manquant — lancer d'abord `/write-persona $ARGUMENTS/new-user`.
+> ❌ Personas manquants — lancer d'abord `/write-persona $ARGUMENTS` (génère les 3 personas).
 
 ## Processus de génération
 

@@ -2,8 +2,6 @@
 name: setup-figma-grid
 description: "Définit les grilles et formats de frames dans Figma selon la stack iOS/Android — colonnes, gouttières, marges, safe areas. Exécuté par le design-system-manager via `use_figma`."
 argument-hint: "[epic-slug]"
-disable-model-invocation: false
-context: fork
 agent: design-system-manager
 ---
 
@@ -11,8 +9,7 @@ agent: design-system-manager
 Créer les frames de base avec les grilles correctes pour iOS et Android, et les mettre à disposition dans le fichier Design System comme référence pour l'UI Designer.
 
 ## Agents consommateurs
-- Design System Manager (pilote)
-- UI Designer (consommateur — utilise ces frames comme base pour tous les écrans)
+Design System Manager  · UI Designer 
 
 ## Prérequis
 - [ ] Fichier Figma Design System créé et tokens configurés
@@ -20,11 +17,7 @@ Créer les frames de base avec les grilles correctes pour iOS et Android, et les
 - [ ] `rules/figma.md` consulté pour les valeurs de grille
 
 ## Gestion des erreurs
-
-Si les prérequis ne sont pas remplis :
 > ❌ Tokens Figma non configurés — lancer d'abord `/setup-figma-tokens $ARGUMENTS`.
-
-Si MCP Figma n'est pas accessible :
 > ⚠️ MCP Figma indisponible — produire les spécifications de grille à appliquer manuellement.
 
 ## Processus de génération

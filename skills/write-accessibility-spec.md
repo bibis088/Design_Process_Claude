@@ -2,8 +2,6 @@
 name: write-accessibility-spec
 description: "Produit la spec d'accessibilité RAAM d'une feature — critères applicables, annotations par écran, checklist de conformité niveau A et AA. Exécuté par le ux-designer en coordination avec le qa-engineer."
 argument-hint: "[feature-slug]"
-disable-model-invocation: false
-context: fork
 agent: ux-designer
 ---
 
@@ -11,9 +9,7 @@ agent: ux-designer
 Produire la spécification d'accessibilité RAAM complète d'une feature — critères applicables, annotations écran par écran, checklist de conformité niveau A (obligatoire) et AA (cible).
 
 ## Agents consommateurs
-- UX Designer (pilote — produit la spec)
-- QA Engineer (consommateur — utilise comme référence de vérification)
-- UI Designer (consommateur — implémente les annotations)
+UX Designer  · QA Engineer  · UI Designer 
 
 ## Référentiel
 RAAM — Référentiel d'Accessibilité des Applications Mobiles
@@ -30,11 +26,7 @@ Consulter `rules/accessibility.md` pour le détail complet des critères.
 - [ ] `rules/accessibility.md` consulté avant de démarrer
 
 ## Gestion des erreurs
-
-Si les prérequis ne sont pas remplis :
 > ❌ Specs d'écran ou navigation map manquantes — produire d'abord `/write-navigation-map $ARGUMENTS` et `/write-screen-spec $ARGUMENTS/[screen-id]`.
-
-Si un fichier source est introuvable via chemin relatif, utiliser Glob avec le pattern `**/design/$ARGUMENTS/**` pour localiser les fichiers depuis leur chemin absolu.
 
 ## Processus de génération
 

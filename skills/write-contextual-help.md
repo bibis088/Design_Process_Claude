@@ -2,8 +2,6 @@
 name: write-contextual-help
 description: "Spécifie l'aide contextuelle d'une feature — empty states, messages d'erreur explicites et labels d'action — intégrée directement dans les specs d'écran. Exécuté par le ux-designer."
 argument-hint: "[feature-slug]"
-disable-model-invocation: false
-context: fork
 agent: ux-designer
 ---
 
@@ -11,17 +9,13 @@ agent: ux-designer
 Produire les textes d'aide contextuelle pour chaque écran d'une feature — messages d'erreur, états vides, tooltips inline — directement exploitables par le UI Designer et le Dev.
 
 ## Agents consommateurs
-- UX Designer (pilote)
-- UI Designer (consommateur — intègre dans les frames)
-- Dev (consommateur — implémente les strings)
+UX Designer  · UI Designer  · Dev 
 
 ## Prérequis
 - [ ] Specs d'écran `S-XX-[nom].md` disponibles dans `./design/[feature-slug]/ux/screens/`
 - [ ] User stories et critères d'acceptance disponibles
 
 ## Gestion des erreurs
-
-Si les prérequis ne sont pas remplis :
 > ❌ Specs d'écran manquantes — lancer d'abord `/write-screen-spec $ARGUMENTS`.
 
 ## Processus de génération

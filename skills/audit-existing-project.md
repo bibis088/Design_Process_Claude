@@ -2,8 +2,6 @@
 name: audit-existing-project
 description: "Audite un projet existant — specs, Figma, codebase — avant d'intégrer ce process. Identifie les écarts, les manques et produit un plan de migration. Exécuté par le business-analyst en coordination avec l'humain."
 argument-hint: "[project-slug]"
-disable-model-invocation: false
-context: fork
 agent: business-analyst
 ---
 
@@ -11,9 +9,7 @@ agent: business-analyst
 Évaluer l'état d'un projet existant avant d'y intégrer ce process — identifier ce qui existe, ce qui manque, ce qui est en conflit, et produire un plan de migration progressif.
 
 ## Agents consommateurs
-- Business Analyst (pilote — audite les specs)
-- UX Designer (contributeur — audite le Figma)
-- Design System Manager (contributeur — audite les tokens et composants)
+Business Analyst  · UX Designer  · Design System Manager 
 
 ## Prérequis
 - [ ] Accès aux specs existantes (fichiers, Notion, Confluence, etc.)
@@ -21,8 +17,6 @@ agent: business-analyst
 - [ ] Validation humaine pour démarrer l'audit
 
 ## Gestion des erreurs
-
-Si les sources sont inaccessibles :
 > ❌ Sources inaccessibles — demander au Product Designer de partager les accès avant de continuer.
 
 ## Processus d'audit

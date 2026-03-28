@@ -2,8 +2,6 @@
 name: review-figma-scope
 description: "Vérifie la conformité des écrans Figma et prototypes selon le scope fonctionnel — EPIC, MVP, critères d'acceptance. Exécuté par le product-owner via `use_figma`."
 argument-hint: "[epic-slug]/[feature-slug]"
-disable-model-invocation: false
-context: fork
 agent: product-owner
 ---
 
@@ -11,7 +9,7 @@ agent: product-owner
 Auditer les frames Figma d'une feature pour vérifier qu'elles couvrent exactement le scope fonctionnel défini — ni plus, ni moins — et que les critères d'acceptance sont visuellement satisfaits.
 
 ## Agents consommateurs
-- Product Owner (pilote)
+Product Owner 
 
 ## Prérequis
 - [ ] Frames Figma créées et peuplées de contenu
@@ -20,8 +18,6 @@ Auditer les frames Figma d'une feature pour vérifier qu'elles couvrent exacteme
 - [ ] MCP Figma connecté
 
 ## Gestion des erreurs
-
-Si les prérequis ne sont pas remplis :
 > ❌ Frames Figma ou specs fonctionnelles manquantes — s'assurer que `/setup-figma-frames` et `/write-user-story` ont été exécutés.
 
 ## Processus de vérification

@@ -2,8 +2,6 @@
 name: write-ds-documentation
 description: "Génère la documentation web du design system pour un composant — contexte d'utilisation, cas principaux, cas dégradés, utilisations interdites, visualisation des tokens appliqués (spacing, couleurs, typo). Section code réservée pour la phase de développement. Exécuté par le design-system-manager."
 argument-hint: "[component-slug]"
-disable-model-invocation: false
-context: fork
 agent: design-system-manager
 ---
 
@@ -11,9 +9,7 @@ agent: design-system-manager
 Produire la page de documentation web d'un composant du design system — exploitable directement comme page HTML standalone ou intégrable dans un site de documentation (Storybook, Zeroheight, Notion, etc.).
 
 ## Agents consommateurs
-- Design System Manager (pilote — produit la documentation)
-- UI Designer (consommateur — référence lors de l'implémentation)
-- Dev iOS / Android (consommateur — section code alimentée en phase Dev)
+Design System Manager  · UI Designer 
 
 ## Prérequis
 - [ ] Composant Figma créé et publié dans la bibliothèque DS

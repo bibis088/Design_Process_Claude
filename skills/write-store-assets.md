@@ -2,8 +2,6 @@
 name: write-store-assets
 description: "Prépare les assets nécessaires pour la publication sur l'App Store et le Play Store — icône, bannière Android, screenshots smartphone et tablet. Exécuté par le ui-designer via `use_figma`."
 argument-hint: "[epic-slug]"
-disable-model-invocation: false
-context: fork
 agent: ui-designer
 ---
 
@@ -11,7 +9,7 @@ agent: ui-designer
 Créer et exporter tous les assets visuels requis pour soumettre l'application sur l'App Store (iOS) et le Play Store (Android) — formats, tailles et contenus conformes aux exigences des stores.
 
 ## Agents consommateurs
-- UI Designer (pilote)
+UI Designer 
 
 ## Prérequis
 - [ ] Handoff Figma terminé et validé (`write-figma-handoff`)
@@ -21,8 +19,6 @@ Créer et exporter tous les assets visuels requis pour soumettre l'application s
 - [ ] MCP Figma connecté
 
 ## Gestion des erreurs
-
-Si les prérequis ne sont pas remplis :
 > ❌ Handoff non terminé — compléter `/write-figma-handoff` avant de préparer les assets store.
 
 ## Processus de génération

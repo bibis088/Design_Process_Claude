@@ -2,8 +2,6 @@
 name: figma-code-connect
 description: "Connecte les composants Figma à leurs implémentations SwiftUI et Jetpack Compose via Code Connect. Permet aux développeurs de naviguer de Figma Dev Mode vers le code source. Exécuté par le ui-designer."
 argument-hint: "[feature-slug]"
-disable-model-invocation: false
-context: fork
 agent: ui-designer
 ---
 
@@ -18,8 +16,7 @@ Sans Code Connect, les développeurs en Dev Mode voient les composants Figma mai
 - `get_design_context` retourne les implémentations réelles plutôt que du code généré
 
 ## Agents consommateurs
-- UI Designer (pilote — établit les connexions)
-- Dev iOS / Android (consommateur — navigue de Figma vers le code)
+UI Designer 
 
 ## Prérequis
 - [ ] Composants Figma créés et publiés dans la bibliothèque DS
@@ -28,11 +25,7 @@ Sans Code Connect, les développeurs en Dev Mode voient les composants Figma mai
 - [ ] MCP Figma connecté avec Full Seat
 
 ## Gestion des erreurs
-
-Si les composants Figma ne sont pas publiés :
 > ❌ Composants non publiés — publier d'abord dans la bibliothèque Design System.
-
-Si les implémentations code sont introuvables :
 > ❌ Implémentations manquantes — s'assurer que `/write-component-ui` a été exécuté.
 
 ## Processus

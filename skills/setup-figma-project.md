@@ -2,8 +2,6 @@
 name: setup-figma-project
 description: "Crée la structure de pages des fichiers Figma Projet et Design System selon le scope fonctionnel (EPIC et US). Exécuté par le design-system-manager via `use_figma`."
 argument-hint: "[epic-slug]"
-disable-model-invocation: false
-context: fork
 agent: design-system-manager
 ---
 
@@ -11,9 +9,7 @@ agent: design-system-manager
 Initialiser la structure des deux fichiers Figma du projet — Design System et Projet — avec les pages, la nomenclature et l'organisation définis dans `rules/figma.md`.
 
 ## Agents consommateurs
-- Design System Manager (pilote)
-- UX Designer (consommateur — travaille dans le fichier Projet)
-- UI Designer (consommateur — travaille dans les deux fichiers)
+Design System Manager  · UX Designer  · UI Designer 
 
 ## Prérequis
 - [ ] Brief Fonctionnel `specs/$ARGUMENTS/EPIC.md` disponible et en statut `Approved`
@@ -23,11 +19,7 @@ Initialiser la structure des deux fichiers Figma du projet — Design System et 
 - [ ] MCP Figma connecté et authentifié
 
 ## Gestion des erreurs
-
-Si les prérequis ne sont pas remplis :
 > ❌ Brief Fonctionnel manquant — lancer d'abord `/write-brief-fonctionnel $ARGUMENTS`.
-
-Si MCP Figma n'est pas accessible :
 > ⚠️ MCP Figma indisponible — produire les instructions manuelles de création de structure à transmettre au designer.
 
 ## Processus de génération
@@ -122,7 +114,7 @@ Avant de valider ce livrable et de passer à la suite, réponds à ces questions
 📁 specs/$ARGUMENTS/figma-setup.md (rapport)
 
 Prochaines étapes :
-→ /setup-figma-tokens $ARGUMENTS
+→ /setup-figma-tokens $ARGUMENTS (orchestré par setup-figma-init)
 → /setup-figma-grid $ARGUMENTS
 → Partager les URLs Figma avec les agents UX et UI
 ```

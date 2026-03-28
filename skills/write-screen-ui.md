@@ -2,8 +2,6 @@
 name: write-screen-ui
 description: "Implémente un écran complet en code natif SwiftUI + Compose depuis une spec UX validée. Exécuté par le ui-designer."
 argument-hint: "[feature-slug]/[screen-id]-[screen-slug]"
-disable-model-invocation: false
-context: fork
 agent: ui-designer
 ---
 
@@ -11,7 +9,7 @@ agent: ui-designer
 Implémenter un écran complet en code natif iOS (SwiftUI) et Android (Compose) depuis une spec UX validée.
 
 ## Agents consommateurs
-- UI Designer (pilote)
+UI Designer 
 
 ## Distinction avec write-component-ui
 | write-screen-ui | write-component-ui |
@@ -144,11 +142,7 @@ fun [NomEcran]Screen(
 
 
 ## Gestion des erreurs
-
-Si les prérequis ne sont pas remplis :
 > ❌ Prérequis manquant — vérifier les fichiers sources avant de relancer.
-
-Si un fichier source est introuvable via chemin relatif, utiliser Glob avec le pattern `**/design/$ARGUMENTS/**` pour localiser les fichiers depuis leur chemin absolu.
 
 ## Chemin de fichier
 ```

@@ -2,8 +2,6 @@
 name: write-glossaire
 description: "Construit et maintient le glossaire projet — référence partagée entre tous les agents. Exécuté par le business-analyst."
 argument-hint: "[epic-slug]"
-disable-model-invocation: false
-context: fork
 agent: business-analyst
 ---
 
@@ -11,8 +9,7 @@ agent: business-analyst
 Construire et maintenir un glossaire projet — référence partagée entre tous les agents pour éviter les ambiguïtés terminologiques.
 
 ## Agents consommateurs
-- Business Analyst (pilote — crée et maintient)
-- Tous les agents (consommateurs — consultent avant de rédiger)
+Business Analyst  · Tous les agents 
 
 ## Prérequis
 - [ ] Le Brief Fonctionnel est au moins en `Draft`
@@ -64,11 +61,7 @@ Ces termes créent de la confusion — utiliser les termes du glossaire à la pl
 
 
 ## Gestion des erreurs
-
-Si les prérequis ne sont pas remplis :
 > ❌ Prérequis manquant — vérifier les fichiers sources avant de relancer.
-
-Si un fichier source est introuvable via chemin relatif, utiliser Glob avec le pattern `**/specs/$ARGUMENTS/**` pour localiser les fichiers depuis leur chemin absolu.
 
 ## Règles de qualité
 

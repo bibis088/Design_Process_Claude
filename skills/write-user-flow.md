@@ -2,8 +2,6 @@
 name: write-user-flow
 description: "Traduit un FLUX-### en séquence d'écrans avec états et transitions. Exécuté par le ux-designer."
 argument-hint: "[feature-slug]/[flux-slug]"
-disable-model-invocation: false
-context: fork
 agent: ux-designer
 ---
 
@@ -11,7 +9,7 @@ agent: ux-designer
 Traduire un flux fonctionnel (`FLUX-###`) en séquence d'écrans avec états, interactions et transitions.
 
 ## Agents consommateurs
-- UX Designer (pilote)
+UX Designer 
 
 ## Distinction avec les autres documents de flux
 
@@ -112,11 +110,7 @@ Chaque étape du flux fonctionnel devient un ou plusieurs états d'écran. Une �
 
 
 ## Gestion des erreurs
-
-Si les prérequis ne sont pas remplis :
 > ❌ Prérequis manquant — vérifier les fichiers sources avant de relancer.
-
-Si un fichier source est introuvable via chemin relatif, utiliser Glob avec le pattern `**/design/$ARGUMENTS/**` pour localiser les fichiers depuis leur chemin absolu.
 
 ## Règles de qualité
 

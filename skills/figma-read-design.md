@@ -2,8 +2,6 @@
 name: figma-read-design
 description: "Pipeline de lecture Figma — structure, tokens, composants existants — avant toute opération d'écriture. Utilise get_metadata, get_variable_defs, get_screenshot et search_design_system. Exécuté par ui-designer ou design-system-manager."
 argument-hint: "[figma-url ou feature-slug]"
-disable-model-invocation: false
-context: fork
 agent: ui-designer
 ---
 
@@ -11,9 +9,7 @@ agent: ui-designer
 Lire et analyser le contenu d'un fichier ou frame Figma avant toute opération d'écriture. Produit un rapport de l'existant — structure, tokens disponibles, composants bibliothèque — pour éviter les doublons et garantir la cohérence avec le design system.
 
 ## Agents consommateurs
-- UI Designer (pilote — lit avant de créer)
-- Design System Manager (pilote — lit avant d'ajouter des tokens ou composants)
-- UX Designer (contributeur — lit pour vérifier la conformité des frames)
+UI Designer  · Design System Manager  · UX Designer 
 
 ## Quand utiliser ce skill
 - Avant `/create-figma-component` — vérifier que le composant n'existe pas
@@ -26,11 +22,7 @@ Lire et analyser le contenu d'un fichier ou frame Figma avant toute opération d
 - [ ] MCP Figma connecté (lecture disponible sur tous les seat types)
 
 ## Gestion des erreurs
-
-Si l'URL Figma est inaccessible :
 > ❌ URL Figma invalide ou permissions insuffisantes — vérifier l'accès au fichier.
-
-Si le frame est trop volumineux pour `get_design_context` :
 > ⚠️ Frame trop large — utiliser `get_metadata` seul pour la structure, puis `get_design_context` sur les frames individuels.
 
 ## Processus de lecture

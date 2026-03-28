@@ -2,8 +2,6 @@
 name: write-sector-watch
 description: "Collecte automatique des tendances sectorielles, actualités récentes et réglementations applicables au projet. Collecte via web_search + web_fetch, analyse par le Product Designer. Exécuté par le ux-researcher avant le cadrage."
 argument-hint: "[project-slug]"
-disable-model-invocation: false
-context: fork
 agent: ux-researcher
 ---
 
@@ -11,9 +9,7 @@ agent: ux-researcher
 Collecter et structurer les tendances du secteur, les actualités pertinentes et les contraintes réglementaires applicables — pour contextualiser le projet et anticiper les contraintes.
 
 ## Agents consommateurs
-- UX Researcher (pilote — collecte auto)
-- Business Analyst (consommateur — intègre dans le cadrage et les règles métier)
-- Product Owner (consommateur — influence la priorisation)
+UX Researcher  · Business Analyst  · Product Owner 
 
 ## Prérequis
 - [ ] Secteur d'activité identifié

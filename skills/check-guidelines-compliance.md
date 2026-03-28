@@ -2,8 +2,6 @@
 name: check-guidelines-compliance
 description: "Vérifie la conformité des composants et écrans Figma selon HIG (iOS) et Material 3 (Android). Intégré dans l'agent UI Designer. Exécuté via `use_figma`."
 argument-hint: "[feature-slug]/[component-ou-screen-slug]"
-disable-model-invocation: false
-context: fork
 agent: ui-designer
 ---
 
@@ -11,9 +9,7 @@ agent: ui-designer
 Auditer un composant ou un écran Figma pour vérifier sa conformité aux guidelines Apple HIG et Material Design 3 — et produire un rapport de non-conformités avec actions correctives.
 
 ## Agents consommateurs
-- UI Designer (pilote — audite et corrige)
-- Design System Manager (contributeur — valide la conformité avant publication bibliothèque)
-- QA Engineer (consommateur — référence pour les tests de conformité)
+UI Designer  · Design System Manager  · QA Engineer 
 
 ## Prérequis
 - [ ] Composant ou écran Figma créé et accessible
@@ -21,8 +17,6 @@ Auditer un composant ou un écran Figma pour vérifier sa conformité aux guidel
 - [ ] MCP Figma connecté pour lire les propriétés des layers
 
 ## Gestion des erreurs
-
-Si MCP Figma n'est pas accessible :
 > ⚠️ MCP Figma indisponible — produire la checklist de conformité à vérifier manuellement.
 
 ## Processus de vérification

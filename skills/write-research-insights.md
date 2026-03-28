@@ -2,8 +2,6 @@
 name: write-research-insights
 description: "Synthétise les notes brutes des interviews en insights priorisés et recommandations actionnables pour le UX Designer. Met à jour les personas hypothétiques. Exécuté par le ux-researcher après les sessions."
 argument-hint: "[epic-slug]"
-disable-model-invocation: false
-context: fork
 agent: ux-researcher
 ---
 
@@ -11,10 +9,7 @@ agent: ux-researcher
 Transformer les notes brutes des interviews en insights structurés, prioriser les découvertes, mettre à jour les personas et produire des recommandations actionnables pour le UX Designer.
 
 ## Agents consommateurs
-- UX Researcher (pilote — structure les insights)
-- Product Designer (valide — confirme les interprétations)
-- UX Designer (consommateur — base pour les specs d'écran)
-- Business Analyst (consommateur — peut impacter les règles métier)
+UX Researcher  · Product Designer  · UX Designer  · Business Analyst 
 
 ## Prérequis
 - [ ] Notes brutes des interviews disponibles (fournies par le Product Designer)
@@ -22,8 +17,6 @@ Transformer les notes brutes des interviews en insights structurés, prioriser l
 - [ ] Hypothèses initiales du plan de recherche disponibles
 
 ## Gestion des erreurs
-
-Si les notes sont insuffisantes :
 > ⚠️ Notes insuffisantes pour synthèse fiable — min. 3 sessions recommandées. Documenter les limites de la recherche dans le rapport.
 
 ## Processus

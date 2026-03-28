@@ -2,8 +2,6 @@
 name: review-dod
 description: "Vérifie la DoD d'un livrable avant passage au statut suivant. Applicable à tous les agents et types de livrables."
 argument-hint: "[type-livrable]/[id-livrable]"
-disable-model-invocation: false
-context: fork
 agent: product-owner
 ---
 
@@ -11,9 +9,7 @@ agent: product-owner
 Vérifier qu'une Definition of Done est complète avant de passer un livrable au statut suivant.
 
 ## Agents consommateurs
-- Tous les agents (auto-vérification avant soumission en review)
-- Product Owner (vérification avant `Approved`)
-- Tech Lead (vérification avant `Dev Ready`)
+Tous les agents  · Product Owner  · Tech Lead 
 
 ## Quand utiliser ce skill
 - Avant de changer le statut d'un livrable de `In Progress` → `In Review`
@@ -91,11 +87,7 @@ Générer le rapport de vérification dans ce format :
 
 
 ## Gestion des erreurs
-
-Si les prérequis ne sont pas remplis :
 > ❌ Prérequis manquant — vérifier les fichiers sources avant de relancer.
-
-Si un fichier source est introuvable via chemin relatif, utiliser Glob avec le pattern `**/— (rapport affiché en sortie, pas de fichier généré)/$ARGUMENTS/**` pour localiser les fichiers depuis leur chemin absolu.
 
 ## Règles de qualité
 
