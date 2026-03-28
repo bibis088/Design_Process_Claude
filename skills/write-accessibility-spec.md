@@ -1,7 +1,7 @@
 ---
 name: write-accessibility-spec
-description: Produit la spec d'accessibilité RAAM d'une feature — critères applicables, annotations par écran, checklist de conformité niveau A et AA. Exécuté par le ux-designer en coordination avec le qa-engineer.
-argument-hint: [feature-slug]
+description: "Produit la spec d'accessibilité RAAM d'une feature — critères applicables, annotations par écran, checklist de conformité niveau A et AA. Exécuté par le ux-designer en coordination avec le qa-engineer."
+argument-hint: "[feature-slug]"
 disable-model-invocation: false
 context: fork
 agent: ux-designer

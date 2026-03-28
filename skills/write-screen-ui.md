@@ -1,7 +1,7 @@
 ---
 name: write-screen-ui
-description: Implémente un écran complet en code natif SwiftUI + Compose depuis une spec UX validée. Exécuté par le ui-designer.
-argument-hint: [feature-slug]/[screen-id]-[screen-slug]
+description: "Implémente un écran complet en code natif SwiftUI + Compose depuis une spec UX validée. Exécuté par le ui-designer."
+argument-hint: "[feature-slug]/[screen-id]-[screen-slug]"
 disable-model-invocation: false
 context: fork
 agent: ui-designer

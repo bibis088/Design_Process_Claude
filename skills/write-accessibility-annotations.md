@@ -1,7 +1,7 @@
 ---
 name: write-accessibility-annotations
-description: Produit les annotations d'accessibilité RAAM pour un écran — labels, ordre de focus, zones tactiles, contrastes — prêtes à intégrer dans Figma et les specs d'écran. Exécuté par le ux-designer.
-argument-hint: [feature-slug]/[screen-id]-[screen-slug]
+description: "Produit les annotations d'accessibilité RAAM pour un écran — labels, ordre de focus, zones tactiles, contrastes — prêtes à intégrer dans Figma et les specs d'écran. Exécuté par le ux-designer."
+argument-hint: "[feature-slug]/[screen-id]-[screen-slug]"
 disable-model-invocation: false
 context: fork
 agent: ux-designer

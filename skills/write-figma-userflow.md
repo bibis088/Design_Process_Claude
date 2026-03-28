@@ -1,7 +1,7 @@
 ---
 name: write-figma-userflow
-description: Génère les user flows visuels dans Figma depuis les FLUX-### — permet au UI Designer de comprendre visuellement les parcours attendus. Exécuté par le ux-designer via `use_figma`.
-argument-hint: [feature-slug]/[flux-slug]
+description: "Génère les user flows visuels dans Figma depuis les FLUX-### — permet au UI Designer de comprendre visuellement les parcours attendus. Exécuté par le ux-designer via `use_figma`."
+argument-hint: "[feature-slug]/[flux-slug]"
 disable-model-invocation: false
 context: fork
 agent: ux-designer

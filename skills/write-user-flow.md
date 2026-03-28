@@ -1,7 +1,7 @@
 ---
 name: write-user-flow
-description: Traduit un FLUX-### en séquence d'écrans avec états et transitions. Exécuté par le ux-designer.
-argument-hint: [feature-slug]/[flux-slug]
+description: "Traduit un FLUX-### en séquence d'écrans avec états et transitions. Exécuté par le ux-designer."
+argument-hint: "[feature-slug]/[flux-slug]"
 disable-model-invocation: false
 context: fork
 agent: ux-designer

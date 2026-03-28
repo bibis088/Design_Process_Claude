@@ -1,7 +1,7 @@
 ---
 name: write-usability-test
-description: Produit le protocole de test d'utilisabilité et le template de rapport. Guide le Product Designer pour tester les maquettes UX avec de vrais utilisateurs. Exécuté par le ux-researcher après les maquettes UX.
-argument-hint: [feature-slug]
+description: "Produit le protocole de test d'utilisabilité et le template de rapport. Guide le Product Designer pour tester les maquettes UX avec de vrais utilisateurs. Exécuté par le ux-researcher après les maquettes UX."
+argument-hint: "[feature-slug]"
 disable-model-invocation: false
 context: fork
 agent: ux-researcher

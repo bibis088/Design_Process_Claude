@@ -1,7 +1,7 @@
 ---
 name: setup-figma-tokens
-description: Met en place la structure de tokens sémantiques dans Figma Design System — couleurs, typographies, styles de texte, spacing, ombres, motion. Exécuté par le design-system-manager via `use_figma`.
-argument-hint: [epic-slug]
+description: "Met en place la structure de tokens sémantiques dans Figma Design System — couleurs, typographies, styles de texte, spacing, ombres, motion. Exécuté par le design-system-manager via `use_figma`."
+argument-hint: "[epic-slug]"
 disable-model-invocation: false
 context: fork
 agent: design-system-manager

@@ -1,7 +1,7 @@
 ---
 name: write-tracking-plan
-description: Produit le plan de tagage d'une feature — liste des événements analytics à implémenter, avec écran source, propriétés et KPI alimenté. Le PO définit quoi mesurer, l'UX Designer mappe sur les écrans. Exécuté après la Gate 9.
-argument-hint: [epic-slug]/[feature-slug]
+description: "Produit le plan de tagage d'une feature — liste des événements analytics à implémenter, avec écran source, propriétés et KPI alimenté. Le PO définit quoi mesurer, l'UX Designer mappe sur les écrans. Exécuté après la Gate 9."
+argument-hint: "[epic-slug]/[feature-slug]"
 disable-model-invocation: false
 context: fork
 agent: product-owner

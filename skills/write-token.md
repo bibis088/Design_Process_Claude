@@ -1,7 +1,7 @@
 ---
 name: write-token
-description: Crée et documente un token de design sémantique avec implémentation iOS et Android. Exécuté par le design-system-manager.
-argument-hint: [type]/[token-slug]
+description: "Crée et documente un token de design sémantique avec implémentation iOS et Android. Exécuté par le design-system-manager."
+argument-hint: "[type]/[token-slug]"
 disable-model-invocation: false
 context: fork
 agent: design-system-manager

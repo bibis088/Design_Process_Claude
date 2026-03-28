@@ -1,7 +1,7 @@
 ---
 name: figma-read-design
-description: Pipeline de lecture Figma — structure, tokens, composants existants — avant toute opération d'écriture. Utilise get_metadata, get_variable_defs, get_screenshot et search_design_system. Exécuté par ui-designer ou design-system-manager.
-argument-hint: [figma-url ou feature-slug]
+description: "Pipeline de lecture Figma — structure, tokens, composants existants — avant toute opération d'écriture. Utilise get_metadata, get_variable_defs, get_screenshot et search_design_system. Exécuté par ui-designer ou design-system-manager."
+argument-hint: "[figma-url ou feature-slug]"
 disable-model-invocation: false
 context: fork
 agent: ui-designer

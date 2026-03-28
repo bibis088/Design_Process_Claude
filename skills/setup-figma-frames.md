@@ -1,7 +1,7 @@
 ---
 name: setup-figma-frames
-description: Crée les frames vides dans Figma nommées selon les US et états, avec grille et auto layout. Demande le contenu réel à intégrer avant de créer. Exécuté par le ui-designer via `use_figma`.
-argument-hint: [feature-slug]
+description: "Crée les frames vides dans Figma nommées selon les US et états, avec grille et auto layout. Demande le contenu réel à intégrer avant de créer. Exécuté par le ui-designer via `use_figma`."
+argument-hint: "[feature-slug]"
 disable-model-invocation: false
 context: fork
 agent: ui-designer

@@ -1,7 +1,7 @@
 ---
 name: write-component-spec
-description: Spécifie un composant UX — comportements, états et variantes sans valeurs visuelles. Exécuté par le ux-designer.
-argument-hint: [feature-slug]/[component-slug]
+description: "Spécifie un composant UX — comportements, états et variantes sans valeurs visuelles. Exécuté par le ux-designer."
+argument-hint: "[feature-slug]/[component-slug]"
 disable-model-invocation: false
 context: fork
 agent: ux-designer

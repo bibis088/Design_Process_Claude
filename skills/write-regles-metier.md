@@ -1,7 +1,7 @@
 ---
 name: write-regles-metier
-description: Formalise une matrice de règles métier RB-### exploitable par PO, Dev et QA. Exécuté par le business-analyst.
-argument-hint: [epic-slug]
+description: "Formalise une matrice de règles métier RB-### exploitable par PO, Dev et QA. Exécuté par le business-analyst."
+argument-hint: "[epic-slug]"
 disable-model-invocation: false
 context: fork
 agent: business-analyst

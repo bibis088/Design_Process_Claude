@@ -1,7 +1,7 @@
 ---
 name: review-figma-scope
-description: Vérifie la conformité des écrans Figma et prototypes selon le scope fonctionnel — EPIC, MVP, critères d'acceptance. Exécuté par le product-owner via `use_figma`.
-argument-hint: [epic-slug]/[feature-slug]
+description: "Vérifie la conformité des écrans Figma et prototypes selon le scope fonctionnel — EPIC, MVP, critères d'acceptance. Exécuté par le product-owner via `use_figma`."
+argument-hint: "[epic-slug]/[feature-slug]"
 disable-model-invocation: false
 context: fork
 agent: product-owner

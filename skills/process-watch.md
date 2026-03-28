@@ -1,7 +1,7 @@
 ---
 name: process-watch
-description: Veille hebdomadaire automatique sur les mises à jour des référentiels — RAAM, Apple HIG, Material Design 3, MCP Figma, Claude/Anthropic. Identifie l'impact sur les agents, rules et skills. Exécuté par le business-analyst.
-argument-hint: [YYYY-MM-DD]
+description: "Veille hebdomadaire automatique sur les mises à jour des référentiels — RAAM, Apple HIG, Material Design 3, MCP Figma, Claude/Anthropic. Identifie l'impact sur les agents, rules et skills. Exécuté par le business-analyst."
+argument-hint: "[YYYY-MM-DD]"
 disable-model-invocation: false
 context: fork
 agent: business-analyst

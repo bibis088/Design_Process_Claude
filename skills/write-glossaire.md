@@ -1,7 +1,7 @@
 ---
 name: write-glossaire
-description: Construit et maintient le glossaire projet — référence partagée entre tous les agents. Exécuté par le business-analyst.
-argument-hint: [epic-slug]
+description: "Construit et maintient le glossaire projet — référence partagée entre tous les agents. Exécuté par le business-analyst."
+argument-hint: "[epic-slug]"
 disable-model-invocation: false
 context: fork
 agent: business-analyst

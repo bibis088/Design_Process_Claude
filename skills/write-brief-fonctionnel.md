@@ -1,7 +1,7 @@
 ---
 name: write-brief-fonctionnel
-description: Génère le Brief Fonctionnel EPIC-### complet depuis les réponses au Cadrage initial. Exécuté par le business-analyst.
-argument-hint: [epic-slug]
+description: "Génère le Brief Fonctionnel EPIC-### complet depuis les réponses au Cadrage initial. Exécuté par le business-analyst."
+argument-hint: "[epic-slug]"
 disable-model-invocation: false
 context: fork
 agent: business-analyst

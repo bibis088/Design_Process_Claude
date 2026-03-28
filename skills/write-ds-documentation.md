@@ -1,7 +1,7 @@
 ---
 name: write-ds-documentation
-description: Génère la documentation web du design system pour un composant — contexte d'utilisation, cas principaux, cas dégradés, utilisations interdites, visualisation des tokens appliqués (spacing, couleurs, typo). Section code réservée pour la phase de développement. Exécuté par le design-system-manager.
-argument-hint: [component-slug]
+description: "Génère la documentation web du design system pour un composant — contexte d'utilisation, cas principaux, cas dégradés, utilisations interdites, visualisation des tokens appliqués (spacing, couleurs, typo). Section code réservée pour la phase de développement. Exécuté par le design-system-manager."
+argument-hint: "[component-slug]"
 disable-model-invocation: false
 context: fork
 agent: design-system-manager

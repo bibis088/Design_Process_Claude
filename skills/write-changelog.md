@@ -1,7 +1,7 @@
 ---
 name: write-changelog
-description: Rédige une entrée de changelog MAJOR.MINOR.PATCH pour le design system. Exécuté par le design-system-manager.
-argument-hint: [version] [type: MAJOR|MINOR|PATCH]
+description: "Rédige une entrée de changelog MAJOR.MINOR.PATCH pour le design system. Exécuté par le design-system-manager."
+argument-hint: "[version] [type: MAJOR|MINOR|PATCH]"
 disable-model-invocation: false
 context: fork
 agent: design-system-manager

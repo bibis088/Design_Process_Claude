@@ -1,7 +1,7 @@
 ---
 name: write-ux-benchmark
-description: Benchmark automatique des patterns UX/UI du secteur — navigation, onboarding, composants récurrents, conventions d'interaction. Collecte via web_search + web_fetch, analyse par le Product Designer. Exécuté par le ux-researcher avant le cadrage.
-argument-hint: [project-slug]
+description: "Benchmark automatique des patterns UX/UI du secteur — navigation, onboarding, composants récurrents, conventions d'interaction. Collecte via web_search + web_fetch, analyse par le Product Designer. Exécuté par le ux-researcher avant le cadrage."
+argument-hint: "[project-slug]"
 disable-model-invocation: false
 context: fork
 agent: ux-researcher

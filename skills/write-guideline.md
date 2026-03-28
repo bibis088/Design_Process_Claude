@@ -1,7 +1,7 @@
 ---
 name: write-guideline
-description: Rédige une guideline du design system (accessibilité, dark mode, motion) avec exemples. Exécuté par le design-system-manager.
-argument-hint: [accessibilite|dark-mode|motion]
+description: "Rédige une guideline du design system (accessibilité, dark mode, motion) avec exemples. Exécuté par le design-system-manager."
+argument-hint: "[accessibilite|dark-mode|motion]"
 disable-model-invocation: false
 context: fork
 agent: design-system-manager

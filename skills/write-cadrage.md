@@ -1,7 +1,7 @@
 ---
 name: write-cadrage
-description: Pose les 6 questions de cadrage en une fois et structure les réponses en résumé de cadrage. Exécuté par le business-analyst.
-argument-hint: [epic-slug]
+description: "Pose les 6 questions de cadrage en une fois et structure les réponses en résumé de cadrage. Exécuté par le business-analyst."
+argument-hint: "[epic-slug]"
 disable-model-invocation: false
 context: fork
 agent: business-analyst

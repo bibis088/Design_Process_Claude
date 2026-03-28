@@ -1,7 +1,7 @@
 ---
 name: write-contextual-help
-description: Spécifie l'aide contextuelle d'une feature — empty states, messages d'erreur explicites et labels d'action — intégrée directement dans les specs d'écran. Exécuté par le ux-designer.
-argument-hint: [feature-slug]
+description: "Spécifie l'aide contextuelle d'une feature — empty states, messages d'erreur explicites et labels d'action — intégrée directement dans les specs d'écran. Exécuté par le ux-designer."
+argument-hint: "[feature-slug]"
 disable-model-invocation: false
 context: fork
 agent: ux-designer

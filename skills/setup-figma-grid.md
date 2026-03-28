@@ -1,7 +1,7 @@
 ---
 name: setup-figma-grid
-description: Définit les grilles et formats de frames dans Figma selon la stack iOS/Android — colonnes, gouttières, marges, safe areas. Exécuté par le design-system-manager via `use_figma`.
-argument-hint: [epic-slug]
+description: "Définit les grilles et formats de frames dans Figma selon la stack iOS/Android — colonnes, gouttières, marges, safe areas. Exécuté par le design-system-manager via `use_figma`."
+argument-hint: "[epic-slug]"
 disable-model-invocation: false
 context: fork
 agent: design-system-manager

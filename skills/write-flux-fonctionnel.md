@@ -1,7 +1,7 @@
 ---
 name: write-flux-fonctionnel
-description: Produit un flux fonctionnel FLUX-### avec préconditions, postconditions, flux alternatifs et cas d'erreur. Exécuté par le business-analyst.
-argument-hint: [epic-slug]/[flux-slug]
+description: "Produit un flux fonctionnel FLUX-### avec préconditions, postconditions, flux alternatifs et cas d'erreur. Exécuté par le business-analyst."
+argument-hint: "[epic-slug]/[flux-slug]"
 disable-model-invocation: false
 context: fork
 agent: business-analyst

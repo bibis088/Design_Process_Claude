@@ -1,7 +1,7 @@
 ---
 name: audit-figma-existing
-description: Revue complète d'un fichier Figma existant avant intégration du process — écrans, design system, composants, tokens, sémantique, nomenclature, auto layout, accessibilité, dark mode, Code Connect. Produit un rapport scoré avec plan de correction priorisé. Exécuté par le design-system-manager.
-argument-hint: [figma-url]
+description: "Revue complète d'un fichier Figma existant avant intégration du process — écrans, design system, composants, tokens, sémantique, nomenclature, auto layout, accessibilité, dark mode, Code Connect. Produit un rapport scoré avec plan de correction priorisé. Exécuté par le design-system-manager."
+argument-hint: "[figma-url]"
 disable-model-invocation: false
 context: fork
 agent: design-system-manager

@@ -1,7 +1,7 @@
 ---
 name: review-tracking-plan
-description: Vérifie que chaque événement du plan de tagage a un élément visuel correspondant dans les frames Figma, et adapte le plan selon les choix UI réels — nouveaux déclencheurs, événements obsolètes, opportunités non prévues. Exécuté après Gate 8 (tous les écrans).
-argument-hint: [epic-slug]/[feature-slug]
+description: "Vérifie que chaque événement du plan de tagage a un élément visuel correspondant dans les frames Figma, et adapte le plan selon les choix UI réels — nouveaux déclencheurs, événements obsolètes, opportunités non prévues. Exécuté après Gate 8 (tous les écrans)."
+argument-hint: "[epic-slug]/[feature-slug]"
 disable-model-invocation: false
 context: fork
 agent: product-owner

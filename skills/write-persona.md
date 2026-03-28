@@ -1,7 +1,7 @@
 ---
 name: write-persona
-description: Crée un persona PERSONA-### archétypal exploitable par le BA, PO et UX Designer. Exécuté par le business-analyst.
-argument-hint: [epic-slug]/[persona-slug]
+description: "Crée un persona PERSONA-### archétypal exploitable par le BA, PO et UX Designer. Exécuté par le business-analyst."
+argument-hint: "[epic-slug]/[persona-slug]"
 disable-model-invocation: false
 context: fork
 agent: business-analyst

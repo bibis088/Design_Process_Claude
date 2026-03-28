@@ -1,7 +1,7 @@
 ---
 name: write-functional-doc
-description: Génère le document fonctionnel complet d'un EPIC — matrice de traçabilité EPIC→FEAT→US→écran Figma, flux fonctionnels avec liens, règles métier, personas validés, glossaire, changelog. Document unique client + Dev. Exécuté par le product-owner après la Gate 9.
-argument-hint: [epic-slug]
+description: "Génère le document fonctionnel complet d'un EPIC — matrice de traçabilité EPIC→FEAT→US→écran Figma, flux fonctionnels avec liens, règles métier, personas validés, glossaire, changelog. Document unique client + Dev. Exécuté par le product-owner après la Gate 9."
+argument-hint: "[epic-slug]"
 disable-model-invocation: false
 context: fork
 agent: product-owner

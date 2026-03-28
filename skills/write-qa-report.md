@@ -1,7 +1,7 @@
 ---
 name: write-qa-report
-description: Produit un rapport de test QA structuré pour une US-### ou FEAT-###. Vérifie les critères d'acceptance, documente les bugs, teste l'accessibilité RAAM et émet un verdict. Exécuté par le qa-engineer.
-argument-hint: [epic-slug]/[us-slug ou feat-slug]
+description: "Produit un rapport de test QA structuré pour une US-### ou FEAT-###. Vérifie les critères d'acceptance, documente les bugs, teste l'accessibilité RAAM et émet un verdict. Exécuté par le qa-engineer."
+argument-hint: "[epic-slug]/[us-slug ou feat-slug]"
 disable-model-invocation: false
 context: fork
 agent: qa-engineer

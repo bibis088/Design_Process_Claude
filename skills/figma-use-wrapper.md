@@ -1,7 +1,7 @@
 ---
 name: figma-use-wrapper
-description: Skill fondateur pour toute écriture sur le canvas Figma. Wrappe figma-use avec les conventions du projet — nomenclature, tokens, grilles mobiles iOS/Android. Obligatoire avant tout skill d'écriture Figma. Exécuté par ui-designer ou design-system-manager.
-argument-hint: [action à réaliser sur le canvas]
+description: "Skill fondateur pour toute écriture sur le canvas Figma. Wrappe figma-use avec les conventions du projet — nomenclature, tokens, grilles mobiles iOS/Android. Obligatoire avant tout skill d'écriture Figma. Exécuté par ui-designer ou design-system-manager."
+argument-hint: "[action à réaliser sur le canvas]"
 disable-model-invocation: false
 context: fork
 agent: ui-designer

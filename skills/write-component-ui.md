@@ -1,7 +1,7 @@
 ---
 name: write-component-ui
-description: Implémente un composant UI natif SwiftUI + Compose depuis une spec UX validée. Exécuté par le ui-designer.
-argument-hint: [feature-slug]/[component-slug]
+description: "Implémente un composant UI natif SwiftUI + Compose depuis une spec UX validée. Exécuté par le ui-designer."
+argument-hint: "[feature-slug]/[component-slug]"
 disable-model-invocation: false
 context: fork
 agent: ui-designer

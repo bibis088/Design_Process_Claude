@@ -1,7 +1,7 @@
 ---
 name: audit-existing-project
-description: Audite un projet existant — specs, Figma, codebase — avant d'intégrer ce process. Identifie les écarts, les manques et produit un plan de migration. Exécuté par le business-analyst en coordination avec l'humain.
-argument-hint: [project-slug]
+description: "Audite un projet existant — specs, Figma, codebase — avant d'intégrer ce process. Identifie les écarts, les manques et produit un plan de migration. Exécuté par le business-analyst en coordination avec l'humain."
+argument-hint: "[project-slug]"
 disable-model-invocation: false
 context: fork
 agent: business-analyst

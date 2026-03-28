@@ -1,7 +1,7 @@
 ---
 name: write-release-notes
-description: Génère les release notes orientées utilisateur pour une version — App Store, Play Store et in-app. Exécuté par le product-owner.
-argument-hint: [version] [epic-slug]
+description: "Génère les release notes orientées utilisateur pour une version — App Store, Play Store et in-app. Exécuté par le product-owner."
+argument-hint: "[version] [epic-slug]"
 disable-model-invocation: false
 context: fork
 agent: product-owner

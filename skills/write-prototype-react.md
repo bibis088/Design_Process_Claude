@@ -1,7 +1,7 @@
 ---
 name: write-prototype-react
-description: Génère un prototype React interactif depuis les frames Figma d'un flow complet — partageable via URL. Deux niveaux selon la phase : cliquable simple (après écrans principaux) ou interactif complet (après écrans secondaires). Exécuté par le ui-designer.
-argument-hint: [feature-slug]/[flow-slug]
+description: "Génère un prototype React interactif depuis les frames Figma d'un flow complet — partageable via URL. Deux niveaux selon la phase : cliquable simple (après écrans principaux) ou interactif complet (après écrans secondaires). Exécuté par le ui-designer."
+argument-hint: "[feature-slug]/[flow-slug]"
 disable-model-invocation: false
 context: fork
 agent: ui-designer

@@ -1,7 +1,7 @@
 ---
 name: write-onboarding-spec
-description: Spécifie le parcours d'onboarding in-app — walkthroughs, tooltips de découverte, écrans d'introduction — pour les nouveaux utilisateurs. Exécuté par le ux-designer.
-argument-hint: [epic-slug]
+description: "Spécifie le parcours d'onboarding in-app — walkthroughs, tooltips de découverte, écrans d'introduction — pour les nouveaux utilisateurs. Exécuté par le ux-designer."
+argument-hint: "[epic-slug]"
 disable-model-invocation: false
 context: fork
 agent: ux-designer

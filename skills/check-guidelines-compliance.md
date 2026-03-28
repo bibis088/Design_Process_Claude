@@ -1,7 +1,7 @@
 ---
 name: check-guidelines-compliance
-description: Vérifie la conformité des composants et écrans Figma selon HIG (iOS) et Material 3 (Android). Intégré dans l'agent UI Designer. Exécuté via `use_figma`.
-argument-hint: [feature-slug]/[component-ou-screen-slug]
+description: "Vérifie la conformité des composants et écrans Figma selon HIG (iOS) et Material 3 (Android). Intégré dans l'agent UI Designer. Exécuté via `use_figma`."
+argument-hint: "[feature-slug]/[component-ou-screen-slug]"
 disable-model-invocation: false
 context: fork
 agent: ui-designer

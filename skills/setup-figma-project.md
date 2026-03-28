@@ -1,7 +1,7 @@
 ---
 name: setup-figma-project
-description: Crée la structure de pages des fichiers Figma Projet et Design System selon le scope fonctionnel (EPIC et US). Exécuté par le design-system-manager via `use_figma`.
-argument-hint: [epic-slug]
+description: "Crée la structure de pages des fichiers Figma Projet et Design System selon le scope fonctionnel (EPIC et US). Exécuté par le design-system-manager via `use_figma`."
+argument-hint: "[epic-slug]"
 disable-model-invocation: false
 context: fork
 agent: design-system-manager

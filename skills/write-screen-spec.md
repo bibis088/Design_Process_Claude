@@ -1,7 +1,7 @@
 ---
 name: write-screen-spec
-description: Spécifie un écran S-XX avec hiérarchie visuelle, 4 états et accessibilité. Exécuté par le ux-designer.
-argument-hint: [feature-slug]/[screen-id]-[screen-slug]
+description: "Spécifie un écran S-XX avec hiérarchie visuelle, 4 états et accessibilité. Exécuté par le ux-designer."
+argument-hint: "[feature-slug]/[screen-id]-[screen-slug]"
 disable-model-invocation: false
 context: fork
 agent: ux-designer

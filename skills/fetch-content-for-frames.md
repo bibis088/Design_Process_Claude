@@ -1,7 +1,7 @@
 ---
 name: fetch-content-for-frames
-description: Extrait du contenu (textes, images, données) depuis une URL et l'injecte dans les frames Figma correspondantes via `use_figma`. Exécuté par le ui-designer.
-argument-hint: [feature-slug]
+description: "Extrait du contenu (textes, images, données) depuis une URL et l'injecte dans les frames Figma correspondantes via `use_figma`. Exécuté par le ui-designer."
+argument-hint: "[feature-slug]"
 disable-model-invocation: false
 context: fork
 agent: ui-designer

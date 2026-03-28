@@ -1,7 +1,7 @@
 ---
 name: write-figma-handoff
-description: Prépare le UI kit et le fichier Figma pour le handoff Dev — nommage, inspection, liens specs, annotations. Exécuté par le ui-designer via `use_figma`.
-argument-hint: [feature-slug]
+description: "Prépare le UI kit et le fichier Figma pour le handoff Dev — nommage, inspection, liens specs, annotations. Exécuté par le ui-designer via `use_figma`."
+argument-hint: "[feature-slug]"
 disable-model-invocation: false
 context: fork
 agent: ui-designer

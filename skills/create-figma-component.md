@@ -1,7 +1,7 @@
 ---
 name: create-figma-component
-description: Crée un composant Figma complet avec variants, auto layout, tokens et propriétés — basé sur la stack iOS/Android. Exécuté par le ui-designer via `use_figma`.
-argument-hint: [feature-slug]/[component-slug]
+description: "Crée un composant Figma complet avec variants, auto layout, tokens et propriétés — basé sur la stack iOS/Android. Exécuté par le ui-designer via `use_figma`."
+argument-hint: "[feature-slug]/[component-slug]"
 disable-model-invocation: false
 context: fork
 agent: ui-designer

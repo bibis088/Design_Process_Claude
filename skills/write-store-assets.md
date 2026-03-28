@@ -1,7 +1,7 @@
 ---
 name: write-store-assets
-description: Prépare les assets nécessaires pour la publication sur l'App Store et le Play Store — icône, bannière Android, screenshots smartphone et tablet. Exécuté par le ui-designer via `use_figma`.
-argument-hint: [epic-slug]
+description: "Prépare les assets nécessaires pour la publication sur l'App Store et le Play Store — icône, bannière Android, screenshots smartphone et tablet. Exécuté par le ui-designer via `use_figma`."
+argument-hint: "[epic-slug]"
 disable-model-invocation: false
 context: fork
 agent: ui-designer

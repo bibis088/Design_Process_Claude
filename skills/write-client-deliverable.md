@@ -1,7 +1,7 @@
 ---
 name: write-client-deliverable
-description: Génère un livrable client formaté pour Google Doc ou Google Sheets depuis les documents internes — résumé de cadrage, user stories, rapport QA, release notes. Inclut une section "Ce qu'on vous demande de valider". Exécuté par le product-owner.
-argument-hint: [type] [epic-slug]
+description: "Génère un livrable client formaté pour Google Doc ou Google Sheets depuis les documents internes — résumé de cadrage, user stories, rapport QA, release notes. Inclut une section \"Ce qu'on vous demande de valider\". Exécuté par le product-owner."
+argument-hint: "[type] [epic-slug]"
 argument-hint-detail: "types disponibles : cadrage | user-stories | maquettes | prototype | qa | release-notes | functional-doc"
 disable-model-invocation: false
 context: fork

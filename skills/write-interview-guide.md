@@ -1,7 +1,7 @@
 ---
 name: write-interview-guide
-description: Produit le guide d'entretien utilisateur structuré — questions ouvertes, scénarios, protocole. Guide le Product Designer pour conduire des interviews qualitatives efficaces. Exécuté par le ux-researcher.
-argument-hint: [epic-slug]
+description: "Produit le guide d'entretien utilisateur structuré — questions ouvertes, scénarios, protocole. Guide le Product Designer pour conduire des interviews qualitatives efficaces. Exécuté par le ux-researcher."
+argument-hint: "[epic-slug]"
 disable-model-invocation: false
 context: fork
 agent: ux-researcher

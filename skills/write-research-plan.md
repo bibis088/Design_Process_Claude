@@ -1,7 +1,7 @@
 ---
 name: write-research-plan
-description: Produit le plan de recherche utilisateur — méthodes, questions de recherche, profils participants, calendrier. Guide le Product Designer pour recruter et planifier les sessions. Exécuté par le ux-researcher après le brief fonctionnel.
-argument-hint: [epic-slug]
+description: "Produit le plan de recherche utilisateur — méthodes, questions de recherche, profils participants, calendrier. Guide le Product Designer pour recruter et planifier les sessions. Exécuté par le ux-researcher après le brief fonctionnel."
+argument-hint: "[epic-slug]"
 disable-model-invocation: false
 context: fork
 agent: ux-researcher

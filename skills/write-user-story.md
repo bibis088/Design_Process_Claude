@@ -1,7 +1,7 @@
 ---
 name: write-user-story
-description: Génère une user story US-### complète avec critères d'acceptance, règles métier et DoD. Exécuté par le product-owner.
-argument-hint: [epic-slug]/[story-slug]
+description: "Génère une user story US-### complète avec critères d'acceptance, règles métier et DoD. Exécuté par le product-owner."
+argument-hint: "[epic-slug]/[story-slug]"
 disable-model-invocation: false
 context: fork
 agent: product-owner

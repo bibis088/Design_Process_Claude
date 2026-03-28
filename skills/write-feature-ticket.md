@@ -1,7 +1,7 @@
 ---
 name: write-feature-ticket
-description: Génère un ticket feature FEAT-### complet avec objectifs mesurables, périmètre et KPIs. Exécuté par le product-owner.
-argument-hint: [epic-slug]/[feature-slug]
+description: "Génère un ticket feature FEAT-### complet avec objectifs mesurables, périmètre et KPIs. Exécuté par le product-owner."
+argument-hint: "[epic-slug]/[feature-slug]"
 disable-model-invocation: false
 context: fork
 agent: product-owner

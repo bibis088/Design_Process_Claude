@@ -1,7 +1,7 @@
 ---
 name: write-research-insights
-description: Synthétise les notes brutes des interviews en insights priorisés et recommandations actionnables pour le UX Designer. Met à jour les personas hypothétiques. Exécuté par le ux-researcher après les sessions.
-argument-hint: [epic-slug]
+description: "Synthétise les notes brutes des interviews en insights priorisés et recommandations actionnables pour le UX Designer. Met à jour les personas hypothétiques. Exécuté par le ux-researcher après les sessions."
+argument-hint: "[epic-slug]"
 disable-model-invocation: false
 context: fork
 agent: ux-researcher

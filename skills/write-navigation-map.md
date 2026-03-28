@@ -1,7 +1,7 @@
 ---
 name: write-navigation-map
-description: Produit le SCREENS-MAP.md — vue globale de tous les écrans et connexions d'une feature. Exécuté par le ux-designer.
-argument-hint: [feature-slug]
+description: "Produit le SCREENS-MAP.md — vue globale de tous les écrans et connexions d'une feature. Exécuté par le ux-designer."
+argument-hint: "[feature-slug]"
 disable-model-invocation: false
 context: fork
 agent: ux-designer

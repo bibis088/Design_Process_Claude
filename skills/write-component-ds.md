@@ -1,7 +1,7 @@
 ---
 name: write-component-ds
-description: Documente un composant dans le design system — référence partagée UX, UI et Dev. Exécuté par le design-system-manager.
-argument-hint: [component-slug]
+description: "Documente un composant dans le design system — référence partagée UX, UI et Dev. Exécuté par le design-system-manager."
+argument-hint: "[component-slug]"
 disable-model-invocation: false
 context: fork
 agent: design-system-manager

@@ -1,7 +1,7 @@
 ---
 name: figma-code-connect
-description: Connecte les composants Figma à leurs implémentations SwiftUI et Jetpack Compose via Code Connect. Permet aux développeurs de naviguer de Figma Dev Mode vers le code source. Exécuté par le ui-designer.
-argument-hint: [feature-slug]
+description: "Connecte les composants Figma à leurs implémentations SwiftUI et Jetpack Compose via Code Connect. Permet aux développeurs de naviguer de Figma Dev Mode vers le code source. Exécuté par le ui-designer."
+argument-hint: "[feature-slug]"
 disable-model-invocation: false
 context: fork
 agent: ui-designer

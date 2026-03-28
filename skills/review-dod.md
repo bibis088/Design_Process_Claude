@@ -1,7 +1,7 @@
 ---
 name: review-dod
-description: Vérifie la DoD d'un livrable avant passage au statut suivant. Applicable à tous les agents et types de livrables.
-argument-hint: [type-livrable]/[id-livrable]
+description: "Vérifie la DoD d'un livrable avant passage au statut suivant. Applicable à tous les agents et types de livrables."
+argument-hint: "[type-livrable]/[id-livrable]"
 disable-model-invocation: false
 context: fork
 agent: product-owner
